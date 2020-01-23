@@ -15,7 +15,7 @@ const CategoryListContainer = () => {
 
   useEffect(() => {
     load();
-  }, [load]);
+  }, []);
 
   function handleChange(item) {
     return value => {

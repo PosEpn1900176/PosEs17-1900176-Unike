@@ -6,7 +6,7 @@ const servicesAPI = {
   professional: ProfessionalService,
 };
 
-const useFetch = (service, method = 'get', args = {}) => {
+const useFetch = (service, method = 'get') => {
   const [fetch, setFetch] = useState({
     loading: true,
     error: false,
@@ -17,7 +17,7 @@ const useFetch = (service, method = 'get', args = {}) => {
   const requestAPI = async parameters => {
     try {
       const api = servicesAPI[service];
-      setParams(parameters || args);
+      setParams(parameters);
       setFetch({
         ...fetch,
         loading: true,

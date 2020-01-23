@@ -10,7 +10,7 @@ export const useLoadCategory = () => {
 
   useEffect(() => {
     dispatch(loadCategory(category));
-  });
+  }, [category]);
 
   const load = () => {
     fetch();

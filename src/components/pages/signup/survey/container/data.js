@@ -2,12 +2,12 @@ const question = [
   {
     id: 'TrabalhaOutroAplicativo',
     type: 'check',
-    question: 'Atualmente você está trabalhano em um salão ou aplicativo?'
+    question: 'Atualmente você está trabalhano em um salão ou aplicativo?',
   },
   {
     id: 'Esterilizacao',
     type: 'text',
-    question: 'O que você utiliza para esterilizar os seus equipamentos?'
+    question: 'O que você utiliza para esterilizar os seus equipamentos?',
   },
   {
     id: 'ExperienciaAtendimentoDomicilio',
@@ -21,30 +21,30 @@ const question = [
     items: [
       {
         text: 'Sem experiência',
-        value: 'no-exp'
+        value: 'no-exp',
       },
       {
         text: '1 ano',
-        value: '1'
+        value: '1',
       },
       {
         text: '2 anos',
-        value: '2'
+        value: '2',
       },
       {
         text: '3 anos',
-        value: '3'
+        value: '3',
       },
       {
         text: '4 anos',
-        value: '4'
+        value: '4',
       },
       {
         text: '5 anos ou mais',
-        value: '5'
-      }
-    ]
-  }
+        value: '5',
+      },
+    ],
+  },
 ];
 
 export default question;

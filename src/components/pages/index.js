@@ -5,3 +5,4 @@ export * from './loading';
 export * from './signup';
 export * from './initial';
 export * from './about';
+export * from './splash';

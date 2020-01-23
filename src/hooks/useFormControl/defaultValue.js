@@ -2,64 +2,64 @@ import { Initial } from './types';
 const defaultValue: Initial = {
   name: {
     value: '',
-    valid: true
+    valid: true,
   },
   surname: {
     value: '',
-    valid: true
+    valid: true,
   },
   email: {
     value: '',
-    valid: true
+    valid: true,
   },
   celular: {
     value: '',
-    valid: true
+    valid: true,
   },
   birthday: {
     value: '',
-    valid: true
+    valid: true,
   },
   rg: {
     value: '',
-    valid: true
+    valid: true,
   },
   cpf: {
     value: '',
-    valid: true
+    valid: true,
   },
   services: {
     value: [],
-    valid: true
+    valid: true,
   },
   cep: {
     value: '',
-    valid: true
+    valid: true,
   },
   address: {
     value: '',
-    valid: true
+    valid: true,
   },
   number: {
     value: '',
-    valid: true
+    valid: true,
   },
   neighborhood: {
     value: '',
-    valid: true
+    valid: true,
   },
   complement: {
     value: '',
-    valid: true
+    valid: true,
   },
   city: {
     value: '',
-    valid: true
+    valid: true,
   },
   uf: {
     value: '',
-    valid: true
-  }
+    valid: true,
+  },
 };
 
 export default defaultValue;

@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 const LoginPage = props => {
   const [form, setForm] = useState({
     email: '1@teste.com.br',
-    password: 'ale123'
+    password: 'ale123',
   });
   const [load, setLoad] = useState(false);
 
@@ -36,7 +36,7 @@ const LoginPage = props => {
     return value => {
       setForm({
         ...form,
-        [element]: value
+        [element]: value,
       });
     };
   }

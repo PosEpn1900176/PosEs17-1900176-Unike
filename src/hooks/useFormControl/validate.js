@@ -17,7 +17,7 @@ const validate = (type: string, value: string | Array<any>) => {
     neighborhood: true,
     complement: true,
     city: true,
-    uf: true
+    uf: true,
   };
 
   return valid[type];

@@ -4,20 +4,20 @@ const style = StyleSheet.create({
   form: {
     flex: 1,
     marginHorizontal: 20,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   label: {
     color: '#000',
     fontSize: 24,
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   info: {
     fontSize: 16,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   checkbox: {
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   button: {
     fontSize: 28,
@@ -27,13 +27,13 @@ const style = StyleSheet.create({
     marginTop: 10,
     backgroundColor: '#FF0000',
     justifyContent: 'center',
-    borderRadius: 5
+    borderRadius: 5,
   },
   return: {
     height: 20,
     margin: 10,
-    textAlign: 'left'
-  }
+    textAlign: 'left',
+  },
 });
 
 export default style;

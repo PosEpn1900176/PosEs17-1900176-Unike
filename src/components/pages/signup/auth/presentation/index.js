@@ -10,13 +10,17 @@ import {
   Button,
   Icon,
   Text,
-  Header
+  Header,
 } from 'native-base';
 
 const SignupAuthPresentation = props => {
   return (
     <Container>
-      <HeaderSignup disable={props.disable} onBack={props.onBack} onForward={props.onForward} />
+      <HeaderSignup
+        disable={props.disable}
+        onBack={props.onBack}
+        onForward={props.onForward}
+      />
       <Content>
         <Form>
           <Item stackedLabel error={!props.data.Email.valid}>
@@ -27,7 +31,10 @@ const SignupAuthPresentation = props => {
               secureTextEntry={true}
             />
           </Item>
-          <Item stackedLabel error={!props.data.Email.valid} style={{ alignItems: 'flex-start' }}>
+          <Item
+            stackedLabel
+            error={!props.data.Email.valid}
+            style={{ alignItems: 'flex-start' }}>
             <Label>Repetir senha</Label>
             <Input
               value={props.verify}

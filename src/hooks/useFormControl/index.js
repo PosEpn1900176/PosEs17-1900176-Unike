@@ -1,5 +1,5 @@
 // @flow
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import validate from './validate';
 import defaultValue from './defaultValue';
 
@@ -7,10 +7,10 @@ import { useAsyncStorage } from '@react-native-community/async-storage';
 
 const useFormControl = () => {
   const { getItem, setItem, removeItem } = useAsyncStorage('@signup');
-  const get1 = async () => {
-    const data = await getItem();
-    return data;
-  };
+  // const get1 = async () => {
+  //   const data = await getItem();
+  //   return data;
+  // };
   const [state, setState] = useState(defaultValue);
 
   const setStorageToState = async () => {
@@ -20,10 +20,10 @@ const useFormControl = () => {
       ...JSON.parse(item),
     });
   };
- 
+
   useEffect(() => {
     setStorageToState();
-  }, []);
+  }, [setStorageToState]);
 
   const set = (type: string, value: string | Array<any>) => {
     const valid = validate(type, value);

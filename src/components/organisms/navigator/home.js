@@ -12,7 +12,7 @@ const HomeNavigator = createStackNavigator({
         headerLeft: <Navigation navigationProps={navigation} />,
       };
     },
-    header: null
+    header: null,
   },
 });
 

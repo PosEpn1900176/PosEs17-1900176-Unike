@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { ActivityIndicator, StatusBar, View } from 'react-native';
-import { getUserToken } from './user'
+import { getUserToken } from './user';
 
 const LoadingPage = props => {
   const goNavigate = async () => {
@@ -8,13 +8,13 @@ const LoadingPage = props => {
       const userToken = await getUserToken();
       props.navigation.navigate(userToken ? 'App' : 'Auth');
     } catch (error) {
-      console.log('Error auth')
+      console.log('Error auth');
       console.error(error);
     }
-  }
+  };
   useEffect(() => {
     goNavigate();
-  }, []);
+  }, [goNavigate]);
 
   return (
     <View>

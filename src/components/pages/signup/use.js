@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import AsyncStorage, { useAsyncStorage } from '@react-native-community/async-storage';
+import AsyncStorage, {
+  useAsyncStorage,
+} from '@react-native-community/async-storage';
 
 export function useSignup(name) {
   const { getItem } = useAsyncStorage(name);
@@ -13,7 +15,7 @@ export function useSignup(name) {
   }
   useEffect(() => {
     setStorageToState();
-  }, []);
+  }, [setStorageToState]);
 
   return state;
 }

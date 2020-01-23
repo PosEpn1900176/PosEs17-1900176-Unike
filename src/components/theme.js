@@ -4,6 +4,6 @@ const theme = {
     // titleStyle: {
     //   color: 'red'
     // }
-  }
+  },
 };
 export default theme;

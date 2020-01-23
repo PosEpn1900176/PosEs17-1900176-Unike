@@ -2,29 +2,16 @@ import React from 'react';
 import {
   Container,
   Button,
-  Content,
   Text,
   Icon,
   Left,
   Body,
   Right,
-  H1,
   Card,
   CardItem,
 } from 'native-base';
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { View } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
-
-const styles = StyleSheet.create({
-  container: {
-    ...StyleSheet.absoluteFillObject,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
-  mapView: {
-    ...StyleSheet.absoluteFillObject,
-  },
-});
 
 const region = {
   latitude: 37.78825,
@@ -89,8 +76,8 @@ const CustomMarker = props => {
 };
 
 const HomePage = props => {
-  const handleChange = region => {
-    console.log(region);
+  const handleChange = regions => {
+    console.log(regions);
   };
   return (
     <Container>

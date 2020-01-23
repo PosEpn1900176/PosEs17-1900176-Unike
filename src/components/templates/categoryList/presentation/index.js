@@ -9,7 +9,7 @@ import {
   Right,
   Switch,
   Icon,
-  Text
+  Text,
 } from 'native-base';
 
 import CategoryListItemPresentation from './item';
@@ -21,7 +21,10 @@ const CategoryListPresentation = props => {
         <Separator bordered>
           <Text>{data.Categoria.Nome}</Text>
         </Separator>
-        <CategoryListItemPresentation data={data.Servicos} onChange={props.onChange} />
+        <CategoryListItemPresentation
+          data={data.Servicos}
+          onChange={props.onChange}
+        />
       </List>
     );
   });

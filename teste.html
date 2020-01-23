@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div ps-menu-admin="true"></div>
+    <script>
+    document.addEventListener('DOMContentLoad', ()=>{
+        psMenuAdmin();
+    });
+    </script>
+    <script src="node_modules/ps-menu-admin/aasd.min.js"></script>
+</body>
+</html>
+
+
+
+import MENUADMIN from 'ps-menu-admin';
+
+
+const Component = () => {
+    useEffect(()=>{
+        MENUADMIN()
+    }, [])
+    return <div id='abc'>&nbsp;</div>
+}

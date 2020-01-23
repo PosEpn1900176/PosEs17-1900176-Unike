@@ -12,11 +12,10 @@ const SignupAuthContainer = ({ navigation }) => {
   const goPage = page => navigation.navigate(page);
   const onChange = key => value => setKeyContact(key, value);
 
-
-  const onVerify = (value)=>{
-    console.log(selector)
+  const onVerify = value => {
+    console.log(selector);
     setVerify(value);
-  }
+  };
 
   return (
     <SignupAuthPresentation
@@ -26,7 +25,7 @@ const SignupAuthContainer = ({ navigation }) => {
       data={selector}
       onBack={() => goPage('Login')}
       onForward={() => goPage('SignupProfessional')}
-      onVerify={()=>onVerify}
+      onVerify={() => onVerify}
       onClear={() => {}}
     />
   );

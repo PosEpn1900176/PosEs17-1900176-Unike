@@ -6,7 +6,7 @@ const QuestionCheck = props => {
   const onChange = value => {
     props.onChange({
       id: props.item.id,
-      value
+      value,
     });
   };
   return (

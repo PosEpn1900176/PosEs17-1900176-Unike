@@ -18,7 +18,7 @@ const SignupLocalizationContainer = ({ navigation }) => {
       data={selector}
       onBack={() => goPage('Login')}
       onForward={() => goPage('SignupSurvey')}
-      onClear={()=>{}}
+      onClear={() => {}}
     />
   );
 };

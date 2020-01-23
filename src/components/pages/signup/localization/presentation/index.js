@@ -1,23 +1,49 @@
 import React, { Component } from 'react';
 import { HeaderSignup } from '../../../../templates';
-import { Container, Form, Item, Label, Input, Content, Icon, Text, Header } from 'native-base';
+import {
+  Container,
+  Form,
+  Item,
+  Label,
+  Input,
+  Content,
+  Icon,
+  Text,
+  Header,
+} from 'native-base';
 
 const SignupLocalizationPresentation = props => {
   return (
     <Container>
-      <HeaderSignup disable={props.disabled} onBack={props.onBack} onForward={props.onForward} />
+      <HeaderSignup
+        disable={props.disabled}
+        onBack={props.onBack}
+        onForward={props.onForward}
+      />
       <Content>
         <Form>
           <Item stackedLabel error={!props.data.Cep.valid}>
             <Label>Cep</Label>
-            <Input value={props.data.Cep.value} onChangeText={props.onChangeForm('Cep')} />
+            <Input
+              value={props.data.Cep.value}
+              onChangeText={props.onChangeForm('Cep')}
+            />
           </Item>
 
-          <Item stackedLabel error={!props.data.Endereco.valid} style={{ alignItems: 'flex-start' }}>
+          <Item
+            stackedLabel
+            error={!props.data.Endereco.valid}
+            style={{ alignItems: 'flex-start' }}>
             <Label>Endereço</Label>
-            <Input value={props.data.Endereco.value} onChangeText={props.onChangeForm('Endereco')} />
+            <Input
+              value={props.data.Endereco.value}
+              onChangeText={props.onChangeForm('Endereco')}
+            />
           </Item>
-          <Item stackedLabel error={!props.data.Numero.valid} style={{ alignItems: 'flex-start' }}>
+          <Item
+            stackedLabel
+            error={!props.data.Numero.valid}
+            style={{ alignItems: 'flex-start' }}>
             <Label>Número</Label>
             <Input
               value={props.data.Numero.value.toString()}
@@ -28,8 +54,7 @@ const SignupLocalizationPresentation = props => {
           <Item
             stackedLabel
             error={!props.data.Bairro.valid}
-            style={{ alignItems: 'flex-start' }}
-          >
+            style={{ alignItems: 'flex-start' }}>
             <Label>Bairro</Label>
             <Input
               value={props.data.Bairro.value}
@@ -39,21 +64,32 @@ const SignupLocalizationPresentation = props => {
           <Item
             stackedLabel
             error={!props.data.Complemento.valid}
-            style={{ alignItems: 'flex-start' }}
-          >
+            style={{ alignItems: 'flex-start' }}>
             <Label>Complemento</Label>
             <Input
               value={props.data.Complemento.value}
               onChangeText={props.onChangeForm('Complemento')}
             />
           </Item>
-          <Item stackedLabel error={!props.data.Cidade.valid} style={{ alignItems: 'flex-start' }}>
+          <Item
+            stackedLabel
+            error={!props.data.Cidade.valid}
+            style={{ alignItems: 'flex-start' }}>
             <Label>Cidade</Label>
-            <Input value={props.data.Cidade.value} onChangeText={props.onChangeForm('Cidade')} />
+            <Input
+              value={props.data.Cidade.value}
+              onChangeText={props.onChangeForm('Cidade')}
+            />
           </Item>
-          <Item stackedLabel error={!props.data.Estado.valid} style={{ alignItems: 'flex-start' }}>
+          <Item
+            stackedLabel
+            error={!props.data.Estado.valid}
+            style={{ alignItems: 'flex-start' }}>
             <Label>UF</Label>
-            <Input value={props.data.Estado.value} onChangeText={props.onChangeForm('Estado')} />
+            <Input
+              value={props.data.Estado.value}
+              onChangeText={props.onChangeForm('Estado')}
+            />
           </Item>
         </Form>
       </Content>

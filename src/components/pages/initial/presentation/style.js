@@ -2,34 +2,34 @@ import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
   container: {
-    margin: 10
+    margin: 10,
   },
   logo: {
     height: 80,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   banner: {
     width: '100%',
-    height: '100%'
+    height: '100%',
   },
   message: {
     flexDirection: 'column',
-    marginBottom: 10
+    marginBottom: 10,
   },
   messageTitle: {
     textAlign: 'center',
     marginTop: 5,
-    marginBottom: 10
+    marginBottom: 10,
   },
   messageText: {
     lineHeight: 25,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   action: {
     height: 110,
     justifyContent: 'space-between',
-    flexDirection: 'column'
-  }
+    flexDirection: 'column',
+  },
 });
 
 export default style;

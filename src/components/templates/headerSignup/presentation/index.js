@@ -1,5 +1,15 @@
 import React from 'react';
-import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
+import {
+  Container,
+  Header,
+  Left,
+  Body,
+  Right,
+  Button,
+  Icon,
+  Title,
+  Text,
+} from 'native-base';
 
 const HeaderSignupPresentation = props => {
   return (

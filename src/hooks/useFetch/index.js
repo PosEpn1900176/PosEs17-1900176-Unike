@@ -3,36 +3,36 @@ import { CategoryListService, ProfessionalService } from '../../services';
 
 const servicesAPI = {
   categories: CategoryListService,
-  professional: ProfessionalService 
+  professional: ProfessionalService,
 };
 
 const useFetch = (service, method = 'get', args = {}) => {
-  const [fetch, setFecth] = useState({
+  const [fetch, setFetch] = useState({
     loading: true,
     error: false,
-    data: []
+    data: [],
   });
   const [params, setParams] = useState({});
 
-  const requestAPI = async (parameters) => {
+  const requestAPI = async parameters => {
     try {
       const api = servicesAPI[service];
       setParams(parameters || args);
-      setFecth({
+      setFetch({
         ...fetch,
-        loading: true
+        loading: true,
       });
-      const { data = [] } = await api[method](params)
-      setFecth({
+      const { data = [] } = await api[method](params);
+      setFetch({
         ...fetch,
         data,
-        loading: false
+        loading: false,
       });
     } catch (error) {
-      setFecth({
+      setFetch({
         ...fetch,
         loading: false,
-        error: true
+        error: true,
       });
     }
   };

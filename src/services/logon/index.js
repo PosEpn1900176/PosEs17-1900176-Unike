@@ -12,7 +12,7 @@ const LogonService = {
           reject(err);
         });
     }),
-  signOut: () => {}
+  signOut: () => {},
 };
 
 export { LogonService };

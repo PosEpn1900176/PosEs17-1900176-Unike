@@ -11,7 +11,7 @@ const CategoryListService = {
         .catch(err => {
           reject(err);
         });
-    })
+    }),
 };
 
 export { CategoryListService };

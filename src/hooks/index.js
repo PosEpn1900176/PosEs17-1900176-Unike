@@ -1,4 +1,5 @@
 import useControl from './useControl';
 import useFetch from './useFetch';
+import useDimensionWindow from './useDimensionWindow'
 
-export { useControl, useFetch };
+export { useControl, useFetch, useDimensionWindow };

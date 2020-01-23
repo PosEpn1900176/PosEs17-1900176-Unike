@@ -16,7 +16,7 @@ const changeFormatService = data => {
 
 const filterServicesSelected = data => {
   let fields = { ...data };
-  fields.Servicos = fields.Servicos.map(service => service.active);
+  fields.Servicos = fields.Servicos.filter(service => service.active);
   return fields;
 };
 

@@ -27,9 +27,9 @@ const validate = (type: string, value: string | Array<any>) => {
     Servicos: true,
     Observacao: true,
     Foto: true,
-    DataCadastro: true
+    DataCadastro: true,
   };
-  
+
   return valid[type];
 };
 

@@ -14,7 +14,7 @@ import {
   Item,
   Input,
   Label,
-  H1
+  H1,
 } from 'native-base';
 const LoginPagePresentation = props => {
   return (
@@ -46,8 +46,16 @@ const LoginPagePresentation = props => {
             />
           </Item>
           <View style={style.button}>
-            <Button primary block large onPress={props.onLogin} disabled={props.load}>
-              <Spinner style={[!props.load ? style.hidden : null]} color="white" />
+            <Button
+              primary
+              block
+              large
+              onPress={props.onLogin}
+              disabled={props.load}>
+              <Spinner
+                style={[!props.load ? style.hidden : null]}
+                color="white"
+              />
               <Text> Entrar </Text>
             </Button>
           </View>

@@ -1,8 +1,4 @@
-import {
-  LOAD_CATEGORY,
-  SET_CATEGORY,
-  SET_CONTACT_DATA,
-} from '../actions/actionTypes';
+import { SET_CONTACT_DATA } from '../actions/actionTypes';
 
 const initialState = {
   Nome: {
@@ -70,7 +66,7 @@ const initialState = {
     valid: true,
   },
   TempoExperiencia: {
-    value: "2",
+    value: '2',
     valid: true,
   },
   ExperienciaAtendimentoDomicilio: {
@@ -124,7 +120,7 @@ const initialState = {
   CodigoPermissaoMoip: {
     value: '',
     valid: true,
-  }
+  },
 };
 
 const contactDataReducer = (state = initialState, action) => {

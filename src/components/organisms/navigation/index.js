@@ -1,6 +1,8 @@
 import React from 'react';
-import { TouchableOpacity, Text, View, Button, Image } from 'react-native';
+import { TouchableOpacity, View, Image } from 'react-native';
+import { Icon, Container, Content, Text } from 'native-base';
 import { drawer } from '../../../images';
+import style from './style';
 
 const Navigation = props => {
   const toggle = () => {
@@ -8,14 +10,13 @@ const Navigation = props => {
   };
 
   return (
-    <View>
-      <TouchableOpacity onPress={toggle}>
-        <Image
-          source={drawer}
-          style={{ width: 25, height: 25, marginLeft: 5 }}
-        />
-      </TouchableOpacity>
-    </View>
+    <Content>
+      <View style={style.space}>
+        <TouchableOpacity onPress={toggle}>
+          <Icon name="menu" />
+        </TouchableOpacity>
+      </View>
+    </Content>
   );
 };
 

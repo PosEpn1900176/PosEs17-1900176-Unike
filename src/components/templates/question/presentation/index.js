@@ -32,11 +32,7 @@ const QuestionText = props => {
       </ListItem>
       <ListItem selected>
         <Item>
-          <Input
-            onChangeText={onChange}
-            value={props.value}
-            placeholder=""
-          />
+          <Input onChangeText={onChange} value={props.value} placeholder="" />
         </Item>
       </ListItem>
     </List>
@@ -100,7 +96,7 @@ const QuestionSelect = props => {
             {props.item.items.map((v, i) => {
               return <Picker.Item key={i} label={v.text} value={v.value} />;
             })}
-          </Picker> 
+          </Picker>
         </Item>
       </ListItem>
     </List>

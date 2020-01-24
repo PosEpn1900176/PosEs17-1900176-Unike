@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Text, H1, Button } from 'native-base';
-import { Image } from 'react-native';
+import { Image, ImageBackground } from 'react-native';
 import { Row, Grid } from 'react-native-easy-grid';
-import { logo } from '../../../../images';
+import { logo, initial } from '../../../../images';
 import style from './style';
 
 const InitialPresentation = props => {
@@ -13,7 +13,7 @@ const InitialPresentation = props => {
           <Image source={logo} />
         </Row>
         <Row size={2}>
-          <Text>Aqui vai uma imagem</Text>
+          <ImageBackground source={initial} style={style.banner} />
         </Row>
         <Row style={style.message} size={1}>
           <H1 style={style.messageTitle}>Bem vindo ao app do Profissional</H1>

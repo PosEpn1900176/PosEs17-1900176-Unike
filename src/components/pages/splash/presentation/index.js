@@ -1,11 +1,11 @@
 import React from 'react';
-import { presentationImage } from '../../../../images';
+import { splash } from '../../../../images';
 import { View, Image } from 'react-native';
 
 const SplashPresentation = props => {
   return (
     <View>
-      <Image source={presentationImage} style={props.dimension} />
+      <Image source={splash} style={props.dimension} />
     </View>
   );
 };

@@ -1,5 +1,7 @@
 import logo from './logo.png';
 import drawer from './drawer.png';
-import presentationImage from './presentation.png';
+import splash from './presentation.png';
+import banner from './banner.jpg';
+import initial from './initial.jpg';
 
-export { logo, drawer, presentationImage };
+export { initial, banner, logo, drawer, splash };

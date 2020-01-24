@@ -1,28 +1,27 @@
 import React from 'react';
-import LogotipoImage from './images/login2.jpg';
-import { Text, Image, TextInput, StatusBar, View } from 'react-native';
+import { banner } from '../../../../images';
+import { Image, StatusBar, View } from 'react-native';
 import style from './style.js';
 
 import {
-  Icon,
+  Text,
   Spinner,
   Button,
   Container,
-  Header,
-  Content,
   Form,
   Item,
   Input,
   Label,
   H1,
 } from 'native-base';
+
 const LoginPagePresentation = props => {
   return (
     <Container style={style.container} disabled={true}>
       <StatusBar hidden />
       <View style={style.header}>
-        <Image width="100%" style={style.logo} source={LogotipoImage} />
-        <H1 style={style.h1}>UNIKE - Autenticação</H1>
+        <Image style={style.logo} source={banner} />
+        <H1>UNIKE - Autenticação</H1>
       </View>
       <View style={style.form}>
         <Form>
@@ -60,9 +59,6 @@ const LoginPagePresentation = props => {
             </Button>
           </View>
         </Form>
-      </View>
-      <View style={style.signup}>
-        <Text onPress={props.onSignup}>Signup</Text>
       </View>
     </Container>
   );

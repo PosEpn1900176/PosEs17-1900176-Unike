@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Content, Text, H1, Button } from 'native-base';
-import { Image, ImageBackground, View } from 'react-native';
-import { Col, Row, Grid } from 'react-native-easy-grid';
+import { Container, Text, H1, Button } from 'native-base';
+import { Image } from 'react-native';
+import { Row, Grid } from 'react-native-easy-grid';
 import { logo } from '../../../../images';
 import style from './style';
 

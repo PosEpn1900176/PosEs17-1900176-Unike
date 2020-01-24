@@ -38,6 +38,7 @@ const useFetch = (service, method = 'get') => {
   };
 
   const set = params => {
+    console.log('SET_USE_FETCH', JSON.stringify(params))
     requestAPI(params);
   };
 

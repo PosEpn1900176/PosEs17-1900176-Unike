@@ -6,6 +6,7 @@ const useSaveSignup = () => {
   const selector = useSelector(state => state.signup);
   const [data, fetch] = useFetch('professional', 'post');
   const save = async () => {
+    console.log(prepareDataForSend(selector))
     await fetch(prepareDataForSend(selector));
   };
 

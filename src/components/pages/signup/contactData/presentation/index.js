@@ -32,6 +32,7 @@ const SignupContactDataPresentation = props => {
           <Item stackedLabel error={!props.data.Telefone.valid}>
             <Label>Telefone</Label>
             <Input
+              placeholder="Formato: (99) 9999-9999"
               value={props.data.Telefone.value}
               onChangeText={props.onChangeForm('Telefone')}
               keyboardType="phone-pad"

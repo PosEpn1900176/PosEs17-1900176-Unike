@@ -8,7 +8,7 @@ const validate = (type: string, value: string | Array<any>) => {
     Nascimento: validator.isAlphanumeric(value.toString()),
     Rg: validator.isAlphanumeric(value.toString()),
     Cpf: validator.isAlphanumeric(value.toString()),
-    Telefone: validator.isAlphanumeric(value.toString()),
+    Telefone: /^\([0-9]{2}\) [0-9]?[0-9]{4}-[0-9]{4}$/.test(value.toString()),
     PossuiInternetMovel: true,
     Cep: true,
     Endereco: true,

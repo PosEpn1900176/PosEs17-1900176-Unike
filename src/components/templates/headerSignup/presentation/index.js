@@ -1,32 +1,17 @@
 import React from 'react';
-import {
-  Container,
-  Header,
-  Left,
-  Body,
-  Right,
-  Button,
-  Icon,
-  Title,
-  Text,
-} from 'native-base';
+import { Header, Left, Body, Right, Button, Title, Text } from 'native-base';
+import { Image } from 'react-native';
+import { logo } from '../../../../images';
+import styles from './styles';
 
 const HeaderSignupPresentation = props => {
   return (
-    <Header>
+    <Header transparent>
       <Left>
-        <Button transparent onPress={props.onBack}>
-          <Icon name="arrow-back" />
-          <Text>Back</Text>
-        </Button>
+        <Image style={styles.image} source={logo} />
       </Left>
-      <Body>
-        <Title>{props.title}</Title>
-      </Body>
       <Right>
-        <Button transparent disabled={props.disable} onPress={props.onForward}>
-          <Text>AVANÇAR</Text>
-        </Button>
+        <Text>Bem vindo</Text>
       </Right>
     </Header>
   );

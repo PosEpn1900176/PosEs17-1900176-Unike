@@ -1,25 +1,11 @@
 import React, { Component } from 'react';
-import { HeaderSignup } from '../../../../templates';
-import {
-  Container,
-  Form,
-  Item,
-  Label,
-  Input,
-  Content,
-  Icon,
-  Text,
-  Header,
-} from 'native-base';
+import { FooterSignup, HeaderSignup } from '../../../../templates';
+import { Container, Form, Item, Label, Input, Content } from 'native-base';
 
 const SignupLocalizationPresentation = props => {
   return (
     <Container>
-      <HeaderSignup
-        disable={props.disabled}
-        onBack={props.onBack}
-        onForward={props.onForward}
-      />
+      <HeaderSignup />
       <Content>
         <Form>
           <Item stackedLabel error={!props.data.Cep.valid}>
@@ -93,6 +79,11 @@ const SignupLocalizationPresentation = props => {
           </Item>
         </Form>
       </Content>
+      <FooterSignup
+        disabled={props.disabled}
+        onBack={props.onBack}
+        onForward={props.onForward}
+      />
     </Container>
   );
 };

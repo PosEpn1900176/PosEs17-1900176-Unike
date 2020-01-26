@@ -14,11 +14,6 @@ const style = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  h1: {
-    backgroundColor: '#000',
-    color: '#fff',
-    textAlign: 'center',
-  },
   form: {
     flex: 1,
     justifyContent: 'center',

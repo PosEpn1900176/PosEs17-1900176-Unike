@@ -91,6 +91,9 @@ export default {
   get buttonWarningColor() {
     return this.inverseTextColor;
   },
+  get buttonBorderedBg() {
+    return this.brandLight;
+  },
   get buttonTextSize() {
     return platform === PLATFORM.IOS
       ? this.fontSizeBase * 1.1
@@ -139,7 +142,7 @@ export default {
   brandDanger: '#d9534f',
   brandWarning: '#f0ad4e',
   brandDark: '#000',
-  brandLight: '#f4f4f4',
+  brandLight: 'rgba(142,20,20,0.3)',
 
   // Container
   containerBgColor: '#fff',
@@ -186,7 +189,7 @@ export default {
 
   // Footer
   footerHeight: 55,
-  footerDefaultBg: platform === PLATFORM.IOS ? '#F8F8F8' : '#3F51B5',
+  footerDefaultBg: platform === PLATFORM.IOS ? '#8e1414' : '#8e1414',
   footerPaddingBottom: 0,
 
   // FooterTab
@@ -322,13 +325,13 @@ export default {
       topInset: 24,
       leftInset: 0,
       rightInset: 0,
-      bottomInset: 34
+      bottomInset: 34,
     },
     landscape: {
       topInset: 0,
       leftInset: 44,
       rightInset: 44,
-      bottomInset: 21
-    }
-  }
+      bottomInset: 21,
+    },
+  },
 };

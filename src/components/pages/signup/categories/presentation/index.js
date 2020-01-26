@@ -1,17 +1,24 @@
 import React from 'react';
-import { Container } from 'native-base';
-import { HeaderSignup, CategoryList } from '../../../../templates';
+import { Container, Content } from 'native-base';
+import {
+  FooterSignup,
+  CategoryList,
+  HeaderSignup,
+} from '../../../../templates';
 
 const SignupCategoriesPresentation = props => {
   return (
     <Container>
-      <HeaderSignup
-        disable={props.disabled}
+      <HeaderSignup />
+      <Content>
+        <CategoryList />
+      </Content>
+
+      <FooterSignup
+        disabled={props.disabled}
         onBack={props.onBack}
         onForward={props.onForward}
       />
-
-      <CategoryList />
     </Container>
   );
 };

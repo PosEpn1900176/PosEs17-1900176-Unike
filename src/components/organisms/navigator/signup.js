@@ -42,7 +42,7 @@ const SignupNavigator = createSwitchNavigator({
   SignupAuth: {
     screen: SignupAuth,
     navigationOptions: {
-      header: null,
+      header: null
     },
   },
 });

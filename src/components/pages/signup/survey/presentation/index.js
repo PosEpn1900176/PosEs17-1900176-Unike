@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
-import { HeaderSignup } from '../../../../templates';
+import React from 'react';
+import { HeaderSignup, FooterSignup } from '../../../../templates';
 import { Container, Form, Content, Button, Text } from 'native-base';
 import { Question } from '../../../../templates';
-import { useSelector } from 'react-redux';
 
 const SignupSurveyPresentation = props => {
   return (
     <Container>
-      <HeaderSignup
-        disable={props.disabled}
-        onBack={props.onBack}
-        onForward={props.onForward}
-      />
+      <HeaderSignup />
       <Content>
         <Form>
           {props.data.map(item => (
@@ -22,6 +17,11 @@ const SignupSurveyPresentation = props => {
           <Text>Salvar</Text>
         </Button>
       </Content>
+      <FooterSignup
+        disable={props.disabled}
+        onBack={props.onBack}
+        onForward={props.onForward}
+      />
     </Container>
   );
 };

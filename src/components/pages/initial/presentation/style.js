@@ -5,8 +5,8 @@ const style = StyleSheet.create({
     margin: 10,
   },
   logo: {
-    height: 80,
     justifyContent: 'center',
+    alignItems: 'center',
   },
   banner: {
     width: '100%',

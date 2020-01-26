@@ -1,11 +1,15 @@
 import React from 'react';
 import SignupContactDataPresentation from '../presentation';
 import { useSelector } from 'react-redux';
-import { useSetContactData } from '../../../../../hooks/useContactData';
+import {
+  useSetContactData,
+  useDisabledSignup,
+} from '../../../../../hooks/useContactData';
 
 const SignupContactDataContainer = ({ navigation }) => {
   const selector = useSelector(state => state.signup.contactData);
   const setKeyContact = useSetContactData();
+  const isDisabled = useDisabledSignup();
 
   const goPage = page => navigation.navigate(page);
   const onChange = key => value => setKeyContact(key, value);
@@ -13,7 +17,7 @@ const SignupContactDataContainer = ({ navigation }) => {
   return (
     <SignupContactDataPresentation
       title="Dados de Contato"
-      disable={false}
+      disabled={isDisabled(['Email', 'Telefone'])}
       onChangeForm={onChange}
       data={selector}
       onBack={() => goPage('Login')}

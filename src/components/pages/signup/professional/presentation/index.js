@@ -1,29 +1,11 @@
 import React from 'react';
-import { Text, View, TextInput } from 'react-native';
-
-import {
-  Icon,
-  Spinner,
-  Button,
-  Container,
-  Content,
-  Header,
-  Form,
-  Item,
-  Input,
-  Label,
-  H1,
-} from 'native-base';
-import { HeaderSignup } from '../../../../templates';
+import { Container, Content, Form, Item, Input, Label, H1 } from 'native-base';
+import { HeaderSignup, FooterSignup } from '../../../../templates';
 
 const SignupProfessionalPresentation = props => {
   return (
     <Container>
-      <HeaderSignup
-        disable={props.disabled}
-        onBack={props.onBack}
-        onForward={props.onForward}
-      />
+      <HeaderSignup />
       <Content>
         <Form>
           <Item stackedLabel error={!props.data.Nome.valid}>
@@ -63,6 +45,11 @@ const SignupProfessionalPresentation = props => {
           </Item>
         </Form>
       </Content>
+      <FooterSignup
+        disable={props.disabled}
+        onBack={props.onBack}
+        onForward={props.onForward}
+      />
     </Container>
   );
 };

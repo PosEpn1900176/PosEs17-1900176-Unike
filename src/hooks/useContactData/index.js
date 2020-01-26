@@ -16,4 +16,17 @@ const useSetContactData = () => {
   return set;
 };
 
-export { useSetContactData };
+const useDisabledSignup = () => {
+  const selector = useSelector(state => state.signup.contactData);
+  const isDisabled = fields => {
+    return (
+      fields.filter(field => {
+        return !selector[field].valid;
+      }).length > 0
+    );
+  };
+
+  return isDisabled;
+};
+
+export { useSetContactData, useDisabledSignup };

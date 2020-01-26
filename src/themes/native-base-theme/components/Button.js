@@ -220,8 +220,12 @@ export default (variables /* : * */ = variable) => {
     },
 
     '.block': {
+      '.bordered': {
+        backgroundColor: variables.brandLight,
+        borderColor: variables.buttonDangerBg
+      },
       justifyContent: 'center',
-      alignSelf: 'stretch'
+      alignSelf: 'stretch',
     },
 
     '.full': {

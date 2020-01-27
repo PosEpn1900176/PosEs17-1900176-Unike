@@ -18,7 +18,7 @@ const SignupContactDataPresentation = props => {
       <Content>
         <Text style={styles.description}>
           Vamos entrar em contato através dessas informações, escreva
-          corretamente
+          corretamente.
         </Text>
         <Form>
           <Item stackedLabel error={!props.data.Email.valid}>

@@ -18,7 +18,7 @@ const style = StyleSheet.create({
   },
   messageTitle: {
     textAlign: 'center',
-    marginTop: 5,
+    marginTop: 10,
     marginBottom: 10,
   },
   messageText: {

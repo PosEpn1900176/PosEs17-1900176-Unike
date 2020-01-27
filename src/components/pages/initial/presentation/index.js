@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Text, H1, Button } from 'native-base';
+import { Container, Text, H3, Button } from 'native-base';
 import { Image, ImageBackground } from 'react-native';
 import { Row, Grid } from 'react-native-easy-grid';
 import { logo, initial } from '../../../../images';
@@ -16,7 +16,7 @@ const InitialPresentation = props => {
           <ImageBackground source={initial} style={style.banner} />
         </Row>
         <Row style={style.message} size={1}>
-          <H1 style={style.messageTitle}>Bem vindo ao app do Profissional</H1>
+          <H3 style={style.messageTitle}>Bem vindo ao app do Profissional</H3>
           <Text style={style.messageText}>
             Receba e selecione os serviços que deseja, criando assim sua própria
             agenda!

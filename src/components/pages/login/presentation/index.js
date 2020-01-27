@@ -12,7 +12,7 @@ import {
   Item,
   Input,
   Label,
-  H1,
+  H3,
 } from 'native-base';
 
 const LoginPagePresentation = props => {
@@ -21,7 +21,7 @@ const LoginPagePresentation = props => {
       <StatusBar hidden />
       <View style={style.header}>
         <Image style={style.logo} source={banner} />
-        <H1>UNIKE - Autenticação</H1>
+        <H3 style={style.messageTitle}>AUTENTICAÇÃO</H3>
       </View>
       <View style={style.form}>
         <Form>

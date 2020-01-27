@@ -10,6 +10,11 @@ const style = StyleSheet.create({
   hidden: {
     display: 'none',
   },
+  messageTitle: {
+    textAlign: 'center',
+    marginTop: 10,
+    marginBottom: 10,
+  },
   logo: {
     width: '100%',
     height: '100%',

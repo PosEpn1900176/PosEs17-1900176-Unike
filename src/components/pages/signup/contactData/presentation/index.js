@@ -1,15 +1,8 @@
 import React from 'react';
 import { FooterSignup, HeaderSignup } from '../../../../templates';
-import {
-  Container,
-  Form,
-  Item,
-  Label,
-  Input,
-  Content,
-  Text,
-} from 'native-base';
+import { Container, Form, Item, Content, Text } from 'native-base';
 import styles from './style';
+import { FormInput } from '../../../../molecules';
 
 const SignupContactDataPresentation = props => {
   return (
@@ -21,17 +14,18 @@ const SignupContactDataPresentation = props => {
           corretamente.
         </Text>
         <Form>
-          <Item stackedLabel error={!props.data.Email.valid}>
-            <Label>E-mail</Label>
-            <Input
+          <Item error={!props.data.Email.valid}>
+            <FormInput
+              error={!props.data.Email.valid}
+              placeholder="Email"
               value={props.data.Email.value}
               onChangeText={props.onChangeForm('Email')}
               keyboardType="email-address"
             />
           </Item>
-          <Item stackedLabel error={!props.data.Telefone.valid}>
-            <Label>Telefone</Label>
-            <Input
+          <Item error={!props.data.Telefone.valid}>
+            <FormInput
+              error={!props.data.Telefone.valid}
               placeholder="Formato: (99) 9999-9999"
               value={props.data.Telefone.value}
               onChangeText={props.onChangeForm('Telefone')}

@@ -23,12 +23,16 @@ const useFetch = (service, method = 'get') => {
         loading: true,
       });
       const { data = [] } = await api[method](params);
+      console.log('USE_FETCH_SUCCESS');
+      console.log(data);
       setFetch({
         ...fetch,
         data,
         loading: false,
       });
     } catch (error) {
+      console.log('USE_FETCH_ERROR');
+      console.log(error);
       setFetch({
         ...fetch,
         loading: false,
@@ -38,7 +42,7 @@ const useFetch = (service, method = 'get') => {
   };
 
   const set = params => {
-    console.log('SET_USE_FETCH', JSON.stringify(params))
+    console.log('SET_USE_FETCH', JSON.stringify(params));
     requestAPI(params);
   };
 

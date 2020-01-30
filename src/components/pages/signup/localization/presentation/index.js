@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FooterSignup, HeaderSignup } from '../../../../templates';
 import { Container, Form, Item, Label, Input, Content } from 'native-base';
+import { FormInput } from '../../../../molecules';
 
 const SignupLocalizationPresentation = props => {
   return (
@@ -8,71 +9,78 @@ const SignupLocalizationPresentation = props => {
       <HeaderSignup />
       <Content>
         <Form>
-          <Item stackedLabel error={!props.data.Cep.valid}>
-            <Label>Cep</Label>
-            <Input
+          <Item error={!props.data.Cep.valid}>
+            {/* <Label>Cep</Label> */}
+            <FormInput
+              placeholder="Cep"
+              error={!props.data.Cep.valid}
               value={props.data.Cep.value}
               onChangeText={props.onChangeForm('Cep')}
             />
           </Item>
 
           <Item
-            stackedLabel
             error={!props.data.Endereco.valid}
             style={{ alignItems: 'flex-start' }}>
-            <Label>Endereço</Label>
-            <Input
+            {/* <Label>Endereço</Label> */}
+            <FormInput
+              placeholder="Endereço"
+              error={!props.data.Endereco.valid}
               value={props.data.Endereco.value}
               onChangeText={props.onChangeForm('Endereco')}
             />
           </Item>
           <Item
-            stackedLabel
             error={!props.data.Numero.valid}
             style={{ alignItems: 'flex-start' }}>
-            <Label>Número</Label>
-            <Input
+            {/* <Label>Número</Label> */}
+            <FormInput
+              placeholder="Numero"
+              error={!props.data.Numero.valid}
               value={props.data.Numero.value.toString()}
               onChangeText={props.onChangeForm('Numero')}
               //   keyboardType="number-pad"
             />
           </Item>
           <Item
-            stackedLabel
             error={!props.data.Bairro.valid}
             style={{ alignItems: 'flex-start' }}>
-            <Label>Bairro</Label>
-            <Input
+            {/* <Label>Bairro</Label> */}
+            <FormInput
+              placeholder="Bairro"
+              error={!props.data.Bairro.valid}
               value={props.data.Bairro.value}
               onChangeText={props.onChangeForm('Bairro')}
             />
           </Item>
           <Item
-            stackedLabel
             error={!props.data.Complemento.valid}
             style={{ alignItems: 'flex-start' }}>
-            <Label>Complemento</Label>
-            <Input
+            {/* <Label>Complemento</Label> */}
+            <FormInput
+              placeholder="Complemento"
+              error={!props.data.Complemento.valid}
               value={props.data.Complemento.value}
               onChangeText={props.onChangeForm('Complemento')}
             />
           </Item>
           <Item
-            stackedLabel
             error={!props.data.Cidade.valid}
             style={{ alignItems: 'flex-start' }}>
-            <Label>Cidade</Label>
-            <Input
+            <FormInput
+              placeholder="Cidade"
+              error={!props.data.Cidade.valid}
               value={props.data.Cidade.value}
               onChangeText={props.onChangeForm('Cidade')}
             />
           </Item>
           <Item
-            stackedLabel
             error={!props.data.Estado.valid}
             style={{ alignItems: 'flex-start' }}>
-            <Label>UF</Label>
-            <Input
+            {/* <Label>UF</Label> */}
+            <FormInput
+              placeholder="UF"
+              error={!props.data.Estado.valid}
               value={props.data.Estado.value}
               onChangeText={props.onChangeForm('Estado')}
             />

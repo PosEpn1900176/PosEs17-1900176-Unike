@@ -7,6 +7,17 @@ const removeValidKey = data => {
   return dataMap;
 };
 
+const removeFieldsEmpty = data => {
+  let fields = { ...data };
+  const dataMap = {};
+  for (let field in fields) {
+    if (fields[field]) {
+      dataMap[field] = fields[field];
+    }
+  }
+  return dataMap;
+};
+
 const changeFormatService = data => {
   let fields = { ...data };
   const servicos = fields.Servicos.map(service => service.Servicos[0]);
@@ -30,4 +41,6 @@ const unifyData = ({ categoria, contactData }) => {
 };
 
 export const prepareDataForSend = data =>
-  filterServicesSelected(changeFormatService(removeValidKey(unifyData(data))));
+  filterServicesSelected(
+    changeFormatService(removeFieldsEmpty(removeValidKey(unifyData(data)))),
+  );

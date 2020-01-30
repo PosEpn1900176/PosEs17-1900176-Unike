@@ -9,7 +9,7 @@ import {
 const SignupContactDataContainer = ({ navigation }) => {
   const selector = useSelector(state => state.signup.contactData);
   const setKeyContact = useSetContactData();
-  const isDisabled = useDisabledSignup();
+  const isDisabled = useDisabledSignup(['Email', 'Telefone']);
 
   const goPage = page => navigation.navigate(page);
   const onChange = key => value => setKeyContact(key, value);
@@ -17,7 +17,7 @@ const SignupContactDataContainer = ({ navigation }) => {
   return (
     <SignupContactDataPresentation
       title="Dados de Contato"
-      disabled={isDisabled(['Email', 'Telefone'])}
+      disabled={isDisabled}
       onChangeForm={onChange}
       data={selector}
       onBack={() => goPage('Login')}

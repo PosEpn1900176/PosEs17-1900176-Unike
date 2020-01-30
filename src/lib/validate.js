@@ -1,13 +1,17 @@
 // @flow
 import validator from 'validator';
 
+const isCpf = cpf => {
+  return cpf.replace(/\D/g, '').length === 11;
+};
+
 const validate = (type: string, value: string | Array<any>) => {
   const valid = {
     Nome: validator.isAlphanumeric(value.toString()),
     Sobrenome: validator.isAlphanumeric(value.toString()),
-    Nascimento: validator.isAlphanumeric(value.toString()),
-    Rg: validator.isAlphanumeric(value.toString()),
-    Cpf: validator.isAlphanumeric(value.toString()),
+    Nascimento: Boolean(Date.parse(value.toString())),
+    Rg: true,
+    Cpf: isCpf(value.toString()),
     Telefone: /^\([0-9]{2}\) [0-9]?[0-9]{4}-[0-9]{4}$/.test(value.toString()),
     PossuiInternetMovel: true,
     Cep: true,

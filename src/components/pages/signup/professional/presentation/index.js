@@ -1,6 +1,15 @@
 import React from 'react';
-import { Container, Content, Form, Item, Input, Label, H1 } from 'native-base';
+import {
+  Container,
+  Content,
+  Form,
+  Item,
+  Input,
+  Label,
+  DatePicker,
+} from 'native-base';
 import { HeaderSignup, FooterSignup } from '../../../../templates';
+import styles from './styles';
 
 const SignupProfessionalPresentation = props => {
   return (
@@ -22,11 +31,20 @@ const SignupProfessionalPresentation = props => {
               onChangeText={props.onChangeForm('Sobrenome')}
             />
           </Item>
-          <Item stackedLabel error={!props.data.Nascimento.valid}>
+          <Item
+            stackedLabel
+            error={!props.data.Nascimento.valid}
+            style={styles.datePicker}>
             <Label>Data de nascimento</Label>
-            <Input
-              value={props.data.Nascimento.value}
-              onChangeText={props.onChangeForm('Nascimento')}
+
+            <DatePicker
+              defaultDate={new Date(props.data.Nascimento.value || new Date())}
+              maximumDate={new Date()}
+              locale={'pt-br'}
+              animationType={'fade'}
+              androidMode={'default'}
+              onDateChange={props.onChangeForm('Nascimento')}
+              disabled={false}
             />
           </Item>
           <Item stackedLabel error={!props.data.Rg.valid}>

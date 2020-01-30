@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeaderSignup, FooterSignup } from '../../../../templates';
-import { Container, Form, Content, Button, Text } from 'native-base';
+import { Container, Form, Content } from 'native-base';
 import { Question } from '../../../../templates';
 
 const SignupSurveyPresentation = props => {
@@ -13,9 +13,6 @@ const SignupSurveyPresentation = props => {
             <Question key={item.id} item={item} onChange={props.onChange} />
           ))}
         </Form>
-        <Button onPress={props.onSave}>
-          <Text>Salvar</Text>
-        </Button>
       </Content>
       <FooterSignup
         disable={props.disabled}

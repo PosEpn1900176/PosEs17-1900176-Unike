@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { HeaderSignup } from '../../../../templates';
 import {
   Container,
@@ -8,9 +8,7 @@ import {
   Input,
   Content,
   Button,
-  Icon,
   Text,
-  Header,
 } from 'native-base';
 
 const SignupAuthPresentation = props => {
@@ -43,6 +41,9 @@ const SignupAuthPresentation = props => {
             />
           </Item>
         </Form>
+        <Button onPress={props.onSave}>
+          <Text>Salvar</Text>
+        </Button>
       </Content>
     </Container>
   );

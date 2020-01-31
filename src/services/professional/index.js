@@ -7,11 +7,9 @@ const ProfessionalService = {
         .post('Profissional/Adicionar', param)
         .then(response => {
           resolve(response);
-          console.log('ResponseProfessional', response);
         })
         .catch(error => {
           reject(error);
-          console.log('ErrorProfessional', error);
         });
     });
   },

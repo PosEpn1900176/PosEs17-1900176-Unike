@@ -20,7 +20,6 @@ const useSetContactData = () => {
 
   const set = (key, value) => {
     let contact = { ...storeContact };
-    console.log(key, value)
     contact[key].value = value;
     contact[key].valid = validate(key, value);
     contact[key].pristine = false;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { CategoryListService, ProfessionalService } from '../../services';
 
 const servicesAPI = {
@@ -12,19 +12,17 @@ const useFetch = (service, method = 'get') => {
     error: false,
     data: [],
   });
-  const [params, setParams] = useState({});
 
-  const requestAPI = async parameters => {
+  const requestAPI = async params => {
     try {
       const api = servicesAPI[service];
-      setParams(parameters);
+
       setFetch({
         ...fetch,
         loading: true,
       });
       const { data = [] } = await api[method](params);
       console.log('USE_FETCH_SUCCESS');
-      console.log(data);
       setFetch({
         ...fetch,
         data,
@@ -41,9 +39,8 @@ const useFetch = (service, method = 'get') => {
     }
   };
 
-  const set = params => {
-    console.log('SET_USE_FETCH', JSON.stringify(params));
-    requestAPI(params);
+  const set = param => {
+    requestAPI(param);
   };
 
   return [fetch, set];

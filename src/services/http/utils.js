@@ -7,6 +7,5 @@ export function getBasicAuthorization() {
     password: 'unike@ya2o08',
   };
   const credentials = window.btoa(`${auth.username}:${auth.password}`);
-  console.log(`Basic ${credentials}`);
   return `Basic ${credentials}`;
 }

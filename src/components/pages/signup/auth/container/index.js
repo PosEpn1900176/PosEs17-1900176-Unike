@@ -14,7 +14,6 @@ const SignupAuthContainer = ({ navigation }) => {
   const onChange = key => value => setKeyContact(key, value);
 
   const onVerify = value => {
-    console.log(selector);
     setVerify(value);
   };
 

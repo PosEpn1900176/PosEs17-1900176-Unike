@@ -38,7 +38,7 @@ const SignupProfessionalPresentation = props => {
             <Label>Data de nascimento</Label>
 
             <DatePicker
-              defaultDate={new Date(props.data.Nascimento.value || new Date())}
+              defaultDate={new Date(props.data.Nascimento.value)}
               maximumDate={new Date()}
               locale={'pt-br'}
               animationType={'fade'}

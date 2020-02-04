@@ -11,7 +11,7 @@ const initialState = {
     pristine: true,
   },
   Nascimento: {
-    value: '',
+    value: new Date(),
     valid: true,
     pristine: true,
   },

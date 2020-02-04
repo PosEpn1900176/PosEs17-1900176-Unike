@@ -10,6 +10,7 @@ const useFetch = (service, method = 'get') => {
   const [fetch, setFetch] = useState({
     loading: true,
     error: false,
+    done: false,
     data: [],
   });
 
@@ -22,17 +23,16 @@ const useFetch = (service, method = 'get') => {
         loading: true,
       });
       const { data = [] } = await api[method](params);
-      console.log('USE_FETCH_SUCCESS');
       setFetch({
-        ...fetch,
         data,
+        done: true,
+        error: false,
         loading: false,
       });
     } catch (error) {
-      console.log('USE_FETCH_ERROR');
-      console.log(error);
       setFetch({
         ...fetch,
+        done: false,
         loading: false,
         error: true,
       });

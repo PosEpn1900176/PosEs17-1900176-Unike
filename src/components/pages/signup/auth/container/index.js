@@ -6,7 +6,7 @@ import { useSaveSignup } from '../../../../../hooks/useSave';
 import { Toast } from 'native-base';
 
 const SignupAuthContainer = ({ navigation }) => {
-  const [verify, setVerify] = useState();
+  const [confirm, setConfirm] = useState();
   const selector = useSelector(state => state.signup.contactData);
   const setKeyContact = useSetContactData();
   const [data, save] = useSaveSignup();
@@ -14,10 +14,7 @@ const SignupAuthContainer = ({ navigation }) => {
   const goPage = useCallback(page => navigation.navigate(page), [navigation]);
 
   const onChange = key => value => setKeyContact(key, value);
-
-  const onVerify = value => {
-    setVerify(value);
-  };
+  const onConfirm = value => setConfirm(value);
 
   const onSave = () => {
     save();
@@ -49,13 +46,13 @@ const SignupAuthContainer = ({ navigation }) => {
   return (
     <SignupAuthPresentation
       title="Dados de login"
-      disable={selector.Senha.value !== verify}
+      disabled={selector.Senha.value !== confirm}
       onChangeForm={onChange}
       data={selector}
       onSave={onSave}
       onBack={() => goPage('Login')}
       onForward={() => goPage('SignupProfessional')}
-      onVerify={() => onVerify}
+      onConfirm={onConfirm}
       onClear={() => {}}
     />
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderSignup } from '../../../../templates';
+import { HeaderSignup, FooterSignup } from '../../../../templates';
 import {
   Container,
   Form,
@@ -10,15 +10,12 @@ import {
   Button,
   Text,
 } from 'native-base';
+import style from './style';
 
 const SignupAuthPresentation = props => {
   return (
     <Container>
-      <HeaderSignup
-        disable={props.disable}
-        onBack={props.onBack}
-        onForward={props.onForward}
-      />
+      <HeaderSignup />
       <Content>
         <Form>
           <Item stackedLabel error={!props.data.Email.valid}>
@@ -29,22 +26,29 @@ const SignupAuthPresentation = props => {
               secureTextEntry={true}
             />
           </Item>
-          <Item
-            stackedLabel
-            error={!props.data.Email.valid}
-            style={{ alignItems: 'flex-start' }}>
+          <Item stackedLabel error={!props.data.Email.valid}>
             <Label>Repetir senha</Label>
             <Input
               value={props.verify}
-              onChangeText={props.onVerify()}
+              onChangeText={props.onConfirm}
               secureTextEntry={true}
             />
           </Item>
         </Form>
-        <Button onPress={props.onSave}>
+        <Button
+          style={style.save}
+          block
+          onPress={props.onSave}
+          disabled={props.disabled}>
           <Text>Salvar</Text>
         </Button>
       </Content>
+      {/* <FooterSignup
+        disabled={props.disabled}
+        onBack={props.onBack}
+        onForward={props.onSave}
+        text={{ back: 'Voltar', next: 'Salvar' }}
+      /> */}
     </Container>
   );
 };

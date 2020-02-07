@@ -1,105 +1,54 @@
 import React from 'react';
-import {
-  Container,
-  Button,
-  Text,
-  Icon,
-  Left,
-  Body,
-  Right,
-  Card,
-  CardItem,
-} from 'native-base';
-import { View } from 'react-native';
-import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
+import { Container, Content, Grid, Col, Thumbnail } from 'native-base';
+import { HeaderSignup } from '../../templates';
+import { Title, DataValue, ActionButtons } from '../../molecules';
+import { useSelector } from 'react-redux';
 
-const region = {
-  latitude: 37.78825,
-  longitude: -122.4324,
-  latitudeDelta: 0.0922,
-  longitudeDelta: 0.0421,
-};
-
-const markers = [
+const actions = [
   {
-    latitude: 37.78825,
-    longitude: -122.4324,
-    categoria: 'Cabeleireiro',
-    description: 'Cabeleireiro profissional',
+    label: 'Serviços disponíveis',
+    link: '/teste',
   },
   {
-    latitude: 37.788403658257394,
-    longitude: -122.43751248344779,
-    categoria: 'Massagista',
-    description: 'Massagiadora profissional',
+    label: 'Serviços agendados',
+    link: '/teste',
+  },
+  {
+    label: 'Perfil do Usuário',
+    link: '/teste',
+  },
+  {
+    label: 'Ajuda',
+    link: '/teste',
   },
 ];
 
-const CustomMarker = props => {
-  return (
-    <View>
-      <Card>
-        <CardItem header bordered>
-          <Text>{props.categoria}</Text>
-        </CardItem>
-        <CardItem>
-          <Body>
-            <Text>{props.description}</Text>
-          </Body>
-        </CardItem>
-        <CardItem>
-          <Left>
-            <Button transparent>
-              <Icon active name="thumbs-up" />
-              <Text>12 Likes</Text>
-            </Button>
-          </Left>
-          <Body>
-            <Button transparent>
-              <Icon active name="chatbubbles" />
-              <Text>4 Comments</Text>
-            </Button>
-          </Body>
-          <Right>
-            <Text>11h ago</Text>
-          </Right>
-        </CardItem>
-        <CardItem footer>
-          <Button transparent>
-            <Icon active name="thumbs-up" />
-            <Text>12 Likes</Text>
-          </Button>
-        </CardItem>
-      </Card>
-    </View>
-  );
-};
-
-const HomePage = props => {
-  const handleChange = regions => {
-    console.log(regions);
-  };
+const HomePage = () => {
+  const selector = useSelector(state => state.user);
+  console.log(selector);
   return (
     <Container>
-      <MapView
-        style={{ flex: 1 }}
-        provider={PROVIDER_GOOGLE}
-        initialRegion={region}
-        zoomTapEnabled={false}
-        onRegionChange={handleChange}>
-        {markers.map((marker, index) => (
-          <Marker
-            key={index}
-            coordinate={{
-              latitude: marker.latitude,
-              longitude: marker.longitude,
-            }}>
-            <Callout>
-              <CustomMarker {...marker} />
-            </Callout>
-          </Marker>
-        ))}
-      </MapView>
+      <HeaderSignup />
+      <Content>
+        <Title value={selector.Nome} />
+        <Grid>
+          <Col>
+            <Thumbnail
+              large
+              source={{ uri: `data:image/png;base64,${selector.Foto}` }}
+            />
+          </Col>
+          <Col>
+            <DataValue
+              label="Nome completo"
+              value={`${selector.Nome} ${selector.Sobrenome}`}
+            />
+            <DataValue label="Email" value={selector.Email} />
+            <DataValue label="Telefone" value={selector.Telefone} />
+          </Col>
+        </Grid>
+        <ActionButtons actions={actions} />
+      </Content>
     </Container>
   );
 };

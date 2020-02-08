@@ -27,7 +27,6 @@ const HomePage = props => {
   const selector = useSelector(state => state.user);
   const onPress = action => {
     return () => {
-      console.log(props);
       props.navigation.navigate(action.link);
     };
   };

@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import useFetch from '../useFetch';
 import { useEffect } from 'react';
 import { loadCategory, setCategory } from '../../actions';
-import deepmerge from 'deepmerge';
 
 export const useLoadCategory = () => {
   const [category, fetch] = useFetch('categories');

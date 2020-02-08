@@ -3,5 +3,5 @@ export * from './headerSignup';
 export * from './footerSignup';
 export * from './categoryList';
 export * from './question';
-export * from './ScheduleAvailable';
-export * from './ScheduleServices';
+export * from './availableServices';
+export * from './scheduleServices';

@@ -3,7 +3,7 @@ import {
   SET_CATEGORY,
   SET_CONTACT_DATA,
   SET_USER,
-  LOAD_SCHEDULE_AVAILABLE,
+  LOAD_AVAILABLE_SERVICES,
 } from './actionTypes';
 
 export const loadCategory = payload => ({ type: LOAD_CATEGORY, payload });
@@ -14,7 +14,7 @@ export const setContactData = payload => ({ type: SET_CONTACT_DATA, payload });
 
 export const setUser = payload => ({ type: SET_USER, payload });
 
-export const loadScheduleAvailable = payload => ({
-  type: LOAD_SCHEDULE_AVAILABLE,
+export const loadAvailableServices = payload => ({
+  type: LOAD_AVAILABLE_SERVICES,
   payload,
 });

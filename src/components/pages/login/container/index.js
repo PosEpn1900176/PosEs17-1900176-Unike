@@ -3,11 +3,12 @@ import { LogonService } from '../../../../services';
 import LoginPagePresentation from '../presentation';
 import AsyncStorage from '@react-native-community/async-storage';
 import { useUser } from '../../../../hooks';
+import { Toast } from 'native-base';
 
 const LoginPage = props => {
   const [form, setForm] = useState({
-    email: '1@teste.com.br',
-    password: 'teste123',
+    email: 'unikeiii@unike.com.br',
+    password: '123456',
   });
   const setUser = useUser();
   const [load, setLoad] = useState(false);
@@ -18,17 +19,17 @@ const LoginPage = props => {
       const response = await LogonService.signIn(form);
       setUser(response.data);
       await AsyncStorage.setItem('unikeToken', response.token || 'testeToken');
-
+      setLoad(false);
       props.navigation.navigate('App');
     } catch (err) {
-      console.log(err);
-      props.navigation.navigate('App');
-      // setForm({
-      //   ...form,
-      //   error: {
-      //     message: err.message
-      //   }
-      // });
+      Toast.show({
+        type: 'danger',
+        text: 'Autenticação não realizada. Tente novamente.',
+        buttonText: 'OK',
+        onClose: () => {
+          setLoad(false);
+        },
+      });
     }
   }
 

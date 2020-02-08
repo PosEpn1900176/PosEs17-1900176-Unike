@@ -6,3 +6,7 @@ export * from './signup';
 export * from './initial';
 export * from './about';
 export * from './splash';
+export * from './scheduleServices';
+export * from './scheduleAvailable';
+export * from './profileUser';
+export * from './help';

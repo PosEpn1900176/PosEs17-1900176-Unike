@@ -7,25 +7,30 @@ import { useSelector } from 'react-redux';
 const actions = [
   {
     label: 'Serviços disponíveis',
-    link: '/teste',
+    link: 'ScheduleAvailable',
   },
   {
     label: 'Serviços agendados',
-    link: '/teste',
+    link: 'ScheduleServices',
   },
   {
     label: 'Perfil do Usuário',
-    link: '/teste',
+    link: 'ProfileUser',
   },
   {
     label: 'Ajuda',
-    link: '/teste',
+    link: 'Help',
   },
 ];
 
-const HomePage = () => {
+const HomePage = props => {
   const selector = useSelector(state => state.user);
-  console.log(selector);
+  const onPress = action => {
+    return () => {
+      console.log(props);
+      props.navigation.navigate(action.link);
+    };
+  };
   return (
     <Container>
       <HeaderSignup />
@@ -47,7 +52,7 @@ const HomePage = () => {
             <DataValue label="Telefone" value={selector.Telefone} />
           </Col>
         </Grid>
-        <ActionButtons actions={actions} />
+        <ActionButtons actions={actions} onPress={onPress} />
       </Content>
     </Container>
   );

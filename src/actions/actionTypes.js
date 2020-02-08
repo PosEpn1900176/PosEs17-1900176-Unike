@@ -4,3 +4,5 @@ export const SET_CATEGORY = 'SET_CATEGORY';
 export const SET_CONTACT_DATA = 'SET_CONTACT_DATA';
 
 export const SET_USER = 'SET_USER';
+
+export const LOAD_SCHEDULE_AVAILABLE = 'LOAD_SCHEDULE_AVAILABLE';

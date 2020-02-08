@@ -1,16 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import {
-  Separator,
-  List,
-  ListItem,
-  Left,
-  Button,
-  Body,
-  Right,
-  Switch,
-  Icon,
-  Text,
-} from 'native-base';
+import React from 'react';
+import { Separator, List, Text } from 'native-base';
 
 import CategoryListItemPresentation from './item';
 

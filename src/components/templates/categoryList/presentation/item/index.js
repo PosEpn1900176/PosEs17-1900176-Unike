@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListItem, Left, Text, Right, Icon, Switch, Button } from 'native-base';
+import { ListItem, Left, Text, Right, Switch } from 'native-base';
 
 const CategoryListItemPresentation = props => {
   return props.data.map((item, index) => {

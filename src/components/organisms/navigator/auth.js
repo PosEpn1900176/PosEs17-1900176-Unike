@@ -29,10 +29,3 @@ const AuthNavigator = createStackNavigator(
 );
 
 export default AuthNavigator;
-
-// Atendimentos Pendentes
-// Atendimentos realizados
-// Buscar por Atendimento
-// Lista de serviços recusados
-// Alterar PerformanceObserverEntryList
-// Sair

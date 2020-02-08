@@ -2,13 +2,10 @@ import axios from 'axios';
 import { getBasicAuthorization } from './utils';
 
 const http = axios.create({
-  baseURL: 'https://unikebr-api.azurewebsites.net/api'
+  baseURL: 'https://unikebr-api.azurewebsites.net/api',
 });
 
-http.interceptors.response.use(config => {
-  console.log('Config', config)
-  return config
-});
+http.interceptors.response.use(config => config);
 
 http.interceptors.request.use(config => {
   config.headers.Authorization = getBasicAuthorization();

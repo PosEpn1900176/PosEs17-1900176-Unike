@@ -5,17 +5,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loadScheduleAvailable } from '../../../../actions';
 
 const useScheduleAvailable = () => {
-  const [data, fetch] = useFetch('servicesAvailable');
+  const [data, fetch] = useFetch('scheduleAvailable');
   useEffect(() => {
     fetch();
-  }, [fetch]);
+  }, []);
   return data;
 };
 
 const ScheduleAvailableContainer = props => {
-  const data= useScheduleAvailable();
+  const data = useScheduleAvailable();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadScheduleAvailable(data));
+  }, [data, dispatch]);
 
-  console.log('DATA', data);
   return <ScheduleAvailablePresentation {...props} />;
 };
 

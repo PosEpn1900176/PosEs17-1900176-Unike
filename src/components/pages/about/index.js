@@ -11,7 +11,6 @@ import {
   Text,
   Button,
   Icon,
-  View,
   Grid,
   Row,
 } from 'native-base';
@@ -19,7 +18,6 @@ import { DataValue } from '../../molecules';
 
 const AboutPage = () => {
   const selector = useSelector(state => state.user);
-  console.log(selector);
   return (
     <Container>
       <Content>

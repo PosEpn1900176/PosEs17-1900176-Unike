@@ -2,4 +2,5 @@ export * from './logon';
 export * from './http';
 export * from './categoryList';
 export * from './professional';
-export * from './servicesAvailable';
+export * from './availableService';
+export * from './scheduleService';

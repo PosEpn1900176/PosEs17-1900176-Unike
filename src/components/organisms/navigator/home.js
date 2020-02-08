@@ -2,7 +2,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import {
   HomePage,
   ScheduleServicesPage,
-  ScheduleAvailablePage,
+  AvailableServicesPage,
   ProfileUserPage,
   HelpPage,
 } from '../../pages';
@@ -24,8 +24,8 @@ const HomeNavigator = createStackNavigator({
       };
     },
   },
-  ScheduleAvailable: {
-    screen: ScheduleAvailablePage,
+  AvailableServices: {
+    screen: AvailableServicesPage,
     navigationOptions: ({ navigation }) => {
       return {
         header: null,

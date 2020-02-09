@@ -83,6 +83,9 @@ class TableScheduleServices extends React.Component {
                         }}
                       />
                     </Button>
+<<<<<<< HEAD
+>>>>>>> a90aac9... Adicionado icone de localizaçao
+=======
 >>>>>>> a90aac9... Adicionado icone de localizaçao
                   </Body>
                   <Right>

@@ -64,6 +64,18 @@ class TableScheduleServices extends React.Component {
                       />
                     </Button>
                   </Left>
+                  <Body>
+                    <Button transparent block iconRight onPress={() => {}}>
+                      <Icon
+                        type="EvilIcons"
+                        name="location"
+                        style={{
+                          color: '#ED4A6A',
+                          fontSize: 40
+                        }}
+                      />
+                    </Button>
+                  </Body>
                   <Right>
                     <Button
                       transparent

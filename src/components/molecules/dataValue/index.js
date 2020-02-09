@@ -6,7 +6,7 @@ import styles from './styles';
 const DataValue = ({ label, value }) => {
   return (
     <Content padder>
-      <Text style={styles.bold}>{label}</Text>
+      <Text note>{label}</Text>
       <Text>{value}</Text>
     </Content>
   );

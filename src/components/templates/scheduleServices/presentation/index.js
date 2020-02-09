@@ -69,6 +69,21 @@ class TableScheduleServices extends React.Component {
                         style={styles.iconLarge}
                       />
                     </Button>
+<<<<<<< HEAD
+=======
+                  </Left>
+                  <Body>
+                    <Button transparent block iconRight onPress={() => {}}>
+                      <Icon
+                        type="EvilIcons"
+                        name="location"
+                        style={{
+                          color: '#ED4A6A',
+                          fontSize: 40
+                        }}
+                      />
+                    </Button>
+>>>>>>> a90aac9... Adicionado icone de localizaçao
                   </Body>
                   <Right>
                     <Button

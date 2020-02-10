@@ -75,7 +75,7 @@ const CustomMarker = props => {
   );
 };
 
-const HomePage = props => {
+const ShowMap = props => {
   const handleChange = regions => {
     console.log(regions);
   };
@@ -104,4 +104,4 @@ const HomePage = props => {
   );
 };
 
-export { HomePage };
+export { ShowMap };

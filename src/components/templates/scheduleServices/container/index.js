@@ -3,7 +3,7 @@ import ScheduleServicesPresentation from '../presentation';
 import { useDispatch } from 'react-redux';
 import { loadScheduleServices } from '../../../../actions';
 import { useScheduleService } from './use';
-
+import { LoadingControl } from '../../../organisms/loadingControl';
 
 const ScheduleServicesContainer = props => {
   const schedule = useScheduleService();
@@ -13,7 +13,11 @@ const ScheduleServicesContainer = props => {
     dispatch(loadScheduleServices(schedule.data));
   }, [schedule, dispatch]);
 
-  return <ScheduleServicesPresentation {...props} data={schedule} />;
+  return (
+    <LoadingControl loading={schedule.loading}>
+      <ScheduleServicesPresentation {...props} data={schedule.data} />
+    </LoadingControl>
+  );
 };
 
 export default ScheduleServicesContainer;

@@ -50,43 +50,19 @@ class TableScheduleServices extends React.Component {
                 </CardItem>
                 <CardItem>
                   <Left>
-                    <Button
-                      transparent
-                      iconRight
-                      onPress={() => this._deckSwiper._root.swipeRight()}>
-                      <Icon type="AntDesign" name="left" />
-                    </Button>
-                  </Left>
-                  <Body>
-                    <Button
-                      transparent
-                      block
-                      iconRight
-                      onPress={this.onViewMap}>
+                    <Body>
+                      <Button
+                        transparent
+                        iconRight
+                        onPress={() => this._deckSwiper._root.swipeRight()}>
+                        <Icon type="AntDesign" name="left" />
+                      </Button>
                       <Icon
                         type="EvilIcons"
                         name="location"
                         style={styles.iconLarge}
                       />
                     </Button>
-<<<<<<< HEAD
-=======
-                  </Left>
-                  <Body>
-                    <Button transparent block iconRight onPress={() => {}}>
-                      <Icon
-                        type="EvilIcons"
-                        name="location"
-                        style={{
-                          color: '#ED4A6A',
-                          fontSize: 40
-                        }}
-                      />
-                    </Button>
-<<<<<<< HEAD
->>>>>>> a90aac9... Adicionado icone de localizaçao
-=======
->>>>>>> a90aac9... Adicionado icone de localizaçao
                   </Body>
                   <Right>
                     <Button

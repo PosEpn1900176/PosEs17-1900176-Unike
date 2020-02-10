@@ -1,22 +1,19 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import {
   H1,
   Container,
-  Content,
   Button,
-  Text,
   Card,
   CardItem,
   Body,
   DeckSwiper,
   Left,
   Icon,
-  View,
-  Footer,
   Right,
 } from 'native-base';
 import { HeaderSignup } from '../../../templates/headerSignup';
 import { DataValue } from '../../../molecules';
+import styles from './styles';
 
 class TableScheduleServices extends React.Component {
   render() {
@@ -24,10 +21,10 @@ class TableScheduleServices extends React.Component {
       <>
         <DeckSwiper
           ref={c => (this._deckSwiper = c)}
-          dataSource={this.props.data.data}
+          dataSource={this.props.data}
           renderItem={(item, index) => {
             return (
-              <Card key={index} style={{ elevation: 3 }}>
+              <Card key={index} style={styles.scheduleCard}>
                 <CardItem cardBody>
                   <Left>
                     <Body>
@@ -57,22 +54,19 @@ class TableScheduleServices extends React.Component {
                       transparent
                       iconRight
                       onPress={() => this._deckSwiper._root.swipeRight()}>
-                      <Icon
-                        type="AntDesign"
-                        name="left"
-                        style={{ color: '#ED4A6A' }}
-                      />
+                      <Icon type="AntDesign" name="left" />
                     </Button>
                   </Left>
                   <Body>
-                    <Button transparent block iconRight onPress={() => {}}>
+                    <Button
+                      transparent
+                      block
+                      iconRight
+                      onPress={this.onViewMap}>
                       <Icon
                         type="EvilIcons"
                         name="location"
-                        style={{
-                          color: '#ED4A6A',
-                          fontSize: 40
-                        }}
+                        style={styles.iconLarge}
                       />
                     </Button>
                   </Body>
@@ -81,11 +75,7 @@ class TableScheduleServices extends React.Component {
                       transparent
                       iconRight
                       onPress={() => this._deckSwiper._root.swipeRight()}>
-                      <Icon
-                        type="AntDesign"
-                        name="right"
-                        style={{ color: '#ED4A6A' }}
-                      />
+                      <Icon type="AntDesign" name="right" />
                     </Button>
                   </Right>
                 </CardItem>

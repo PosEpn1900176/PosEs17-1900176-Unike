@@ -10,3 +10,4 @@ export * from './availableServices';
 export * from './scheduleServices';
 export * from './profileUser';
 export * from './help';
+export * from './map';

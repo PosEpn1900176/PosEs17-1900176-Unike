@@ -50,13 +50,15 @@ class TableScheduleServices extends React.Component {
                 </CardItem>
                 <CardItem>
                   <Left>
-                    <Body>
-                      <Button
-                        transparent
-                        iconRight
-                        onPress={() => this._deckSwiper._root.swipeRight()}>
-                        <Icon type="AntDesign" name="left" />
-                      </Button>
+                    <Button
+                      transparent
+                      iconRight
+                      onPress={() => this._deckSwiper._root.swipeRight()}>
+                      <Icon type="AntDesign" name="left" />
+                    </Button>
+                  </Left>
+                  <Body>
+                    <Button>
                       <Icon
                         type="EvilIcons"
                         name="location"
@@ -66,7 +68,7 @@ class TableScheduleServices extends React.Component {
                   </Body>
                   <Right>
                     <Button
-                      transparent
+                      transparent 
                       iconRight
                       onPress={() => this._deckSwiper._root.swipeRight()}>
                       <Icon type="AntDesign" name="right" />

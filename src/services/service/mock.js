@@ -9,6 +9,7 @@ const servicesData = [
     ValorServico: 'R$ 35,00',
     Desconto: 'R$ 1,05',
     TotalReceber: 'R$ 33,96',
+    status: 'SCHEDULED',
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const servicesData = [
     ValorServico: 'R$ 25,00',
     Desconto: 'R$ 1,00',
     TotalReceber: 'R$ 30,00',
+    status: 'SCHEDULED',
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ const servicesData = [
     ValorServico: 'R$ 200,00',
     Desconto: 'R$ 30,00',
     TotalReceber: 'R$ 150,00',
+    status: 'SCHEDULED',
   },
   {
     id: 4,
@@ -42,11 +45,12 @@ const servicesData = [
     ValorServico: 'R$ 90,00',
     Desconto: 'R$ 4,00',
     TotalReceber: 'R$ 86,00',
+    status: 'SCHEDULED',
   },
 ];
 
-const getServicesData = status => {
-  return servicesData.filter(service => (service.status = status));
+const getServicesData = params => {
+  return servicesData.filter(service => (service.status = params.status));
 };
 
 export default getServicesData;

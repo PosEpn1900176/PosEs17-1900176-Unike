@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { loadScheduleServices } from '../../../../actions';
 import { useScheduleService } from './use';
 import { LoadingControl } from '../../../organisms/loadingControl';
+import { Text } from 'native-base';
 
 const ScheduleServicesContainer = props => {
   const schedule = useScheduleService();

@@ -2,18 +2,17 @@ import { useState } from 'react';
 import {
   CategoryListService,
   ProfessionalService,
-  AvailableServiceServices,
-  serviceServices,
+  ServiceServices,
 } from '../../services';
 
 const servicesAPI = {
   categories: CategoryListService,
   professional: ProfessionalService,
-  availableService: AvailableServiceServices,
-  service: serviceServices,
+  availableService: ServiceServices,
+  scheduledService: ServiceServices,
 };
 
-const useFetch = (service, method = 'get', parameters) => {
+const useFetch = (service, method = 'get') => {
   const [fetch, setFetch] = useState({
     loading: true,
     error: false,
@@ -30,7 +29,6 @@ const useFetch = (service, method = 'get', parameters) => {
         loading: true,
       });
       const data = await api[method](params);
-
       setFetch({
         data: data.data ? data.data : data,
         done: true,
@@ -38,6 +36,7 @@ const useFetch = (service, method = 'get', parameters) => {
         loading: false,
       });
     } catch (error) {
+      console.error(error)
       setFetch({
         ...fetch,
         done: false,

@@ -1,10 +1,9 @@
 import getServicesData from './mock';
 
-const serviceServices = {
-  get: async type => {
-    console.log(type)
+const ServiceServices = {
+  get: async params => {
     try {
-      const services = await getServicesData(type);
+      const services = await getServicesData(params);
       return services;
     } catch (error) {
       console.log('Ocorreu um erro: ', error);
@@ -13,4 +12,4 @@ const serviceServices = {
   },
 };
 
-export { serviceServices };
+export { ServiceServices };

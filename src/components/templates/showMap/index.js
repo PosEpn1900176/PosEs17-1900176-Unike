@@ -10,7 +10,7 @@ import {
   Card,
   CardItem,
 } from 'native-base';
-import { View } from 'react-native';
+import { View, Dimensions } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import { useSelector } from 'react-redux';
 
@@ -19,6 +19,20 @@ const region = {
   longitude: -122.4324,
   latitudeDelta: 0.0922,
   longitudeDelta: 0.0421,
+};
+
+const useGetRegion = () => {
+  const { width, height } = Dimensions.get('window');
+  const get = ({ latitude, longitude }) => {
+    return {
+      latitude,
+      longitude,
+      latitudeDelta: 0.0922,
+      longitudeDelta: 0.0922 * (width / height),
+    };
+  };
+
+  return get;
 };
 
 // const markers = [
@@ -77,6 +91,7 @@ const CustomMarker = props => {
 };
 
 const ShowMap = props => {
+  const getRegion = useGetRegion();
   const handleChange = regions => {
     console.log(regions);
   };
@@ -85,17 +100,14 @@ const ShowMap = props => {
       <MapView
         style={{ flex: 1 }}
         provider={PROVIDER_GOOGLE}
-        initialRegion={region}
-        zoomTapEnabled={false}
+        initialRegion={getRegion(props.markers[0])}
+        zoomTapEnabled={true}
         onRegionChange={handleChange}>
         {props.markers.map((marker, index) => (
-          <Marker
-            key={index}
-            coordinate={{
-              latitude: marker.latitude,
-              longitude: marker.longitude,
-            }}>
-            <Callout>{/* <CustomMarker {...marker} /> */}</Callout>
+          <Marker key={index} coordinate={getRegion(marker)}>
+            <Callout>
+              <CustomMarker {...marker} />
+            </Callout>
           </Marker>
         ))}
       </MapView>

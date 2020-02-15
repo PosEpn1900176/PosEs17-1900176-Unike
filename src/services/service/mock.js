@@ -1,4 +1,4 @@
-const scheduleServiceData = [
+const servicesData = [
   {
     id: 1,
     Cliente: 'Marilda de Carlos Ramos',
@@ -45,4 +45,8 @@ const scheduleServiceData = [
   },
 ];
 
-export default scheduleServiceData;
+const getServicesData = status => {
+  return servicesData.filter(service => (service.status = status));
+};
+
+export default getServicesData;

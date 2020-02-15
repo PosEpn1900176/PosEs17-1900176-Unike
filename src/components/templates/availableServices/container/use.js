@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useFetch } from '../../../../hooks';
 
 const useScheduleAvailable = () => {
-  const [data, fetch] = useFetch('scheduleAvailable');
+  const [data, fetch] = useFetch('service', 'get', { type: 'AVAILABLE' });
   useEffect(() => {
     fetch();
   }, []);

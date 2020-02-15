@@ -1,14 +1,12 @@
 import { combineReducers } from 'redux';
 import signupReducer from './signup';
 import userReducer from './user';
-import availableServicesReducer from './availableServices';
-import scheduleServicesReducer from './scheduleServices';
+import servicesReducer from './services';
 
 const Reducers = combineReducers({
   signup: signupReducer,
   user: userReducer,
-  availableServices: availableServicesReducer,
-  scheduleServices: scheduleServicesReducer,
+  services: servicesReducer,
 });
 
 export default Reducers;

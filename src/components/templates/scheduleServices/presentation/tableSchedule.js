@@ -12,7 +12,7 @@ import {
 } from 'native-base';
 import { DataValue } from '../../../molecules';
 
-export default class TableScheduleServices extends React.Component {
+export default class TableScheduleServicesPresentation extends React.Component {
   render() {
     return (
       <>

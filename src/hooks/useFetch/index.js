@@ -3,17 +3,17 @@ import {
   CategoryListService,
   ProfessionalService,
   AvailableServiceServices,
-  ScheduleServiceServices,
+  serviceServices,
 } from '../../services';
 
 const servicesAPI = {
   categories: CategoryListService,
   professional: ProfessionalService,
   availableService: AvailableServiceServices,
-  scheduleService: ScheduleServiceServices,
+  service: serviceServices,
 };
 
-const useFetch = (service, method = 'get') => {
+const useFetch = (service, method = 'get', parameters) => {
   const [fetch, setFetch] = useState({
     loading: true,
     error: false,

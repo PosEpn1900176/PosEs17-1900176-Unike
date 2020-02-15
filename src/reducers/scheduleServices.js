@@ -1,14 +1,14 @@
-import { LOAD_SCHEDULE_SERVICES } from '../actions/actionTypes';
+import { LOAD_SCHEDULED_SERVICES } from '../actions/actionTypes';
 
 const initialStore = [];
 
-const scheduleServicesReducer = (state = initialStore, action) => {
+const scheduledServicesReducer = (state = initialStore, action) => {
   switch (action.type) {
-    case LOAD_SCHEDULE_SERVICES:
+    case LOAD_SCHEDULED_SERVICES:
       return action.payload;
     default:
       return state;
   }
 };
 
-export default scheduleServicesReducer;
+export default scheduledServicesReducer;

@@ -13,9 +13,17 @@ const ScheduleServicesContainer = props => {
     dispatch(loadScheduleServices(schedule.data));
   }, [schedule, dispatch]);
 
+  const onViewMap = (map)=>{
+    console.log(map);
+  }
+
   return (
     <LoadingControl loading={schedule.loading}>
-      <ScheduleServicesPresentation {...props} data={schedule.data} />
+      <ScheduleServicesPresentation
+        {...props}
+        data={schedule.data}
+        onViewMap={onViewMap}
+      />
     </LoadingControl>
   );
 };

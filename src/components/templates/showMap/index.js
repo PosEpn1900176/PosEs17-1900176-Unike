@@ -12,6 +12,7 @@ import {
 } from 'native-base';
 import { View } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
+import { useSelector } from 'react-redux';
 
 const region = {
   latitude: 37.78825,
@@ -20,20 +21,20 @@ const region = {
   longitudeDelta: 0.0421,
 };
 
-const markers = [
-  {
-    latitude: 37.78825,
-    longitude: -122.4324,
-    categoria: 'Cabeleireiro',
-    description: 'Cabeleireiro profissional',
-  },
-  {
-    latitude: 37.788403658257394,
-    longitude: -122.43751248344779,
-    categoria: 'Massagista',
-    description: 'Massagiadora profissional',
-  },
-];
+// const markers = [
+//   {
+//     latitude: 37.78825,
+//     longitude: -122.4324,
+//     categoria: 'Cabeleireiro',
+//     description: 'Cabeleireiro profissional',
+//   },
+//   {
+//     latitude: 37.788403658257394,
+//     longitude: -122.43751248344779,
+//     categoria: 'Massagista',
+//     description: 'Massagiadora profissional',
+//   },
+// ];
 
 const CustomMarker = props => {
   return (
@@ -87,16 +88,14 @@ const ShowMap = props => {
         initialRegion={region}
         zoomTapEnabled={false}
         onRegionChange={handleChange}>
-        {markers.map((marker, index) => (
+        {props.markers.map((marker, index) => (
           <Marker
             key={index}
             coordinate={{
               latitude: marker.latitude,
               longitude: marker.longitude,
             }}>
-            <Callout>
-              <CustomMarker {...marker} />
-            </Callout>
+            <Callout>{/* <CustomMarker {...marker} /> */}</Callout>
           </Marker>
         ))}
       </MapView>

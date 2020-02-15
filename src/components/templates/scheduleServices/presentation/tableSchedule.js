@@ -59,7 +59,7 @@ export default class TableScheduleServicesPresentation extends React.Component {
                       transparent
                       block
                       iconRight
-                      onPress={() => this.props.onViewMap(item)}>
+                      onPress={() => this.props.onViewMap([item])}>
                       <Icon
                         type="EvilIcons"
                         name="location"

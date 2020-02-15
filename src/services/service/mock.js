@@ -11,6 +11,8 @@ const servicesData = [
     TotalReceber: 'R$ 33,96',
     status: 'SCHEDULED',
     accept: false,
+    latitude: 37.78825,
+    longitude: -122.4324,
   },
   {
     id: 2,
@@ -24,6 +26,8 @@ const servicesData = [
     TotalReceber: 'R$ 30,00',
     status: 'SCHEDULED',
     accept: false,
+    latitude: 37.78825,
+    longitude: -122.4324,
   },
   {
     id: 3,
@@ -37,6 +41,8 @@ const servicesData = [
     TotalReceber: 'R$ 150,00',
     status: 'SCHEDULED',
     accept: false,
+    latitude: 37.78825,
+    longitude: -122.4324,
   },
   {
     id: 4,
@@ -50,6 +56,8 @@ const servicesData = [
     TotalReceber: 'R$ 86,00',
     status: 'SCHEDULED',
     accept: false,
+    latitude: 37.78825,
+    longitude: -122.4324,
   },
 ];
 

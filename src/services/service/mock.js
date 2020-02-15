@@ -10,6 +10,7 @@ const servicesData = [
     Desconto: 'R$ 1,05',
     TotalReceber: 'R$ 33,96',
     status: 'SCHEDULED',
+    accept: false,
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const servicesData = [
     Desconto: 'R$ 1,00',
     TotalReceber: 'R$ 30,00',
     status: 'SCHEDULED',
+    accept: false,
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const servicesData = [
     Desconto: 'R$ 30,00',
     TotalReceber: 'R$ 150,00',
     status: 'SCHEDULED',
+    accept: false,
   },
   {
     id: 4,
@@ -46,6 +49,7 @@ const servicesData = [
     Desconto: 'R$ 4,00',
     TotalReceber: 'R$ 86,00',
     status: 'SCHEDULED',
+    accept: false,
   },
 ];
 

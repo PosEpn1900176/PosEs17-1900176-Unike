@@ -10,5 +10,4 @@ const scheduledServicesReducer = (state = initialStore, action) => {
       return state;
   }
 };
-
 export default scheduledServicesReducer;

@@ -3,11 +3,12 @@ import { useFetch } from '../../../../hooks';
 
 const useScheduleService = () => {
   const [data, fetch] = useFetch('scheduledService');
+
   useEffect(() => {
     fetch({ status: 'SCHEDULED' });
   }, []);
 
-  return data;
+  return { schedule: data };
 };
 
 export { useScheduleService };

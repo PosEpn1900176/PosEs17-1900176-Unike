@@ -1,25 +1,14 @@
 import React from 'react';
-import {
-  Container,
-  Button,
-  Text,
-  Icon,
-  Left,
-  Body,
-  Right,
-  Card,
-  CardItem,
-} from 'native-base';
+import { Container, Button, Text, Body, Card, CardItem } from 'native-base';
 import { View, Dimensions } from 'react-native';
-import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
-import { useSelector } from 'react-redux';
-
-const region = {
-  latitude: 37.78825,
-  longitude: -122.4324,
-  latitudeDelta: 0.0922,
-  longitudeDelta: 0.0421,
-};
+import MapView, {
+  PROVIDER_GOOGLE,
+  Marker,
+  Callout,
+  CalloutSubview,
+} from 'react-native-maps';
+import { DataValue } from '../../molecules';
+import { useFetch } from '../../../hooks';
 
 const useGetRegion = () => {
   const { width, height } = Dimensions.get('window');
@@ -35,55 +24,26 @@ const useGetRegion = () => {
   return get;
 };
 
-// const markers = [
-//   {
-//     latitude: 37.78825,
-//     longitude: -122.4324,
-//     categoria: 'Cabeleireiro',
-//     description: 'Cabeleireiro profissional',
-//   },
-//   {
-//     latitude: 37.788403658257394,
-//     longitude: -122.43751248344779,
-//     categoria: 'Massagista',
-//     description: 'Massagiadora profissional',
-//   },
-// ];
+const CustomMarker = ({ marker }) => {
+  const [data, fetch] = useFetch('scheduledService', 'put');
+  console.log('MARKER', marker);
+  const onFinishService = () => {
+    // fetch(marker);
+    console.log(data);
+  };
 
-const CustomMarker = props => {
   return (
     <View>
       <Card>
         <CardItem header bordered>
-          <Text>{props.categoria}</Text>
+          <Text>{marker.Servico}</Text>
         </CardItem>
         <CardItem>
           <Body>
-            <Text>{props.description}</Text>
+            <DataValue label="Cliente" value={marker.Cliente} />
+            <DataValue label="Endereço" value={marker.Endereco} />
+            <DataValue label="Horário" value={marker.Horario} />
           </Body>
-        </CardItem>
-        <CardItem>
-          <Left>
-            <Button transparent>
-              <Icon active name="thumbs-up" />
-              <Text>12 Likes</Text>
-            </Button>
-          </Left>
-          <Body>
-            <Button transparent>
-              <Icon active name="chatbubbles" />
-              <Text>4 Comments</Text>
-            </Button>
-          </Body>
-          <Right>
-            <Text>11h ago</Text>
-          </Right>
-        </CardItem>
-        <CardItem footer>
-          <Button transparent>
-            <Icon active name="thumbs-up" />
-            <Text>12 Likes</Text>
-          </Button>
         </CardItem>
       </Card>
     </View>
@@ -106,7 +66,7 @@ const ShowMap = props => {
         {props.markers.map((marker, index) => (
           <Marker key={index} coordinate={getRegion(marker)}>
             <Callout>
-              <CustomMarker {...marker} />
+              <CustomMarker marker={marker} />
             </Callout>
           </Marker>
         ))}

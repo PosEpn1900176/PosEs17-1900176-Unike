@@ -1,4 +1,4 @@
-const servicesData = [
+let servicesData = [
   {
     id: 1,
     Cliente: 'Marilda de Carlos Ramos',
@@ -62,7 +62,21 @@ const servicesData = [
 ];
 
 const getServicesData = params => {
-  return servicesData.filter(service => (service.status = params.status));
+  const services = servicesData.filter(
+    service => (service.status = params.status),
+  );
+  return Promise.resolve(services);
 };
 
-export default getServicesData;
+const finishService = param => {
+  servicesData.map(service => {
+    if (param.id === service.id) {
+      service.status = 'FINISHED';
+    }
+    return service;
+  });
+
+  return Promise.resolve({ ok: true });
+};
+
+export { getServicesData, finishService };

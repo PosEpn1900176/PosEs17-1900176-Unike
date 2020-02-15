@@ -1,20 +1,7 @@
 import React from 'react';
-import {
-  H1,
-  Container,
-  Button,
-  Card,
-  CardItem,
-  Body,
-  DeckSwiper,
-  Left,
-  Icon,
-  Right,
-} from 'native-base';
+import { H1, Container } from 'native-base';
 import { HeaderSignup } from '../../../templates/headerSignup';
-import { DataValue } from '../../../molecules';
 import TableScheduleServicesPresentation from './tableSchedule';
-import styles from './styles';
 
 const ScheduleServicesPresentation = props => {
   return (

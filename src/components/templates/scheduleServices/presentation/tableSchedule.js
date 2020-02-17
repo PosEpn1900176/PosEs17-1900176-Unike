@@ -22,29 +22,6 @@ export default class TableScheduleServicesPresentation extends React.Component {
           renderItem={(item, index) => {
             return (
               <Card key={index} style={styles.scheduleCard}>
-                <CardItem cardBody>
-                  <Left>
-                    <Body>
-                      <DataValue label="Cliente" value={item.Cliente} />
-                      <DataValue label="Endereco" value={item.Endereco} />
-                      <DataValue label="Serviço" value={item.Servico} />
-                      <DataValue label="Horário" value={item.Horario} />
-                      <DataValue
-                        label="Taxa do serviço"
-                        value={item.TaxaServico}
-                      />
-                      <DataValue
-                        label="Valor do serviço"
-                        value={item.ValorServico}
-                      />
-                      <DataValue label="Desconto" value={item.Desconto} />
-                      <DataValue
-                        label="Total à receber"
-                        value={item.TotalReceber}
-                      />
-                    </Body>
-                  </Left>
-                </CardItem>
                 <CardItem>
                   <Left>
                     <Button
@@ -75,6 +52,29 @@ export default class TableScheduleServicesPresentation extends React.Component {
                       <Icon type="AntDesign" name="right" />
                     </Button>
                   </Right>
+                </CardItem>
+                <CardItem cardBody>
+                  <Left>
+                    <Body>
+                      <DataValue label="Cliente" value={item.Cliente} />
+                      <DataValue label="Endereco" value={item.Endereco} />
+                      <DataValue label="Serviço" value={item.Servico} />
+                      <DataValue label="Horário" value={item.Horario} />
+                      <DataValue
+                        label="Taxa do serviço"
+                        value={item.TaxaServico}
+                      />
+                      <DataValue
+                        label="Valor do serviço"
+                        value={item.ValorServico}
+                      />
+                      <DataValue label="Desconto" value={item.Desconto} />
+                      <DataValue
+                        label="Total à receber"
+                        value={item.TotalReceber}
+                      />
+                    </Body>
+                  </Left>
                 </CardItem>
               </Card>
             );

@@ -88,7 +88,7 @@ export default (variables /* : * */ = variable) => {
       '.transparent': {
         backgroundColor: 'transparent',
         'NativeBase.Text': {
-          color: variables.buttonDisabledBg
+          color: 'gray'
         },
         'NativeBase.Icon': {
           color: variables.buttonDisabledBg

@@ -11,7 +11,9 @@ const HeaderSignupPresentation = props => {
         <Image style={styles.image} source={logo} />
       </Left>
       <Right>
-        <Text>Bem vindo</Text>
+        <Button transparent onPress={props.onBack}>
+          <Text style={{ color: 'gray' }}>Bem vindo</Text>
+        </Button>
       </Right>
     </Header>
   );

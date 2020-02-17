@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import AvailableServicesPresentation from '../presentation';
-import { useDispatch } from 'react-redux';
-import { loadAvailableServices } from '../../../../actions';
-import { useScheduleAvailable } from './use';
+import { useAvailableServices } from './use';
 
 const AvailableServicesContainer = props => {
-  const data = useScheduleAvailable();
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadAvailableServices(data));
-  }, [data, dispatch]);
+  const data = useAvailableServices();
 
-  return <AvailableServicesPresentation {...props} />;
+  return (
+    <AvailableServicesPresentation
+      data={data}
+      {...props}
+      ongoMap={props.onGoMap}
+    />
+  );
 };
 
 export default AvailableServicesContainer;

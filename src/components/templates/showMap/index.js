@@ -1,5 +1,14 @@
 import React from 'react';
-import { Container, Button, Text, Body, Card, CardItem } from 'native-base';
+import {
+  Container,
+  Button,
+  Text,
+  Body,
+  Card,
+  CardItem,
+  Left,
+  Right,
+} from 'native-base';
 import { View, Dimensions } from 'react-native';
 import MapView, {
   PROVIDER_GOOGLE,
@@ -44,6 +53,18 @@ const CustomMarker = ({ marker }) => {
             <DataValue label="Endereço" value={marker.Endereco} />
             <DataValue label="Horário" value={marker.Horario} />
           </Body>
+        </CardItem>
+        <CardItem>
+          <Left>
+            <Button>
+              <Text>Aceitar</Text>
+            </Button>
+          </Left>
+          <Right>
+            <Button>
+              <Text>Concluir</Text>
+            </Button>
+          </Right>
         </CardItem>
       </Card>
     </View>

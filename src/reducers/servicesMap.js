@@ -4,7 +4,7 @@ import scheduledServicesMap from './scheduleServicesMap';
 
 const servicesMapReducer = combineReducers({
   scheduled: scheduledServicesMap,
-  categoria: availableServicesMap,
+  available: availableServicesMap,
 });
 
 export default servicesMapReducer;

@@ -1,13 +1,21 @@
 import { useEffect } from 'react';
 import { useFetch } from '../../../../hooks';
+import { useSelector, useDispatch } from 'react-redux';
+import { setMapAvailableServices } from '../../../../actions';
 
-const useScheduleAvailable = () => {
-  const [data, fetch] = useFetch('service', 'get');
+const useAvailableServices = () => {
+  const selector = useSelector(state => state.services.map);
+  const dispatch = useDispatch();
+  const [data, fetch] = useFetch('availableService', 'get');
   useEffect(() => {
     fetch({ status: 'AVAILABLE' });
   }, []);
 
-  return data;
+  useEffect(() => {
+    dispatch(setMapAvailableServices(data.data));
+  }, [data, dispatch]);
+
+  return selector;
 };
 
-export { useScheduleAvailable };
+export { useAvailableServices };

@@ -1,6 +1,6 @@
 import { LOAD_SCHEDULED_SERVICES } from '../actions/actionTypes';
 
-const initialStore = [];
+const initialStore = { loading: true, data: [], error: false };
 
 const scheduledServicesReducer = (state = initialStore, action) => {
   switch (action.type) {

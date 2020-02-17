@@ -9,6 +9,9 @@ import {
   Button,
   Icon,
   Right,
+  Grid,
+  Col,
+  Text,
 } from 'native-base';
 import { DataValue } from '../../../molecules';
 
@@ -22,7 +25,7 @@ export default class TableScheduleServicesPresentation extends React.Component {
           renderItem={(item, index) => {
             return (
               <Card key={index} style={styles.scheduleCard}>
-                <CardItem>
+                <CardItem header>
                   <Left>
                     <Button
                       transparent
@@ -69,10 +72,21 @@ export default class TableScheduleServicesPresentation extends React.Component {
                         value={item.ValorServico}
                       />
                       <DataValue label="Desconto" value={item.Desconto} />
-                      <DataValue
-                        label="Total à receber"
-                        value={item.TotalReceber}
-                      />
+                      <Grid>
+                        <Col>
+                          <DataValue
+                            label="Total à receber"
+                            value={item.TotalReceber}
+                          />
+                        </Col>
+                        <Col>
+                          <Button
+                            primary
+                            onPress={() => this.props.onFinish(item)}>
+                            <Text>Fnalizar serviço</Text>
+                          </Button>
+                        </Col>
+                      </Grid>
                     </Body>
                   </Left>
                 </CardItem>

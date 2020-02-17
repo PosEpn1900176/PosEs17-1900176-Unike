@@ -1,6 +1,6 @@
 import { LOAD_AVAILABLE_SERVICES } from '../actions/actionTypes';
 
-const initialStore = [];
+const initialStore = { loading: true, data: [], error: false };
 
 const availableServicesReducer = (state = initialStore, action) => {
   switch (action.type) {

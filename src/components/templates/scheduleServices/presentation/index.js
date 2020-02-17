@@ -8,6 +8,7 @@ const ScheduleServicesPresentation = props => {
       <TableScheduleServicesPresentation
         data={props.data}
         onViewMap={props.onViewMap}
+        onFinish={props.onFinish}
       />
     </Container>
   );

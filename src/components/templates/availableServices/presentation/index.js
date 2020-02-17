@@ -1,9 +1,13 @@
 import React from 'react';
-import { Text } from 'native-base';
+// import { ShowMap } from '../../../templates/showMap';
+import { Button, Text } from 'native-base';
 
-
-const AvailableServicesPresentation = () => {
-  return <Text>AvailableServicesPresentation</Text>;
+const AvailableServicesPresentation = props => {
+  return (
+    <Button onPress={props.ongoMap}>
+      <Text>OK</Text>
+    </Button>
+  );
 };
 
 export default AvailableServicesPresentation;

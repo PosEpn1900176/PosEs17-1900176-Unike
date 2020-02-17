@@ -1,6 +1,6 @@
 import { SET_MAP_SCHEDULED_SERVICES } from '../actions/actionTypes';
 
-const initialStore = [];
+const initialStore = { loading: true, data: [], error: false };
 
 const scheduledServicesMapReducer = (state = initialStore, action) => {
   switch (action.type) {

@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 const actions = [
   {
     label: 'Serviços disponíveis',
-    link: 'ScheduleAvailable',
+    link: 'AvailableServices',
   },
   {
     label: 'Serviços agendados',

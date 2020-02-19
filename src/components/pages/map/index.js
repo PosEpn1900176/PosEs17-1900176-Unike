@@ -9,7 +9,7 @@ const MapPage = ({ navigation }) => {
     state => state.services.map[navigation.state.params.service],
   );
   const goBack = () => {
-    navigation.goBack();
+    navigation.navigate('Home');
   };
   return (
     <Container>

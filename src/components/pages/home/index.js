@@ -3,6 +3,7 @@ import { Container, Content, Grid, Col, Thumbnail } from 'native-base';
 import { HeaderSignup } from '../../templates';
 import { Title, DataValue, ActionButtons } from '../../molecules';
 import { useSelector } from 'react-redux';
+import { user } from '../../../images';
 
 const actions = [
   {
@@ -30,18 +31,25 @@ const HomePage = props => {
       props.navigation.navigate(action.link);
     };
   };
+  const getImage = () => {
+    if (selector.Foto) {
+      return (
+        <Thumbnail
+          large
+          source={{ uri: `data:image/png;base64,${selector.Foto}` }}
+        />
+      );
+    } else {
+      return <Thumbnail large source={user} />;
+    }
+  };
   return (
     <Container>
       <HeaderSignup />
       <Content>
         <Title value={selector.Nome} />
         <Grid>
-          <Col>
-            <Thumbnail
-              large
-              source={{ uri: `data:image/png;base64,${selector.Foto}` }}
-            />
-          </Col>
+          <Col>{getImage()}</Col>
           <Col>
             <DataValue
               label="Nome completo"

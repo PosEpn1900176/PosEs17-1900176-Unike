@@ -8,7 +8,7 @@ const AvailableServicesPresentation = props => {
       service: 'available',
     });
   });
-  return <Text></Text>
+  return <Text></Text>;
 };
 
 export default AvailableServicesPresentation;

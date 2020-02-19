@@ -36,7 +36,7 @@ const useFetch = (service, method = 'get') => {
         loading: false,
       });
     } catch (error) {
-      console.error(error)
+      console.error(error);
       setFetch({
         ...fetch,
         done: false,

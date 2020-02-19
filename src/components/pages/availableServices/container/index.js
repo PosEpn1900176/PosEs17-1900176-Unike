@@ -1,6 +1,5 @@
 import React from 'react';
 import AvailableServicesPagePresentation from '../presentation';
-import { Text } from 'native-base';
 
 const AvailableServicesPageContainer = props => {
   const onGoMap = () => {

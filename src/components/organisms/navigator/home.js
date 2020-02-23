@@ -6,6 +6,7 @@ import {
   ProfileUserPage,
   HelpPage,
   MapPage,
+  GeneralMap,
 } from '../../pages';
 
 const HomeNavigator = createStackNavigator({
@@ -44,6 +45,14 @@ const HomeNavigator = createStackNavigator({
   Map: {
     screen: MapPage,
     navigationOptions: ({ navigation }) => {
+      return {
+        header: null,
+      };
+    },
+  },
+  GeneralMap: {
+    screen: GeneralMap,
+    navigationOptions: () => {
       return {
         header: null,
       };

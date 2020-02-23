@@ -4,25 +4,7 @@ import { HeaderSignup } from '../../templates';
 import { Title, DataValue, ActionButtons } from '../../molecules';
 import { useSelector } from 'react-redux';
 import { user } from '../../../images';
-
-const actions = [
-  {
-    label: 'Serviços disponíveis',
-    link: 'AvailableServices',
-  },
-  {
-    label: 'Serviços agendados',
-    link: 'ScheduleServices',
-  },
-  {
-    label: 'Perfil do Usuário',
-    link: 'ProfileUser',
-  },
-  {
-    label: 'Ajuda',
-    link: 'Help',
-  },
-];
+import { actions } from './utils';
 
 const HomePage = props => {
   const selector = useSelector(state => state.user);

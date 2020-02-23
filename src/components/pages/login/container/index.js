@@ -6,8 +6,9 @@ import { useUser } from '../../../../hooks';
 import { Toast } from 'native-base';
 
 const LoginPage = props => {
+  console.log('Navigator', navigator)
   const [form, setForm] = useState({
-    email: 'unikeiii@unike.com.br',
+    email: 'tcc@unike.com.br',
     password: '123456',
   });
   const setUser = useUser();
@@ -22,6 +23,7 @@ const LoginPage = props => {
       setLoad(false);
       props.navigation.navigate('App');
     } catch (err) {
+      console.log(err)
       Toast.show({
         type: 'danger',
         text: 'Autenticação não realizada. Tente novamente.',

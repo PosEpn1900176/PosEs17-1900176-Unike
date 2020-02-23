@@ -14,7 +14,7 @@ import { useFetch } from '../../../hooks';
 
 const CustomMarker = ({ marker }) => {
   const [data, fetch] = useFetch('scheduledService', 'put');
-  console.log('MARKER', marker);
+
   const onFinishService = () => {
     // fetch(marker);
     console.log(data);
@@ -50,4 +50,8 @@ const CustomMarker = ({ marker }) => {
   );
 };
 
-export default CustomMarker;
+const MyMarker = props => {
+  return <Text>dsdsd</Text>;
+};
+
+export { CustomMarker, MyMarker };

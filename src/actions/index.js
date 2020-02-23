@@ -7,6 +7,7 @@ import {
   LOAD_SCHEDULED_SERVICES,
   SET_MAP_SCHEDULED_SERVICES,
   SET_MAP_AVAILABLE_SERVICES,
+  SET_CURRENT_POSITION_MAP,
 } from './actionTypes';
 
 export const loadCategory = payload => ({ type: LOAD_CATEGORY, payload });
@@ -34,5 +35,10 @@ export const setMapAvailableServices = payload => ({
 
 export const loadScheduleServices = payload => ({
   type: LOAD_SCHEDULED_SERVICES,
+  payload,
+});
+
+export const setCurrentPositionMap = payload => ({
+  type: SET_CURRENT_POSITION_MAP,
   payload,
 });

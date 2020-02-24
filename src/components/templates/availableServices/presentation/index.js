@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Button, Text, Container, Content, Footer } from 'native-base';
 import { HeaderSignup } from '../../headerSignup';
 import { ShowMap } from '../../showMap';
-import { useSelector } from 'react-redux';
 
 const AvailableServicesPresentation = props => {
   return (

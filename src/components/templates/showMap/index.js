@@ -19,17 +19,21 @@ const ShowMap = props => {
       <MapView
         style={{ flex: 1 }}
         provider={PROVIDER_GOOGLE}
-        initialRegion={getRegion(coords)}
+        initialRegion={getRegion({ geolocation: coords })}
         zoomTapEnabled={true}
         onRegionChange={handleChange}>
         {props.markers.map((marker, index) => (
           <Marker key={index} coordinate={getRegion(marker)}>
-            <Callout>
+            {/* <Callout>
               <CustomMarker marker={marker} />
-            </Callout>
+            </Callout> */}
           </Marker>
         ))}
-        <Marker key="unike" pinColor="#0000ff" coordinate={getRegion(coords)} />
+        <Marker
+          key="unike"
+          pinColor="#0000ff"
+          coordinate={getRegion({ geolocation: coords })}
+        />
       </MapView>
     </Container>
   );

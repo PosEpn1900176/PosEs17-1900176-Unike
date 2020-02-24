@@ -5,24 +5,17 @@ import { ShowMap } from '../../showMap';
 import { useSelector } from 'react-redux';
 
 const AvailableServicesPresentation = props => {
-  // useEffect(() => {
-  //   props.navigation.navigate('Map', {
-  //     service: 'available',
-  //   });
-  // });
-  const a = [];
-
   return (
     <Container>
       <HeaderSignup />
       <Content>
-        <ShowMap markers={a} />
+        <ShowMap markers={props.data} />
       </Content>
-      {/* <Footer> */}
-      {/* <Button onPress={goBack}>
+      <Footer>
+        <Button onPress={props.goBack}>
           <Text>Voltar</Text>
-        </Button> */}
-      {/* </Footer> */}
+        </Button>
+      </Footer>
     </Container>
   );
 };

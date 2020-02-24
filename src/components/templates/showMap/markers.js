@@ -50,8 +50,4 @@ const CustomMarker = ({ marker }) => {
   );
 };
 
-const MyMarker = props => {
-  return <Text>dsdsd</Text>;
-};
-
-export { CustomMarker, MyMarker };
+export { CustomMarker };

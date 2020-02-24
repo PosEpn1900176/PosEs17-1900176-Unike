@@ -3,12 +3,14 @@ import {
   CategoryListService,
   ProfessionalService,
   ServiceServices,
+  AvailableServiceServices,
 } from '../../services';
+import { buildParams } from './utils';
 
 const servicesAPI = {
   categories: CategoryListService,
   professional: ProfessionalService,
-  availableService: ServiceServices,
+  availableService: AvailableServiceServices,
   scheduledService: ServiceServices,
 };
 
@@ -28,7 +30,7 @@ const useFetch = (service, method = 'get') => {
         ...fetch,
         loading: true,
       });
-      const data = await api[method](params);
+      const data = await api[method](buildParams(method, params));
       setFetch({
         data: data.data ? data.data : data,
         done: true,

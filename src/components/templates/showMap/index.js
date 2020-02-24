@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Text } from 'native-base';
+import { Container } from 'native-base';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
-import { CustomMarker, MyMarker } from './markers';
+import { CustomMarker } from './markers';
 import { useGetRegion } from '../../../hooks';
 import { useSelector } from 'react-redux';
 import { logo } from '../../../images';
@@ -25,7 +25,7 @@ const ShowMap = props => {
         {props.markers.map((marker, index) => (
           <Marker key={index} coordinate={getRegion(marker)}>
             <Callout>
-              <CustomMarker marker={marker} image={logo} />
+              <CustomMarker marker={marker} />
             </Callout>
           </Marker>
         ))}

@@ -4,6 +4,7 @@ import { useAvailableServices } from './use';
 
 const AvailableServicesContainer = props => {
   const data = useAvailableServices();
+  console.log(data)
 
   return (
     <AvailableServicesPresentation

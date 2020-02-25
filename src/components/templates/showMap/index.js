@@ -1,17 +1,27 @@
 import React from 'react';
-import { Container } from 'native-base';
-import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
+import { Container, Button, Text, View } from 'native-base';
+import MapView, {
+  PROVIDER_GOOGLE,
+  Marker,
+  Callout,
+  CalloutSubview,
+} from 'react-native-maps';
 import { CustomMarker } from './markers';
 import { useGetRegion } from '../../../hooks';
 import { useSelector } from 'react-redux';
-import { logo } from '../../../images';
+import Animated from 'react-native-reanimated';
+import styles from './styles'
+
+const detailsMarker = () => {};
 
 const ShowMap = props => {
   const { coords } = useSelector(state => state.services.map.currentPosition);
   const getRegion = useGetRegion();
 
-  const handleChange = regions => {
-    console.log(regions);
+  const onPress = e => {
+    return a => {
+      console.log('onCalloutPress', e, a);
+    };
   };
 
   return (
@@ -20,13 +30,21 @@ const ShowMap = props => {
         style={{ flex: 1 }}
         provider={PROVIDER_GOOGLE}
         initialRegion={getRegion({ geolocation: coords })}
+        showsUserLocation={true}
+        showsMyLocationButton={true}
+        followsUserLocation={true}
+        zoomEnabled={true}
         zoomTapEnabled={true}
-        onRegionChange={handleChange}>
+        zoomControlEnabled={true}
+        loadingEnabled={true}>
         {props.markers.map((marker, index) => (
-          <Marker key={index} coordinate={getRegion(marker)}>
-            {/* <Callout>
+          <Marker
+            key={index}
+            coordinate={getRegion(marker)}
+            onPress={onPress(marker)}>
+            <Callout>
               <CustomMarker marker={marker} />
-            </Callout> */}
+            </Callout>
           </Marker>
         ))}
         <Marker

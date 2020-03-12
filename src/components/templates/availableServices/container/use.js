@@ -5,18 +5,19 @@ import { setMapAvailableServices } from '../../../../actions';
 import { addGeolocationData } from './utils';
 
 const useAvailableServices = () => {
+  const user = useSelector(state => state.user);
   const selector = useSelector(state => state.services.map.available);
   const dispatch = useDispatch();
   const [data, fetch] = useFetch('availableService');
 
-
   useEffect(() => {
-    fetch({ ProfissionalId: 48 });
+    fetch({ ProfissionalId: user.Id });
   }, []);
+  console.log('Data', data.data);
 
   useEffect(() => {
     dispatch(setMapAvailableServices(addGeolocationData(data.data)));
-  }, [data, dispatch]);
+  }, [data.data, dispatch]);
 
   return selector;
 };

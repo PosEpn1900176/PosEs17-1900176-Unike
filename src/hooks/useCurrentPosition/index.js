@@ -1,10 +1,10 @@
 import Geolocation from 'react-native-geolocation-service';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPermission, cleanPosition } from './utils';
 import { setCurrentPositionMap } from '../../actions';
 
-// const getLocation = async () => {
+// const getLocation = () => {
 //   return new Promise((resolve, reject) => {
 //     if (!getPermission()) {
 //       console.error(
@@ -20,11 +20,11 @@ import { setCurrentPositionMap } from '../../actions';
 //       {
 //         enableHighAccuracy: true,
 //         timeout: 20000,
-//         maximumAge: 1000,
+//         maximumAge: 10000,
 //         forceRequestLocation: true,
 //       },
 //     );
-//     const watchId = Geolocation.watchPosition(position => {
+//     Geolocation.watchPosition(position => {
 //       resolve({ position });
 //       // dispatch(setCurrentPositionMap(position));
 //     });
@@ -32,7 +32,7 @@ import { setCurrentPositionMap } from '../../actions';
 // };
 
 const useCurrentPosition = async () => {
-  const { coords = {} } = useSelector(
+  const currentPosition = useSelector(
     state => state.services.map.currentPosition,
   );
   const dispatch = useDispatch();
@@ -42,10 +42,26 @@ const useCurrentPosition = async () => {
     if (getPermission()) {
       Geolocation.getCurrentPosition(
         position => {
-          dispatch(setCurrentPositionMap(position));
+          console.log('Finded', position);
+          dispatch(
+            setCurrentPositionMap({
+              loading: false,
+              coords: position,
+              error: false,
+            }),
+          );
         },
-        error => console.log('ERROR TENTANDO OBTER A LOCALIZAÇÃO'),
-        { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
+        error => {
+          console.log('ERROR TENTANDO OBTER A LOCALIZAÇÃO', error);
+          dispatch(
+            setCurrentPositionMap({
+              loading: false,
+              coords: { latitude: 1, longitude: 1 },
+              error: true,
+            }),
+          );
+        },
+        { enableHighAccuracy: false, timeout: 20000, maximumAge: 10000 },
       );
       watchId = Geolocation.watchPosition(position => {
         dispatch(setCurrentPositionMap(position));
@@ -53,9 +69,9 @@ const useCurrentPosition = async () => {
     }
 
     return cleanPosition(watchId);
-  }, [dispatch]);
+  }, []);
 
-  return coords;
+  return currentPosition;
 };
 
 export default useCurrentPosition;

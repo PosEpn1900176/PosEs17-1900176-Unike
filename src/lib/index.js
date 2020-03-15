@@ -3,3 +3,4 @@ export * from './client';
 export * from './date';
 export * from './item';
 export * from './validate';
+export * from './currency';

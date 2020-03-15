@@ -1,4 +1,5 @@
-export const formatDate = date => {
+export const getDate = (dateString, type = 'full') => {
+  const date = new Date(dateString);
   const day = date
     .getDate()
     .toString()
@@ -18,10 +19,15 @@ export const formatDate = date => {
     .toString()
     .padStart(2, '0');
 
-  return `${day}/${month}/${year} - ${hour}:${minutes}:${seconds}`;
-};
+  const dateFormatted = `${day}/${month}/${year}`;
+  const hoursFormatted = `${hour}:${minutes}:${seconds}`;
 
-export const getDateHour = request => {
-  const date = formatDate(new Date(request.Data));
-  return `${date}`;
+  switch (type) {
+    case 'full':
+      return `${dateFormatted} - ${hoursFormatted}`;
+    case 'date':
+      return dateFormatted;
+    case 'hours':
+      return `${hoursFormatted}`;
+  }
 };

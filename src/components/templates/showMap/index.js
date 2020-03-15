@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Button, Text, View } from 'native-base';
+import { Container } from 'native-base';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { useGetRegion } from '../../../hooks';
 import { useSelector } from 'react-redux';

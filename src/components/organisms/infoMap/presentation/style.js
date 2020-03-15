@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     width: '100%',
-    backgroundColor: 'rgba(255,255,255,0.7)',
+    backgroundColor: 'rgba(255,255,255,0.9)',
     borderTopWidth: 1,
     borderTopColor: '#ccc',
     borderStyle: 'solid',

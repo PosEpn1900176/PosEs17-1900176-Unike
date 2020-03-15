@@ -15,6 +15,7 @@ import styles from './style';
 import { ShowComponent } from '../../showComponent';
 import { DataValue } from '../../../molecules';
 import { getFullName, getFullAddress } from '../../../../lib';
+import { ListService } from '../../../templates';
 
 const getValue = (data, key) => {
   return data ? data[key] : '';
@@ -31,6 +32,7 @@ const InfoMapPresentation = ({ marker, ...props }) => {
             label="Nome"
             value={getFullAddress(marker.EnderecoCliente)}
           />
+          <ListService requests={marker.ItemsPedido} />
         </ShowComponent>
       </View>
       <View style={styles.control}>

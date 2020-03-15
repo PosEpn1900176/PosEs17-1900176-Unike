@@ -1,20 +1,17 @@
 import React from 'react';
-import { Button, Text, Container, Content, Footer } from 'native-base';
+import { Container, Content } from 'native-base';
 import { HeaderSignup } from '../../headerSignup';
 import { ShowMap } from '../../showMap';
+import { InfoMap } from '../../../organisms';
 
-const AvailableServicesPresentation = props => {
+const AvailableServicesPresentation = ({ info, showMarker, ...props }) => {
   return (
     <Container>
       <HeaderSignup />
       <Content>
-        <ShowMap markers={props.data} />
+        <ShowMap {...props} />
       </Content>
-      <Footer>
-        <Button onPress={props.goBack}>
-          <Text>Voltar</Text>
-        </Button>
-      </Footer>
+      <InfoMap marker={props.selectedMarker} show={showMarker} />
     </Container>
   );
 };

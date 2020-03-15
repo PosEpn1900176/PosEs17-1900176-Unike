@@ -13,7 +13,7 @@ import {
 } from 'native-base';
 import { DataValue } from '../../molecules';
 import { useFetch } from '../../../hooks';
-import { getFullName, getFullAddress, getDateHour } from './utils';
+import { getFullName, getFullAddress, getDateHour } from '../../../lib';
 
 const ListService = props => {
   return (

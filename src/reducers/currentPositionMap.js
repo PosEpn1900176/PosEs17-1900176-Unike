@@ -1,7 +1,7 @@
 import { SET_CURRENT_POSITION_MAP } from '../actions/actionTypes';
 
 const initialState = {
-  loading: true,
+  loading: false,
   coords: {
     latitude: -23.564259,
     longitude: -46.652507,

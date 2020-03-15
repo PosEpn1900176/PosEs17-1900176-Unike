@@ -56,7 +56,10 @@ const useCurrentPosition = async () => {
           dispatch(
             setCurrentPositionMap({
               loading: false,
-              coords: { latitude: 1, longitude: 1 },
+              coords: {
+                longitude: -46.6523317,
+                latitude: -23.5654183,
+              },
               error: true,
             }),
           );

@@ -1,10 +1,10 @@
 import http from '../http';
 
 const ProfessionalService = {
-  post: async param => {
+  post: async params => {
     return new Promise((resolve, reject) => {
       http
-        .post('Profissional/Adicionar', param)
+        .post('Profissional/Adicionar', params)
         .then(response => {
           resolve(response);
         })

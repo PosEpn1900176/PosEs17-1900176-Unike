@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {
   CategoryListService,
   ProfessionalService,
-  ServiceServices,
+  ScheduleServiceServices,
   AvailableServiceServices,
   AproveRequestService,
 } from '../../services';
@@ -12,7 +12,7 @@ const servicesAPI = {
   categories: CategoryListService,
   professional: ProfessionalService,
   availableService: AvailableServiceServices,
-  scheduledService: ServiceServices,
+  scheduleService: ScheduleServiceServices,
   aproveRequest: AproveRequestService,
 };
 
@@ -32,7 +32,7 @@ const useFetch = (service, method = 'get') => {
         ...fetch,
         loading: true,
       });
-      const data = await api[method](buildParams(method, params));
+      const data = await api[method](params);
       setFetch({
         data: data.data ? data.data : data,
         done: true,

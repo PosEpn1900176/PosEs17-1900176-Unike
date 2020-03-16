@@ -6,7 +6,7 @@ const useSaveSignup = () => {
   const selector = useSelector(state => state.signup);
   const [data, fetch] = useFetch('professional', 'post');
   const save = () => {
-    fetch(prepareDataForSend(selector));
+    fetch({ params: prepareDataForSend(selector) });
   };
 
   return [data, save];

@@ -39,7 +39,7 @@ const InfoMapPresentation = ({ marker, ...props }) => {
         </ShowComponent>
       </View>
       <View style={styles.control}>
-        <Button iconLeft transparent>
+        <Button iconLeft transparent onPress={props.onBack}>
           <Icon type="MaterialCommunityIcons" name="arrow-left" />
           <Text>Voltar</Text>
         </Button>

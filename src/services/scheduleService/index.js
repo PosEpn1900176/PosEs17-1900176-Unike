@@ -1,9 +1,18 @@
-import scheduleServiceData from './mock';
+import http from '../http';
 
 const ScheduleServiceServices = {
-  get: () => {
+  get: param => {
     return new Promise((resolve, reject) => {
-      resolve(scheduleServiceData);
+      http
+        .get('Pedido/PedidosProfissional', param)
+        .then(response => {
+          resolve(response);
+        })
+        .catch(error => {
+          console.log('Erro na solicitaçao de Pedidos');
+          console.log(error);
+          reject(error);
+        });
     });
   },
 };

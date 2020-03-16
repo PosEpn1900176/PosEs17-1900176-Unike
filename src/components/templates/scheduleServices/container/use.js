@@ -1,34 +1,21 @@
 import { useEffect } from 'react';
 import { useFetch } from '../../../../hooks';
 import { useSelector, useDispatch } from 'react-redux';
-import { loadScheduleServices } from '../../../../actions';
 
-const useFinishService = () => {
-  const [data, fetch] = useFetch('scheduledService', 'finish');
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(loadScheduleServices(data));
-  }, [data]);
-
-  return fetch;
-};
-
-const useScheduleService = () => {
-  const finish = useFinishService();
-  const scheduled = useSelector(state => state.services.scheduled);
-  const dispatch = useDispatch();
-  const [data, fetch] = useFetch('scheduledService');
+const useScheduleServices = () => {
+  const user = useSelector(state => state.user);
+  const [data, fetch] = useFetch('scheduleService');
+  console.log('chedule', data);
 
   useEffect(() => {
-    fetch({ params: { status: 'SCHEDULED' } });
+    fetch({
+      params: {
+        ProfissionalId: user.Id,
+      },
+    });
   }, []);
 
-  useEffect(() => {
-    dispatch(loadScheduleServices(data));
-  }, [data, dispatch]);
-
-  return { scheduled, finish };
+  return data;
 };
 
-export { useScheduleService, useFinishService };
+export { useScheduleServices };

@@ -42,7 +42,6 @@ const useCurrentPosition = async () => {
     if (getPermission()) {
       Geolocation.getCurrentPosition(
         position => {
-          console.log('Finded', position);
           dispatch(
             setCurrentPositionMap({
               loading: false,

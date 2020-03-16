@@ -21,11 +21,10 @@ const useScheduleService = () => {
   const [data, fetch] = useFetch('scheduledService');
 
   useEffect(() => {
-    fetch({ status: 'SCHEDULED' });
+    fetch({ params: { status: 'SCHEDULED' } });
   }, []);
 
   useEffect(() => {
-    console.log(data);
     dispatch(loadScheduleServices(data));
   }, [data, dispatch]);
 

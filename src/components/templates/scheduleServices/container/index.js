@@ -17,7 +17,6 @@ const ScheduleServicesContainer = props => {
   };
   const onFinish = item => {
     finish(item);
-    console.log('DATA', scheduled);
   };
 
   const getScheduledData = () => {

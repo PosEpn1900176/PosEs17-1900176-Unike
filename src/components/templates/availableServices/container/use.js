@@ -11,9 +11,12 @@ const useAvailableServices = () => {
   const [data, fetch] = useFetch('availableService');
 
   useEffect(() => {
-    fetch({ ProfissionalId: user.Id });
+    fetch({
+      params: {
+        ProfissionalId: user.Id,
+      },
+    });
   }, []);
-  console.log('Data', data.data);
 
   useEffect(() => {
     dispatch(setMapAvailableServices(addGeolocationData(data.data)));

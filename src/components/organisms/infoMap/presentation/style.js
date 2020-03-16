@@ -2,10 +2,11 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   totalService: {
-    paddingTop: 10,
+    padding: 10,
   },
   total: {
     color: 'red',
+    fontSize: 20,
   },
   column: {
     display: 'flex',

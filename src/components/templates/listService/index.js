@@ -4,12 +4,10 @@ import { getDate, formatMoney } from '../../../lib';
 import styles from './styles';
 
 const ListService = props => {
-  console.log(props.requests);
   return (
     <List>
       {props.requests.map((request, index) => {
         const service = request.Servico;
-        console.log('Service', request);
         return (
           <View key={index} style={styles.row}>
             <View style={styles.column}>

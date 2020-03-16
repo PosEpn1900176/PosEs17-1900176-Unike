@@ -4,6 +4,7 @@ import {
   ProfessionalService,
   ServiceServices,
   AvailableServiceServices,
+  AproveRequestService,
 } from '../../services';
 import { buildParams } from './utils';
 
@@ -12,6 +13,7 @@ const servicesAPI = {
   professional: ProfessionalService,
   availableService: AvailableServiceServices,
   scheduledService: ServiceServices,
+  aproveRequest: AproveRequestService,
 };
 
 const useFetch = (service, method = 'get') => {

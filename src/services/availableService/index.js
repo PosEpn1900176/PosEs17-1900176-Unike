@@ -9,7 +9,6 @@ const AvailableServiceServices = {
           resolve(response);
         })
         .catch(error => {
-          console.log(param)
           console.log('Erro na solicitaçao de Pedidos');
           console.log(error);
           reject(error);

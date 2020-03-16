@@ -19,7 +19,6 @@ import { ListService } from '../../../templates';
 import TotalService from './totalService';
 
 const InfoMapPresentation = ({ marker, ...props }) => {
-  console.log('MARKER', marker);
   return (
     <View style={styles.infoMap}>
       <View style={styles.content}>
@@ -32,7 +31,6 @@ const InfoMapPresentation = ({ marker, ...props }) => {
               <TotalService request={marker.ItemsPedido} />
             </View>
           </View>
-
           <DataValue
             label="Nome"
             value={getFullAddress(marker.EnderecoCliente)}
@@ -45,9 +43,9 @@ const InfoMapPresentation = ({ marker, ...props }) => {
           <Icon type="MaterialCommunityIcons" name="arrow-left" />
           <Text>Voltar</Text>
         </Button>
-        <Button iconLeft transparent>
+        <Button iconLeft transparent onPress={() => props.onAccept(marker)}>
           <Icon type="MaterialCommunityIcons" name="check" />
-          <Text>Aprovar</Text>
+          <Text>Aceitar</Text>
         </Button>
       </View>
     </View>

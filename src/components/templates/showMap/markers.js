@@ -38,7 +38,7 @@ const CustomMarker = ({ marker }) => {
 
   const onFinishService = () => {
     // fetch(marker);
-    console.log(data);
+    
   };
 
   return (

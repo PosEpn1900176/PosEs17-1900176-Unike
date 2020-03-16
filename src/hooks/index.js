@@ -4,6 +4,7 @@ import useDimensionWindow from './useDimensionWindow';
 import useUser from './useUser';
 import useGetRegion from './useGetRegion';
 import useCurrentPosition from './useCurrentPosition';
+import useAproveRequest from './useAproveRequest';
 
 export {
   useControl,
@@ -12,4 +13,5 @@ export {
   useUser,
   useGetRegion,
   useCurrentPosition,
+  useAproveRequest,
 };

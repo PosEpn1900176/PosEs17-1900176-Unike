@@ -1,6 +1,17 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  totalService: {
+    paddingTop: 10,
+  },
+  total: {
+    color: 'red',
+  },
+  column: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   infoMap: {
     position: 'absolute',
     bottom: 0,
@@ -9,7 +20,6 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: '#ccc',
     borderStyle: 'solid',
-    // height: 200,
   },
   content: {
     flex: 1,

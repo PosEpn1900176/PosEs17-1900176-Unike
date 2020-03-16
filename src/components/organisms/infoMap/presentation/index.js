@@ -16,10 +16,7 @@ import { ShowComponent } from '../../showComponent';
 import { DataValue } from '../../../molecules';
 import { getFullName, getFullAddress } from '../../../../lib';
 import { ListService } from '../../../templates';
-
-const getValue = (data, key) => {
-  return data ? data[key] : '';
-};
+import TotalService from './totalService';
 
 const InfoMapPresentation = ({ marker, ...props }) => {
   console.log('MARKER', marker);
@@ -27,7 +24,15 @@ const InfoMapPresentation = ({ marker, ...props }) => {
     <View style={styles.infoMap}>
       <View style={styles.content}>
         <ShowComponent show={props.show}>
-          <DataValue label="Nome" value={getFullName(marker.Cliente)} />
+          <View style={styles.column}>
+            <View>
+              <DataValue label="Nome" value={getFullName(marker.Cliente)} />
+            </View>
+            <View>
+              <TotalService request={marker.ItemsPedido} />
+            </View>
+          </View>
+
           <DataValue
             label="Nome"
             value={getFullAddress(marker.EnderecoCliente)}

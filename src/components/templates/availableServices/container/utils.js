@@ -1,18 +1,18 @@
 const mapLocation = id => {
   const requestMap = {
-    154: {
+    174: {
       latitude: -23.566129,
       longitude: -46.646892,
     },
-    155: {
+    175: {
       latitude: -23.570398,
       longitude: -46.645457,
     },
-    156: {
+    176: {
       latitude: -23.563222,
       longitude: -46.652666,
     },
-    158: {
+    178: {
       latitude: -23.563222,
       longitude: -46.652666,
     },

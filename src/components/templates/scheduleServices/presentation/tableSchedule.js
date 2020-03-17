@@ -23,6 +23,7 @@ export default class TableScheduleServicesPresentation extends React.Component {
           ref={c => (this._deckSwiper = c)}
           dataSource={this.props.data}
           renderItem={(item, index) => {
+            console.log('ITEM', item);
             return (
               <Card key={index} style={styles.scheduleCard}>
                 <CardItem header>
@@ -56,14 +57,18 @@ export default class TableScheduleServicesPresentation extends React.Component {
                     </Button>
                   </Right>
                 </CardItem>
+
                 <CardItem cardBody>
                   <Left>
                     <Body>
-                      <DataValue label="Cliente" value={item.Cliente} />
-                      <DataValue label="Endereco" value={item.Endereco} />
-                      <DataValue label="Serviço" value={item.Servico} />
-                      <DataValue label="Horário" value={item.Horario} />
+                      <DataValue label="Cliente" value={item.Cliente.Nome} />
                       <DataValue
+                        label="Endereco"
+                        value={item.EnderecoCliente.Endereco}
+                      />
+                      {/* <DataValue label="Serviço" value={item.Servico} /> */}
+                      <DataValue label="Horário" value={item.HorarioInicial} />
+                      {/* <DataValue
                         label="Taxa do serviço"
                         value={item.TaxaServico}
                       />
@@ -71,8 +76,8 @@ export default class TableScheduleServicesPresentation extends React.Component {
                         label="Valor do serviço"
                         value={item.ValorServico}
                       />
-                      <DataValue label="Desconto" value={item.Desconto} />
-                      <Grid>
+                      <DataValue label="Desconto" value={item.Desconto} /> */}
+                      {/* <Grid>
                         <Col>
                           <DataValue
                             label="Total à receber"
@@ -86,7 +91,7 @@ export default class TableScheduleServicesPresentation extends React.Component {
                             <Text>Fnalizar serviço</Text>
                           </Button>
                         </Col>
-                      </Grid>
+                      </Grid> */}
                     </Body>
                   </Left>
                 </CardItem>

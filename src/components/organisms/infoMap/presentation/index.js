@@ -17,8 +17,10 @@ import { DataValue } from '../../../molecules';
 import { getFullName, getFullAddress } from '../../../../lib';
 import { ListService } from '../../../templates';
 import TotalService from './totalService';
+import { AproveRequestService } from '../../../../services';
 
 const InfoMapPresentation = ({ marker, ...props }) => {
+  console.log('status', props.status);
   return (
     <View style={styles.infoMap}>
       <View style={styles.content}>
@@ -43,7 +45,11 @@ const InfoMapPresentation = ({ marker, ...props }) => {
           <Icon type="MaterialCommunityIcons" name="arrow-left" />
           <Text>Voltar</Text>
         </Button>
-        <Button iconLeft transparent onPress={() => props.onAccept(marker)}>
+        <Button
+          iconLeft
+          transparent
+          disabled={props.disabled}
+          onPress={() => props.onAccept(marker)}>
           <Icon type="MaterialCommunityIcons" name="check" />
           <Text>Aceitar</Text>
         </Button>

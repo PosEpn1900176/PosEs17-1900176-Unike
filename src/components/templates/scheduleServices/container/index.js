@@ -5,6 +5,7 @@ import { Text } from 'native-base';
 
 const ScheduleServicesContainer = props => {
   const data = useScheduleServices();
+  console.log('DATA', data)
 
   return <ScheduleServicesPresentation data={data} />;
 };

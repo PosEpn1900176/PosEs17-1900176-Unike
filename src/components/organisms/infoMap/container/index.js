@@ -3,25 +3,22 @@ import InfoMapPresentation from '../presentation';
 import { useAproveRequest } from '../../../../hooks';
 import { useSelector } from 'react-redux';
 import { useNavigation } from 'react-navigation-hooks';
+import { Alert } from '../../../molecules/alert';
 
 const InfoMapContainer = props => {
   const { navigate } = useNavigation();
   const [data, fetch] = useAproveRequest();
   const selector = useSelector(state => state.user);
-  const [disabled, setDisabled] = useState(true);
+  const [showAlert, setShowAlert] = useState(false);
 
-  useEffect(() => {
-    if (data.done) {
-      alert('Cliente aceite com sucesso');
-      navigate('Home');
-    }
-  }, [data.done, navigate]);
+  useEffect(() => {}, [data.done, navigate]);
 
   const onBack = () => {
     navigate('Home');
   };
   const onAccept = marker => {
-    setDisabled(false);
+    setShowAlert(true);
+    props.onAccept();
     fetch({
       query: {
         pedidoId: marker.Id,
@@ -30,13 +27,15 @@ const InfoMapContainer = props => {
     });
   };
   return (
-    <InfoMapPresentation
-      disabled={disabled}
-      status={data}
-      {...props}
-      onAccept={onAccept}
-      onBack={onBack}
-    />
+    <>
+      {showAlert ? <Alert loading={!data.done} /> : null}
+      <InfoMapPresentation
+        status={data}
+        {...props}
+        onAccept={onAccept}
+        onBack={onBack}
+      />
+    </>
   );
 };
 

@@ -48,7 +48,7 @@ const InfoMapPresentation = ({ marker, ...props }) => {
         <Button
           iconLeft
           transparent
-          disabled={props.disabled}
+          disabled={!props.show}
           onPress={() => props.onAccept(marker)}>
           <Icon type="MaterialCommunityIcons" name="check" />
           <Text>Aceitar</Text>

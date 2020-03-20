@@ -4,14 +4,23 @@ import { HeaderSignup } from '../../headerSignup';
 import { ShowMap } from '../../showMap';
 import { InfoMap } from '../../../organisms';
 
-const AvailableServicesPresentation = ({ info, showMarker, ...props }) => {
+const AvailableServicesPresentation = ({
+  info,
+  showMarker,
+  onAccept,
+  ...props
+}) => {
   return (
     <Container>
       <HeaderSignup />
       <Content>
         <ShowMap {...props} />
       </Content>
-      <InfoMap marker={props.selectedMarker} show={showMarker} />
+      <InfoMap
+        marker={props.selectedMarker}
+        show={showMarker}
+        onAccept={onAccept}
+      />
     </Container>
   );
 };

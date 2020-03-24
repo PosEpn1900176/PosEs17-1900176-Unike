@@ -47,9 +47,9 @@ const TableScheduleServicesPresentation = ({ data = [] }) => {
                       <Text>{getFullName(item.Cliente)}</Text>
                       <Text note>{getFullAddress(item.EnderecoCliente)}</Text>
                       <View style={{ flexDirection: 'row', padding: 5 }}>
-                        {item.ItemsPedido.map(request => {
+                        {item.ItemsPedido.map((request, i) => {
                           return (
-                            <View>
+                            <View key={i}>
                               <Text note>{getDate(request.Horario)}</Text>
                               <View style={{ padding: 5 }}>
                                 <Badge primary>
@@ -72,7 +72,6 @@ const TableScheduleServicesPresentation = ({ data = [] }) => {
             );
           })}
         </List>
-        {/* </ScrollView> */}
       </Content>
     </Container>
   );

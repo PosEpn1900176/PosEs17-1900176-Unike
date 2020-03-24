@@ -24,60 +24,14 @@ import { DataValue } from '../../../molecules';
 import { HeaderSignup } from '../../headerSignup';
 import { ListService } from '../../listService';
 import { getFullName, getFullAddress, getDate } from '../../../../lib';
-import { ScrollView, View, FlatList } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 const TableScheduleServicesPresentation = ({ data = [] }) => {
-  return (
-    <List>
-      <FlatList
-        data={data}
-        keyExtractor={item => item.Id}
-        renderItem={({ item }) => (
-          <ListItem>
-            <Body>
-              <View
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}>
-                <View style={{ flex: 1 }}>
-                  <Text>{getFullName(item.Cliente)}</Text>
-                  <Text note>{getFullAddress(item.EnderecoCliente)}</Text>
-                  <View style={{ flexDirection: 'row', padding: 5 }}>
-                    {item.ItemsPedido.map((request, index) => {
-                      return (
-                        <View key={index}>
-                          <Text note>{getDate(request.Horario)}</Text>
-                          <View style={{ padding: 5 }}>
-                            <Badge primary>
-                              <Text>{request.Servico.Nome}</Text>
-                            </Badge>
-                          </View>
-                        </View>
-                      );
-                    })}
-                  </View>
-                </View>
-                <View>
-                  <Button transparent>
-                    <Icon name="arrow-forward" />
-                  </Button>
-                </View>
-              </View>
-            </Body>
-          </ListItem>
-        )}
-      />
-    </List>
-  );
-};
-
-const TableScheduleServicesPresentation1 = ({ data = [] }) => {
   console.log('Presentation', data);
   return (
     <Container>
       <Content>
+        {/* <ScrollView> */}
         <List>
           {data.map((item, index) => {
             return (

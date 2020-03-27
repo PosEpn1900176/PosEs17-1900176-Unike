@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import styles from './styles';
 
 const ShowMap = props => {
+  console.log('data', props);
   const { coords } = useSelector(state => state.services.map.currentPosition);
   const getRegion = useGetRegion();
 

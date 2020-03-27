@@ -3,22 +3,19 @@ import { Text, Container, Content, Footer, Button } from 'native-base';
 import { ShowMap } from '../../templates/showMap';
 import { HeaderSignup } from '../../templates/headerSignup';
 import { useSelector } from 'react-redux';
+import { useNavigationParam } from 'react-navigation-hooks';
 
 const MapPage = ({ navigation }) => {
-  const selector = useSelector(
-    state => state.services.map[navigation.state.params.service],
-  );
-  const goBack = () => {
-    navigation.navigate('Home');
-  };
+  const item = useNavigationParam('item');
+
   return (
     <Container>
       <HeaderSignup />
       <Content>
-        <ShowMap markers={selector} />
+        <ShowMap data={item} />
       </Content>
       <Footer>
-        <Button onPress={goBack}>
+        <Button onPress={()=>{}}>
           <Text>Voltar</Text>
         </Button>
       </Footer>

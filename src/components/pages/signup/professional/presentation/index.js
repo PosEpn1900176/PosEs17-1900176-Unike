@@ -8,7 +8,8 @@ import {
   Label,
   DatePicker,
 } from 'native-base';
-import { HeaderSignup, FooterSignup } from '../../../../templates';
+import { HeaderSignup } from '../../../../templates/headerSignup';
+import { FooterSignup } from '../../../../templates/footerSignup';
 import styles from './styles';
 
 const SignupProfessionalPresentation = props => {

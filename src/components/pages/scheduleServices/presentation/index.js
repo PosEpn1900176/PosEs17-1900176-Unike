@@ -1,6 +1,7 @@
 import React from 'react';
-import { ScheduleServices, HeaderSignup } from '../../../templates';
-import { Container, Content, Text } from 'native-base';
+import { HeaderSignup } from '../../../templates/headerSignup';
+import { ScheduleServices } from '../../../templates/scheduleServices';
+import { Container, Content } from 'native-base';
 
 const ScheduleServicesPagePresentation = props => {
   const onBack = () => {

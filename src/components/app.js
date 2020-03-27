@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { Routes } from './organisms';
+import { Routes } from './organisms/route';
 import { StyleProvider } from 'native-base';
 import theme from '../themes';
 import { useCurrentPosition } from '../hooks';

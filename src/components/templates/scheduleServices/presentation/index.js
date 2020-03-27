@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'native-base';
 import TableScheduleServicesPresentation from './tableSchedule';
-import { LoadingControl } from '../../../organisms';
+import { LoadingControl } from '../../../organisms/loadingControl';
 
 const ScheduleServicesPresentation = props => {
   return (

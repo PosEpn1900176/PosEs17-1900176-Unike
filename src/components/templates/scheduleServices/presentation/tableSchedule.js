@@ -24,34 +24,28 @@ import { DataValue } from '../../../molecules';
 import { HeaderSignup } from '../../headerSignup';
 import { ListService } from '../../listService';
 import { getFullName, getFullAddress, getDate } from '../../../../lib';
-import { ScrollView, View } from 'react-native';
+import { ScrollView, View, Dimensions } from 'react-native';
 
-const TableScheduleServicesPresentation = ({ data = [] }) => {
-  console.log('Presentation', data);
+const TableScheduleServicesPresentation = ({ data = [], onViewMap }) => {
+  console.log('Presentation', onViewMap);
   return (
     <Container>
       <Content>
-        {/* <ScrollView> */}
         <List>
           {data.map((item, index) => {
             return (
               <ListItem key={index}>
                 <Body>
-                  <View
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                    }}>
-                    <View style={{ flex: 1 }}>
+                  <View style={styles.row}>
+                    <View style={styles.flexAuto}>
                       <Text>{getFullName(item.Cliente)}</Text>
                       <Text note>{getFullAddress(item.EnderecoCliente)}</Text>
-                      <View style={{ flexDirection: 'row', padding: 5 }}>
+                      <View style={styles.items}>
                         {item.ItemsPedido.map((request, i) => {
                           return (
                             <View key={i}>
                               <Text note>{getDate(request.Horario)}</Text>
-                              <View style={{ padding: 5 }}>
+                              <View style={styles.badge}>
                                 <Badge primary>
                                   <Text>{request.Servico.Nome}</Text>
                                 </Badge>
@@ -62,7 +56,7 @@ const TableScheduleServicesPresentation = ({ data = [] }) => {
                       </View>
                     </View>
                     <View>
-                      <Button transparent>
+                      <Button transparent onPress={() => onViewMap(item)}>
                         <Icon name="arrow-forward" />
                       </Button>
                     </View>

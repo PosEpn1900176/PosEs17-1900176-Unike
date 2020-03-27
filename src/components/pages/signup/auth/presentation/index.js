@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderSignup, FooterSignup } from '../../../../templates';
+import { HeaderSignup } from '../../../../templates/headerSignup';
 import {
   Container,
   Form,

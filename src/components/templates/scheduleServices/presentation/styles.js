@@ -7,6 +7,19 @@ const styles = StyleSheet.create({
   iconLarge: {
     fontSize: 40,
   },
+  row: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  items: {
+    flexDirection: 'row',
+    padding: 5,
+  },
+  badge: { padding: 5 },
+  flexAuto: {
+    flex: 1,
+  },
 });
 
 export default styles;

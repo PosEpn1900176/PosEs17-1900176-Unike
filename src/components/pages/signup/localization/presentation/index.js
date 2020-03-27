@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { FooterSignup, HeaderSignup } from '../../../../templates';
-import { Container, Form, Item, Label, Input, Content } from 'native-base';
+import React from 'react';
+import { HeaderSignup } from '../../../../templates/headerSignup';
+import { FooterSignup } from '../../../../templates/footerSignup';
+import { Container, Form, Item, Content } from 'native-base';
 import { FormInput } from '../../../../molecules';
 
 const SignupLocalizationPresentation = props => {

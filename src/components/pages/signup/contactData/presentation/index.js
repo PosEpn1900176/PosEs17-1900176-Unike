@@ -1,5 +1,6 @@
 import React from 'react';
-import { FooterSignup, HeaderSignup } from '../../../../templates';
+import { HeaderSignup } from '../../../../templates/headerSignup';
+import { FooterSignup } from '../../../../templates/footerSignup';
 import { Container, Form, Item, Content, Text } from 'native-base';
 import styles from './style';
 import { FormInput } from '../../../../molecules';

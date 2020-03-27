@@ -1,5 +1,5 @@
 import React from 'react';
-import { AvailableServices } from '../../../templates';
+import { AvailableServices } from '../../../templates/availableServices';
 
 const AvailableServicesPagePresentation = props => {
   return <AvailableServices {...props} />;

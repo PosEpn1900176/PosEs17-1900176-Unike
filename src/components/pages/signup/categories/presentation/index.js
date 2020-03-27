@@ -1,10 +1,8 @@
 import React from 'react';
 import { Container, Content } from 'native-base';
-import {
-  FooterSignup,
-  CategoryList,
-  HeaderSignup,
-} from '../../../../templates';
+import { FooterSignup } from '../../../../templates/footerSignup';
+import { CategoryList } from '../../../../templates/categoryList';
+import { HeaderSignup } from '../../../../templates/headerSignup';
 
 const SignupCategoriesPresentation = props => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Content, Grid, Col, Thumbnail } from 'native-base';
-import { HeaderSignup } from '../../templates';
+import { HeaderSignup } from '../../templates/headerSignup';
 import { Title, DataValue, ActionButtons } from '../../molecules';
 import { useSelector } from 'react-redux';
 import { user } from '../../../images';

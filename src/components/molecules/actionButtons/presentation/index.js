@@ -1,5 +1,5 @@
 import React from 'react';
-import { Content, Button, Text, Icon, View } from 'native-base';
+import { Button, Text, Icon } from 'native-base';
 import styles from './styles';
 
 const ActionButtonsPresentation = props => {

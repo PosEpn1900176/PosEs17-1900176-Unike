@@ -19,16 +19,14 @@ import { ShowMap } from '../../templates/showMap';
 import { useFetch } from '../../../hooks';
 import { useSelector } from 'react-redux';
 import { Alert } from '../../molecules';
+import styles from './styles';
 
 const ClientPage = ({ navigation }) => {
   const [item] = useNavigationParam('item');
   const selector = useSelector(state => state.user);
   const [data, fetch] = useFetch('finalizeRequest', 'post');
   const [showAlert, setShowAlert] = useState(false);
-  console.log('POSTDATA', data);
-  console.log('IDUSER', selector.Id);
 
-  useEffect(() => {});
 
   const handleBack = () => {
     navigation.goBack();
@@ -44,10 +42,9 @@ const ClientPage = ({ navigation }) => {
     });
   };
 
-  console.log(item);
 
   return (
-    <Container style={{ position: 'relative', display: 'flex', flex: 1 }}>
+    <Container style={styles.container}>
       <HeaderSignup />
       {/* <Header hasTabs /> */}
       <Content>

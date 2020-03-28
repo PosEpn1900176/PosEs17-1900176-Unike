@@ -6,7 +6,6 @@ const AvailableServicesContainer = props => {
   const data = useAvailableServices();
   const [selectedMarker, setSelectedMarker] = useState({});
   const [showMarker, setShowMarker] = useState(false);
-  const [accept, setAccept] = useState(false);
 
   const onAccept = () => {
     setShowMarker(false);

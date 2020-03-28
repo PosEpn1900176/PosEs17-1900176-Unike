@@ -9,7 +9,6 @@ const ShowMap = props => {
   console.log('data', props);
   const { coords } = useSelector(state => state.services.map.currentPosition);
   const getRegion = useGetRegion();
-
   const onPress = marker => {
     return event => {
       props.onPressMarker(marker);

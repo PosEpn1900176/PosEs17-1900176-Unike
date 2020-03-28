@@ -5,11 +5,14 @@ import { useGetRegion } from '../../../hooks';
 import { useSelector } from 'react-redux';
 import styles from './styles';
 
+const GOOGLE_MAPS_APIKEY = 'AIzaSyA7yc3fZnlRQIL9iN51enydQ-Vnx--Cz24';
+
+import MapViewDirections from 'react-native-maps-directions';
+
 const ShowMap = props => {
   console.log('data', props);
   const { coords } = useSelector(state => state.services.map.currentPosition);
   const getRegion = useGetRegion();
-
   const onPress = marker => {
     return event => {
       props.onPressMarker(marker);

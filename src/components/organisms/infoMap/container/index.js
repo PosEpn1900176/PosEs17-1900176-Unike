@@ -11,7 +11,7 @@ const InfoMapContainer = props => {
   const selector = useSelector(state => state.user);
   const [showAlert, setShowAlert] = useState(false);
 
-  useEffect(() => {}, [data.done, navigate]);
+  
 
   const onBack = () => {
     navigate('Home');

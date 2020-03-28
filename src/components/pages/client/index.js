@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Left,
   Container,
@@ -18,19 +18,24 @@ import InfoClient from './info';
 import { ShowMap } from '../../templates/showMap';
 import { useFetch } from '../../../hooks';
 import { useSelector } from 'react-redux';
+import { Alert } from '../../molecules';
 
 const ClientPage = ({ navigation }) => {
   const [item] = useNavigationParam('item');
   const selector = useSelector(state => state.user);
   const [data, fetch] = useFetch('finalizeRequest', 'post');
+  const [showAlert, setShowAlert] = useState(false);
   console.log('POSTDATA', data);
   console.log('IDUSER', selector.Id);
+
+  useEffect(() => {});
 
   const handleBack = () => {
     navigation.goBack();
   };
 
   const handleApprove = () => {
+    setShowAlert(true);
     fetch({
       query: {
         pedidoId: item.Id,
@@ -42,7 +47,7 @@ const ClientPage = ({ navigation }) => {
   console.log(item);
 
   return (
-    <Container>
+    <Container style={{ position: 'relative', display: 'flex', flex: 1 }}>
       <HeaderSignup />
       {/* <Header hasTabs /> */}
       <Content>
@@ -67,6 +72,7 @@ const ClientPage = ({ navigation }) => {
             <ShowMap data={[item]} />
           </Tab>
         </Tabs>
+        {showAlert ? <Alert loading={!data.done} /> : null}
       </Content>
       <Footer>
         <Left>

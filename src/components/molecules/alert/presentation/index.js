@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Icon, Button } from 'native-base';
+import { View, Icon, Button, Text } from 'native-base';
 import styles from './styles';
 import { IconStatusLoading } from '../../iconStatusLoading';
 

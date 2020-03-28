@@ -1,7 +1,6 @@
 import React from 'react';
 import ScheduleServicesPresentation from '../presentation';
 import { useScheduleServices } from './use';
-import { Text } from 'native-base';
 import { addGeolocationData } from '../../../../utils/maps';
 import { useNavigation } from 'react-navigation-hooks';
 

@@ -23,10 +23,10 @@ const InitialPresentation = props => {
           </Text>
         </Row>
         <Row style={style.action}>
-          <Button block primary onPress={props.onGoSignIn}>
+          <Button block primary rounded onPress={props.onGoSignIn}>
             <Text>Tenho uma conta</Text>
           </Button>
-          <Button block bordered onPress={props.onGoSignUp}>
+          <Button block transparent onPress={props.onGoSignUp}>
             <Text>Criar Conta</Text>
           </Button>
         </Row>

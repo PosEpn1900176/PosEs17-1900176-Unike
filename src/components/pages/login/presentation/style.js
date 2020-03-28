@@ -21,7 +21,7 @@ const style = StyleSheet.create({
   },
   form: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-around'
   },
   button: {
     margin: 15,

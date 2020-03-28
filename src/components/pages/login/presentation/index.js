@@ -17,13 +17,13 @@ import {
 
 const LoginPagePresentation = props => {
   return (
-    <Container style={style.container} disabled={true}>
-      <StatusBar hidden />
+    <Container style={style.container}>
+      {/* <StatusBar hidden /> */}
       <View style={style.header}>
         <Image style={style.logo} source={banner} />
-        <H3 style={style.messageTitle}>AUTENTICAÇÃO</H3>
       </View>
       <View style={style.form}>
+        <H3 style={style.messageTitle}>AUTENTICAÇÃO</H3>
         <Form>
           <Item floatingLabel>
             <Label>Email</Label>
@@ -44,21 +44,22 @@ const LoginPagePresentation = props => {
               secureTextEntry
             />
           </Item>
-          <View style={style.button}>
-            <Button
-              primary
-              block
-              large
-              onPress={props.onLogin}
-              disabled={props.load}>
-              <Spinner
-                style={[!props.load ? style.hidden : null]}
-                color="white"
-              />
-              <Text> Entrar </Text>
-            </Button>
-          </View>
         </Form>
+        <View style={style.button}>
+          <Button
+            primary
+            block
+            large
+            rounded
+            onPress={props.onLogin}
+            disabled={props.load}>
+            <Spinner
+              style={[!props.load ? style.hidden : null]}
+              color="white"
+            />
+            <Text> Entrar </Text>
+          </Button>
+        </View>
       </View>
     </Container>
   );

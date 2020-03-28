@@ -9,44 +9,24 @@ import {
   Tab,
   TabHeading,
   Footer,
-  Right,
   Content,
 } from 'native-base';
 import { useNavigationParam } from 'react-navigation-hooks';
 import { HeaderSignup } from '../../templates/headerSignup';
 import InfoClient from './info';
 import { ShowMap } from '../../templates/showMap';
-import { useFetch } from '../../../hooks';
-import { useSelector } from 'react-redux';
-import { Alert } from '../../molecules';
 import styles from './styles';
 
 const ClientPage = ({ navigation }) => {
   const [item] = useNavigationParam('item');
-  const selector = useSelector(state => state.user);
-  const [data, fetch] = useFetch('finalizeRequest', 'post');
-  const [showAlert, setShowAlert] = useState(false);
-
 
   const handleBack = () => {
     navigation.goBack();
   };
 
-  const handleApprove = () => {
-    setShowAlert(true);
-    fetch({
-      query: {
-        pedidoId: item.Id,
-        profissionalId: selector.Id,
-      },
-    });
-  };
-
-
   return (
     <Container style={styles.container}>
       <HeaderSignup />
-      {/* <Header hasTabs /> */}
       <Content>
         <Tabs>
           <Tab
@@ -69,7 +49,6 @@ const ClientPage = ({ navigation }) => {
             <ShowMap data={[item]} />
           </Tab>
         </Tabs>
-        {showAlert ? <Alert loading={!data.done} /> : null}
       </Content>
       <Footer>
         <Left>
@@ -78,12 +57,6 @@ const ClientPage = ({ navigation }) => {
             <Text>Voltar</Text>
           </Button>
         </Left>
-        <Right>
-          <Button transparent onPress={handleApprove}>
-            <Icon active name="checkmark" />
-            <Text>Atender</Text>
-          </Button>
-        </Right>
       </Footer>
     </Container>
   );

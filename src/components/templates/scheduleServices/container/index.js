@@ -4,8 +4,8 @@ import { useScheduleServices } from './use';
 import { addGeolocationData } from '../../../../utils/maps';
 import { useNavigation } from 'react-navigation-hooks';
 
-const ScheduleServicesContainer = props => {
-  const data = useScheduleServices();
+const ScheduleServicesContainer = ({ status }) => {
+  const data = useScheduleServices({ status });
   const { navigate } = useNavigation();
 
   const onViewMap = item => {

@@ -264,7 +264,7 @@ export default {
   topTabBarActiveBorderColor: platform === PLATFORM.IOS ? '#007aff' : '#fff',
 
   // Tabs
-  tabBgColor: '#F8F8F8',
+  tabBgColor: 'red',
   tabFontSize: 15,
 
   // Text

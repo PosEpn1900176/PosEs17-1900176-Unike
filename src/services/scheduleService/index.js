@@ -1,12 +1,16 @@
 import http from '../http';
+import { getFilterByStatus } from './utils';
 
 const ScheduleServiceServices = {
   get: param => {
     return new Promise((resolve, reject) => {
       http
         .get('Pedido/PedidosProfissional', param)
-        .then(response => {
-          resolve(response);
+        .then(({ data, response }) => {
+          resolve({
+            ...response,
+            data: getFilterByStatus(data, param.status),
+          });
         })
         .catch(error => {
           console.log('Erro na solicitaçao de Pedidos');

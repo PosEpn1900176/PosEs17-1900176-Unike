@@ -1,6 +1,6 @@
 const actions = [
   {
-    label: 'Serviços disponíveis',
+    label: 'Aguardando profissional',
     link: 'AvailableServices',
     icon: {
       name: 'stopwatch',
@@ -8,20 +8,11 @@ const actions = [
     },
   },
   {
-    label: 'Serviços agendados',
+    label: 'Serviços',
     link: 'ScheduleServices',
     icon: {
       name: 'check-square',
       type: 'Feather',
-    },
-  },
-  {
-    label: 'Serviços cancelados',
-    link: '#',
-    disabled: true,
-    icon: {
-      name: 'cancel',
-      type: 'MaterialCommunityIcons',
     },
   },
   {
@@ -40,6 +31,14 @@ const actions = [
     icon: {
       name: 'help',
       type: 'Entypo',
+    },
+  },
+  {
+    label: 'Sair',
+    link: 'ProfileUser',
+    icon: {
+      name: 'logout',
+      type: 'AntDesign',
     },
   },
 ];

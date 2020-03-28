@@ -12,3 +12,4 @@ export * from './profileUser';
 export * from './help';
 export * from './map';
 export * from './generalMap';
+export * from './client';

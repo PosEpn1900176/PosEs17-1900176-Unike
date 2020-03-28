@@ -5,6 +5,7 @@ import {
   ScheduleServiceServices,
   AvailableServiceServices,
   AproveRequestService,
+  FinalizeRequestService,
 } from '../../services';
 import { buildParams } from './utils';
 
@@ -14,6 +15,7 @@ const servicesAPI = {
   availableService: AvailableServiceServices,
   scheduleService: ScheduleServiceServices,
   aproveRequest: AproveRequestService,
+  finalizeRequest: FinalizeRequestService,
 };
 
 const useFetch = (service, method = 'get') => {

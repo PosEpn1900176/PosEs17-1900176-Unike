@@ -10,7 +10,7 @@ const ScheduleServicesContainer = props => {
   const { navigate } = useNavigation();
 
   const onViewMap = item => {
-    navigate('Map', {
+    navigate('Client', {
       item: addGeolocationData([item]),
     });
   };

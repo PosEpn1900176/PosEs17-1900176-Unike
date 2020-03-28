@@ -7,6 +7,7 @@ import {
   HelpPage,
   MapPage,
   GeneralMap,
+  ClientPage,
 } from '../../pages';
 
 const HomeNavigator = createStackNavigator({
@@ -28,6 +29,14 @@ const HomeNavigator = createStackNavigator({
   },
   AvailableServices: {
     screen: AvailableServicesPage,
+    navigationOptions: ({ navigation }) => {
+      return {
+        header: null,
+      };
+    },
+  },
+  Client: {
+    screen: ClientPage,
     navigationOptions: ({ navigation }) => {
       return {
         header: null,

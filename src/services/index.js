@@ -6,3 +6,4 @@ export * from './service';
 export * from './availableService';
 export * from './scheduleService';
 export * from './aproveRequest';
+export * from './finalizeRequest';

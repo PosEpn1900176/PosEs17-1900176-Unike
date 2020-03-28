@@ -8,6 +8,9 @@ import { useNavigationParam } from 'react-navigation-hooks';
 const MapPage = ({ navigation }) => {
   const item = useNavigationParam('item');
 
+  const onBack = () => {
+    navigation.goBack();
+  };
   return (
     <Container>
       <HeaderSignup />
@@ -15,7 +18,7 @@ const MapPage = ({ navigation }) => {
         <ShowMap data={item} />
       </Content>
       <Footer>
-        <Button onPress={()=>{}}>
+        <Button onPress={onBack}>
           <Text>Voltar</Text>
         </Button>
       </Footer>

@@ -30,7 +30,8 @@ const ShowMap = props => {
         zoomEnabled={true}
         zoomTapEnabled={true}
         zoomControlEnabled={true}
-        loadingEnabled={true}>
+        loadingEnabled={true}
+        toolbarEnabled={true}>
         {props.data.map((marker, index) => (
           <Marker
             key={index}

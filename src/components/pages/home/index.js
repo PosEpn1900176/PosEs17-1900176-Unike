@@ -1,10 +1,11 @@
 import React from 'react';
-import { Container, Content, Grid, Col, Thumbnail } from 'native-base';
+import { Container, Grid, Col, Row } from 'native-base';
 import { HeaderSignup } from '../../templates/headerSignup';
-import { Title, DataValue, ActionButtons } from '../../molecules';
+import { DataValue, ActionButtons } from '../../molecules';
 import { useSelector } from 'react-redux';
-import { user } from '../../../images';
 import { actions } from './utils';
+import { ImageUser } from '../../organisms/imageUser';
+import styles from './styles';
 
 const HomePage = props => {
   const selector = useSelector(state => state.user);
@@ -13,25 +14,15 @@ const HomePage = props => {
       props.navigation.navigate(action.link);
     };
   };
-  const getImage = () => {
-    if (selector.Foto) {
-      return (
-        <Thumbnail
-          large
-          source={{ uri: `data:image/png;base64,${selector.Foto}` }}
-        />
-      );
-    } else {
-      return <Thumbnail large source={user} />;
-    }
-  };
+
   return (
     <Container>
       <HeaderSignup />
-      <Content>
-        <Title value={selector.Nome} />
-        <Grid>
-          <Col>{getImage()}</Col>
+      <Grid>
+        <Row>
+          <Col>
+            <ImageUser photo={selector.Foto} />
+          </Col>
           <Col>
             <DataValue
               label="Nome completo"
@@ -40,9 +31,11 @@ const HomePage = props => {
             <DataValue label="Email" value={selector.Email} />
             <DataValue label="Telefone" value={selector.Telefone} />
           </Col>
-        </Grid>
-        <ActionButtons actions={actions} onPress={onPress} />
-      </Content>
+        </Row>
+        <Row size={2} style={styles.actionButton}>
+          <ActionButtons actions={actions} onPress={onPress} />
+        </Row>
+      </Grid>
     </Container>
   );
 };

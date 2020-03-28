@@ -6,7 +6,6 @@ const AlertContainer = props => {
   const { navigate } = useNavigation();
   
   const onClose = () => {
-    console.log('ok')
     navigate('Home');
   };
   return <AlertPresentation {...props} onClose={onClose} />;

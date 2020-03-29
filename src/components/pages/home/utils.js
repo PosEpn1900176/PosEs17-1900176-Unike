@@ -35,7 +35,7 @@ const actions = [
   },
   {
     label: 'Sair',
-    link: 'ProfileUser',
+    link: 'Login',
     icon: {
       name: 'logout',
       type: 'AntDesign',

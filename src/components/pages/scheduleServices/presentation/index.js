@@ -23,37 +23,37 @@ const ScheduleServicesPagePresentation = props => {
   return (
     <Container>
       <HeaderSignup onBack={onBack} />
-      
-        <Tabs>
-          <Tab
-            heading={
-              <TabHeading>
-                <Icon type="MaterialIcons" name="schedule" />
-                <Text>Agendados</Text>
-              </TabHeading>
-            }>
-            <ScheduleServices {...props} status={2} />
-          </Tab>
-          <Tab
-            heading={
-              <TabHeading>
-                <Icon type="AntDesign" name="smileo" />
-                <Text>Realizados</Text>
-              </TabHeading>
-            }>
-            <ScheduleServices {...props} status={3} />
-          </Tab>
-          <Tab
-            heading={
-              <TabHeading>
-                <Icon type="MaterialIcons" name="done" />
-                <Text>Concluídos</Text>
-              </TabHeading>
-            }>
-            <ScheduleServices {...props} status={12} />
-          </Tab>
-        </Tabs>
-      
+
+      <Tabs>
+        <Tab
+          heading={
+            <TabHeading>
+              <Icon type="MaterialIcons" name="schedule" />
+              <Text>Agendados</Text>
+            </TabHeading>
+          }>
+          <ScheduleServices {...props} status={2} />
+        </Tab>
+        <Tab
+          heading={
+            <TabHeading>
+              <Icon type="AntDesign" name="smileo" />
+              <Text>Realizados</Text>
+            </TabHeading>
+          }>
+          <ScheduleServices {...props} status={3} />
+        </Tab>
+        <Tab
+          heading={
+            <TabHeading>
+              <Icon type="MaterialIcons" name="done" />
+              <Text>Concluídos</Text>
+            </TabHeading>
+          }>
+          <ScheduleServices {...props} status={12} />
+        </Tab>
+      </Tabs>
+
       <Footer>
         <Left>
           <Button transparent onPress={onBack}>

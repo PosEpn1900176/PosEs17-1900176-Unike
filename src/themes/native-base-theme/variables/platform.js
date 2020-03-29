@@ -189,7 +189,7 @@ export default {
 
   // Footer
   footerHeight: 55,
-  footerDefaultBg: platform === PLATFORM.IOS ? '#8e1414' : '#8e1414',
+  footerDefaultBg: platform === PLATFORM.IOS ? '#8E1414' : '#8E1414',
   footerPaddingBottom: 0,
 
   // FooterTab
@@ -271,9 +271,10 @@ export default {
 
   // Segment
   segmentBackgroundColor: platform === PLATFORM.IOS ? '#F8F8F8' : '#3F51B5',
-  segmentActiveBackgroundColor: platform === PLATFORM.IOS ? '#007aff' : '#fff',
-  segmentTextColor: platform === PLATFORM.IOS ? '#007aff' : '#fff',
-  segmentActiveTextColor: platform === PLATFORM.IOS ? '#fff' : '#3F51B5',
+  segmentActiveBackgroundColor:
+    platform === PLATFORM.IOS ? '#007aff' : '#007aff',
+  segmentTextColor: platform === PLATFORM.IOS ? '#ddd' : '#ddd',
+  segmentActiveTextColor: platform === PLATFORM.IOS ? '#fff' : '#fff',
   segmentBorderColor: platform === PLATFORM.IOS ? '#007aff' : '#fff',
   segmentBorderColorMain: platform === PLATFORM.IOS ? '#a7a6ab' : '#3F51B5',
 
@@ -283,8 +284,8 @@ export default {
 
   // Tab
   tabBarDisabledTextColor: '#BDBDBD',
-  tabDefaultBg: platform === PLATFORM.IOS ? '#F8F8F8' : '#3F51B5',
-  topTabBarTextColor: platform === PLATFORM.IOS ? '#6b6b6b' : '#b3c7f9',
+  tabDefaultBg: platform === PLATFORM.IOS ? '#8e1414' : '#8e1414',
+  topTabBarTextColor: platform === PLATFORM.IOS ? '#fff' : '#fff',
   topTabBarActiveTextColor: platform === PLATFORM.IOS ? '#007aff' : '#fff',
   topTabBarBorderColor: platform === PLATFORM.IOS ? '#a7a6ab' : '#fff',
   topTabBarActiveBorderColor: platform === PLATFORM.IOS ? '#007aff' : '#fff',

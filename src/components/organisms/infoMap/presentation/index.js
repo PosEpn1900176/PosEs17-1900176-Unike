@@ -1,23 +1,11 @@
 import React from 'react';
-import {
-  Text,
-  Content,
-  Footer,
-  Button,
-  Body,
-  Container,
-  View,
-  Left,
-  Right,
-  Icon,
-} from 'native-base';
+import { Text, Button, View, Icon, Footer, Left, Right } from 'native-base';
 import styles from './style';
 import { ShowComponent } from '../../showComponent';
 import { DataValue } from '../../../molecules';
 import { getFullName, getFullAddress } from '../../../../lib';
 import { ListService } from '../../../templates/listService';
 import TotalService from './totalService';
-import { AproveRequestService } from '../../../../services';
 
 const InfoMapPresentation = ({ marker, ...props }) => {
   console.log('status', props.status);
@@ -40,20 +28,24 @@ const InfoMapPresentation = ({ marker, ...props }) => {
           <ListService requests={marker.ItemsPedido} />
         </ShowComponent>
       </View>
-      <View style={styles.control}>
-        <Button iconLeft transparent onPress={props.onBack}>
-          <Icon type="MaterialCommunityIcons" name="arrow-left" />
-          <Text>Voltar</Text>
-        </Button>
-        <Button
-          iconLeft
-          transparent
-          disabled={!props.show}
-          onPress={() => props.onAccept(marker)}>
-          <Icon type="MaterialCommunityIcons" name="check" />
-          <Text>Aceitar</Text>
-        </Button>
-      </View>
+      <Footer style={styles.control}>
+        <Left>
+          <Button iconLeft transparent onPress={props.onBack}>
+            <Icon type="MaterialCommunityIcons" name="arrow-left" />
+            <Text>Voltar</Text>
+          </Button>
+        </Left>
+        <Right>
+          <Button
+            iconLeft
+            transparent
+            disabled={!props.show}
+            onPress={() => props.onAccept(marker)}>
+            <Icon type="MaterialCommunityIcons" name="check" />
+            <Text>Aceitar</Text>
+          </Button>
+        </Right>
+      </Footer>
     </View>
   );
 };

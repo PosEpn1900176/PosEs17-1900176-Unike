@@ -24,6 +24,8 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
+    backgroundColor: 'rgba(142,20,20,0.04)',
+    paddingBottom: 10,
   },
   control: {
     display: 'flex',

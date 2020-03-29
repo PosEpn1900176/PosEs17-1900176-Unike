@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import InfoMapPresentation from '../presentation';
 import { useAproveRequest } from '../../../../hooks';
 import { useSelector } from 'react-redux';
@@ -10,8 +10,6 @@ const InfoMapContainer = props => {
   const [data, fetch] = useAproveRequest();
   const selector = useSelector(state => state.user);
   const [showAlert, setShowAlert] = useState(false);
-
-  
 
   const onBack = () => {
     navigate('Home');

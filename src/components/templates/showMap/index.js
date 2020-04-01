@@ -4,6 +4,10 @@ import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { useGetRegion } from '../../../hooks';
 import { useSelector } from 'react-redux';
 import styles from './styles';
+import MapViewDirections from 'react-native-maps-directions';
+const origin = { latitude: 37.3318456, longitude: -122.0296002 };
+const destination = { latitude: 37.771707, longitude: -122.4053769 };
+const GOOGLE_MAPS_APIKEY = 'AIzaSyBM9agp_gMCjF3WlhtzX0LglbCwKu_54wA';
 
 const ShowMap = props => {
   console.log('data', props);
@@ -45,6 +49,15 @@ const ShowMap = props => {
             geolocation: coords,
           })}
         />
+        {props.data.length === 1 ? (
+          <MapViewDirections
+            origin={coords}
+            destination={props.data[0] ? props.data[0].geolocation : coords}
+            apikey={GOOGLE_MAPS_APIKEY}
+            strokeWidth={5}
+            strokeColor="hotpink"
+          />
+        ) : null}
       </MapView>
     </Container>
   );

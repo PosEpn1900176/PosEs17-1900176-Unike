@@ -19,8 +19,13 @@ import { ShowMap } from '../../templates/showMap';
 import styles from './styles';
 import ButtonGroup from '../../organisms/buttonGroup';
 import { buttonsData } from './data';
+import getDirections from 'react-native-google-maps-directions';
+import { useSelector } from 'react-redux';
 
 const ClientPage = ({ navigation }) => {
+  const {
+    coords = { latitude: -23.564259, longitude: -46.652507 },
+  } = useSelector(state => state.services.map.currentPosition);
   const [item] = useNavigationParam('item');
   const [mode, setMode] = useState('DRIVING');
 
@@ -30,6 +35,22 @@ const ClientPage = ({ navigation }) => {
 
   const onMode = value => {
     setMode(value);
+  };
+  const onPressMarker = () => {
+    const data = {
+      source: coords,
+      destination: {
+        latitude: item.geolocation.latitude,
+        longitude: item.geolocation.longitude,
+      },
+      params: [
+        {
+          key: 'travelmode',
+          value: 'driving',
+        },
+      ],
+    };
+    getDirections(data);
   };
 
   return (
@@ -55,9 +76,18 @@ const ClientPage = ({ navigation }) => {
               </TabHeading>
             }>
             <View>
-              <ShowMap data={[item]} mode={mode} />
+              <ShowMap data={[item]} mode={mode} onPressMarker={() => {}} />
               <View style={{ position: 'absolute', top: 100, right: 10 }}>
                 <ButtonGroup data={buttonsData} onMode={onMode} />
+              </View>
+              <View style={{ position: 'absolute', top: 40, right: 10 }}>
+                <Button>
+                  <Icon
+                    type="FontAwesome5"
+                    name="route"
+                    onPress={onPressMarker}
+                  />
+                </Button>
               </View>
             </View>
           </Tab>

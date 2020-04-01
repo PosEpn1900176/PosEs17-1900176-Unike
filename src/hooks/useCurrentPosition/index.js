@@ -54,11 +54,8 @@ const useCurrentPosition = async () => {
           console.log('ERROR TENTANDO OBTER A LOCALIZAÇÃO', error);
           dispatch(
             setCurrentPositionMap({
+              ...currentPosition,
               loading: false,
-              coords: {
-                longitude: -46.6523317,
-                latitude: -23.5654183,
-              },
               error: true,
             }),
           );

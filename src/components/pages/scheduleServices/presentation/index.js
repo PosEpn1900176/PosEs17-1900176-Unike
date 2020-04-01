@@ -46,11 +46,11 @@ const ScheduleServicesPagePresentation = props => {
         <Tab
           heading={
             <TabHeading>
-              <Icon type="MaterialIcons" name="done" />
-              <Text>Concluídos</Text>
+              <Icon type="MaterialIcons" name="close" />
+              <Text>Cancelados</Text>
             </TabHeading>
           }>
-          <ScheduleServices {...props} status={12} />
+          <ScheduleServices {...props} status={4} />
         </Tab>
       </Tabs>
 

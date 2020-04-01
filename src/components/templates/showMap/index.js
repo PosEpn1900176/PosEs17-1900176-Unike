@@ -4,14 +4,15 @@ import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { useGetRegion } from '../../../hooks';
 import { useSelector } from 'react-redux';
 import styles from './styles';
+import ButtonGroup from '../../organisms/buttonGroup';
 import MapViewDirections from 'react-native-maps-directions';
-const origin = { latitude: 37.3318456, longitude: -122.0296002 };
-const destination = { latitude: 37.771707, longitude: -122.4053769 };
+
 const GOOGLE_MAPS_APIKEY = 'AIzaSyBM9agp_gMCjF3WlhtzX0LglbCwKu_54wA';
 
 const ShowMap = props => {
-  console.log('data', props);
-  const { coords } = useSelector(state => state.services.map.currentPosition);
+  const {
+    coords = { latitude: -23.564259, longitude: -46.652507 },
+  } = useSelector(state => state.services.map.currentPosition);
   const getRegion = useGetRegion();
   const onPress = marker => {
     return event => {
@@ -56,6 +57,7 @@ const ShowMap = props => {
             apikey={GOOGLE_MAPS_APIKEY}
             strokeWidth={5}
             strokeColor="hotpink"
+            mode={props.mode}
           />
         ) : null}
       </MapView>

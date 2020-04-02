@@ -6,6 +6,13 @@ const styles = StyleSheet.create({
     display: 'flex',
     flex: 1,
   },
+  getPositionButton: top => {
+    return {
+      position: 'absolute',
+      top,
+      right: 10,
+    };
+  },
 });
 
 export default styles;

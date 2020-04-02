@@ -37,11 +37,12 @@ const ClientPage = ({ navigation }) => {
     setMode(value);
   };
   const onPressMarker = () => {
+    const { latitude, longitude } = item.geolocation;
     const data = {
       source: coords,
       destination: {
-        latitude: item.geolocation.latitude,
-        longitude: item.geolocation.longitude,
+        latitude,
+        longitude,
       },
       params: [
         {
@@ -77,10 +78,10 @@ const ClientPage = ({ navigation }) => {
             }>
             <View>
               <ShowMap data={[item]} mode={mode} onPressMarker={() => {}} />
-              <View style={{ position: 'absolute', top: 100, right: 10 }}>
+              <View style={styles.getPositionButton(100)}>
                 <ButtonGroup data={buttonsData} onMode={onMode} />
               </View>
-              <View style={{ position: 'absolute', top: 40, right: 10 }}>
+              <View style={styles.getPositionButton(40)}>
                 <Button>
                   <Icon
                     type="FontAwesome5"

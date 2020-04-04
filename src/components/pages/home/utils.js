@@ -18,7 +18,6 @@ const actions = [
   {
     label: 'Perfil do Usuário',
     link: 'ProfileUser',
-    disabled: true,
     icon: {
       name: 'user-circle-o',
       type: 'FontAwesome',

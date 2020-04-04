@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Left,
   Container,
@@ -81,11 +81,11 @@ const ClientPage = ({ navigation }) => {
               <View style={styles.getPositionButton(100)}>
                 <ButtonGroup data={buttonsData} onMode={onMode} />
               </View>
-              <View style={styles.getPositionButton(40)}>
+              <View style={styles.getPositionButton(10)}>
                 <Button>
                   <Icon
-                    type="FontAwesome5"
-                    name="route"
+                    type="MaterialCommunityIcons"
+                    name="google-maps"
                     onPress={onPressMarker}
                   />
                 </Button>

@@ -86,4 +86,11 @@ const addGeolocationData = (requests = []) => {
   });
 };
 
-export { addGeolocationData };
+const filterRequestWithoutGeolocation = requests => {
+  return requests.filter(request => {
+    const { latitude, longitude } = request.EnderecoClient;
+    return latitude && longitude;
+  });
+};
+
+export { addGeolocationData, filterRequestWithoutGeolocation };

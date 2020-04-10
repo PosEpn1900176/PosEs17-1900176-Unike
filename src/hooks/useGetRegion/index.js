@@ -2,13 +2,17 @@ import { Dimensions } from 'react-native';
 
 const useGetRegion = () => {
   const { width, height } = Dimensions.get('window');
-  const get = ({ geolocation }) => {
-    return {
-      latitude: geolocation.latitude || 1,
-      longitude: geolocation.longitude || 1,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0922 * (width / height),
+  const get = ({ latitude, longitude }, delta = true) => {
+    const coords = {
+      latitude,
+      longitude,
     };
+    if (delta) {
+      coords.latitudeDelta = 0.0922;
+      coords.longitudeDelta = 0.0922 * (width / height);
+    }
+
+    return coords;
   };
 
   return get;

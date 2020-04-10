@@ -2,8 +2,8 @@ import React from 'react';
 import { Text, Container, Content, Footer, Button } from 'native-base';
 import { ShowMap } from '../../templates/showMap';
 import { HeaderSignup } from '../../templates/headerSignup';
-import { useSelector } from 'react-redux';
 import { useNavigationParam } from 'react-navigation-hooks';
+import { filterRequestWithoutGeolocation } from '../../../utils/maps';
 
 const MapPage = ({ navigation }) => {
   const item = useNavigationParam('item');
@@ -15,7 +15,7 @@ const MapPage = ({ navigation }) => {
     <Container>
       <HeaderSignup />
       <Content>
-        <ShowMap data={item} />
+        <ShowMap data={filterRequestWithoutGeolocation(item)} />
       </Content>
       <Footer>
         <Button onPress={onBack}>

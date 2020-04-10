@@ -1,14 +1,11 @@
 import React from 'react';
-import { Container, Grid, Col, Row } from 'native-base';
+import { Container, View, Content } from 'native-base';
 import { HeaderSignup } from '../../templates/headerSignup';
-import { DataValue, ActionButtons } from '../../molecules';
-import { useSelector } from 'react-redux';
+import { ActionButtons } from '../../molecules';
 import { actions } from './utils';
-import { ImageUser } from '../../organisms/imageUser';
 import styles from './styles';
 
 const HomePage = props => {
-  const selector = useSelector(state => state.user);
   const onPress = action => {
     return () => {
       props.navigation.navigate(action.link);
@@ -18,24 +15,11 @@ const HomePage = props => {
   return (
     <Container>
       <HeaderSignup />
-      <Grid>
-        <Row>
-          <Col>
-            <ImageUser photo={selector.Foto} />
-          </Col>
-          <Col>
-            <DataValue
-              label="Nome completo"
-              value={`${selector.Nome} ${selector.Sobrenome}`}
-            />
-            <DataValue label="Email" value={selector.Email} />
-            <DataValue label="Telefone" value={selector.Telefone} />
-          </Col>
-        </Row>
-        <Row size={2} style={styles.actionButton}>
+      <Content>
+        <View style={styles.column}>
           <ActionButtons actions={actions} onPress={onPress} />
-        </Row>
-      </Grid>
+        </View>
+      </Content>
     </Container>
   );
 };

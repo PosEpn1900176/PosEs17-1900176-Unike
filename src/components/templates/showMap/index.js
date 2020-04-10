@@ -4,8 +4,8 @@ import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { useGetRegion } from '../../../hooks';
 import { useSelector } from 'react-redux';
 import styles from './styles';
-import ButtonGroup from '../../organisms/buttonGroup';
 import MapViewDirections from 'react-native-maps-directions';
+import { hasLatitude } from './utils';
 
 const GOOGLE_MAPS_APIKEY = 'AIzaSyBM9agp_gMCjF3WlhtzX0LglbCwKu_54wA';
 
@@ -19,15 +19,14 @@ const ShowMap = props => {
       props.onPressMarker(marker);
     };
   };
+  console.log('PROPS', props, coords);
 
   return (
     <Container>
       <MapView
         style={styles.mapView}
         provider={PROVIDER_GOOGLE}
-        initialRegion={getRegion({
-          geolocation: coords,
-        })}
+        initialRegion={getRegion(coords)}
         showsUserLocation={true}
         showsMyLocationButton={true}
         followsUserLocation={true}
@@ -36,24 +35,26 @@ const ShowMap = props => {
         zoomControlEnabled={true}
         loadingEnabled={true}
         toolbarEnabled={true}>
-        {props.data.map((marker, index) => (
-          <Marker
-            key={index}
-            coordinate={getRegion(marker)}
-            onPress={onPress(marker)}
-          />
-        ))}
-        <Marker
-          key="unike"
-          pinColor="#0000ff"
-          coordinate={getRegion({
-            geolocation: coords,
-          })}
-        />
-        {props.data.length === 1 ? (
+        {props.data.map((marker, index) => {
+          console.log('MARKer', marker);
+          return (
+            <Marker
+              key={index}
+              coordinate={getRegion(marker.EnderecoCliente)}
+              onPress={onPress(marker.EnderecoCliente)}
+            />
+          );
+        })}
+        <Marker key="unike" pinColor="#0000ff" coordinate={getRegion(coords)} />
+        {props.data.length === 1 &&
+        hasLatitude(props.data[0].EnderecoCliente) ? (
           <MapViewDirections
             origin={coords}
-            destination={props.data[0] ? props.data[0].geolocation : coords}
+            destination={
+              props.data[0]
+                ? getRegion(props.data[0].EnderecoCliente, false)
+                : coords
+            }
             apikey={GOOGLE_MAPS_APIKEY}
             strokeWidth={5}
             strokeColor="hotpink"

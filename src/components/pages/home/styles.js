@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  actionButton: {
-    flexDirection: 'column',
-    justifyContent: 'space-around',
+  column: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
 });
 

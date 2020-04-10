@@ -11,16 +11,24 @@ const actions = [
     label: 'Serviços',
     link: 'ScheduleServices',
     icon: {
-      name: 'check-square',
-      type: 'Feather',
+      name: 'briefcase',
+      type: 'Entypo',
     },
   },
   {
     label: 'Perfil do Usuário',
     link: 'ProfileUser',
     icon: {
-      name: 'user-circle-o',
+      name: 'user',
       type: 'FontAwesome',
+    },
+  },
+  {
+    label: 'Gráficos',
+    link: 'AboutPage',
+    icon: {
+      name: 'graph',
+      type: 'Octicons',
     },
   },
   {

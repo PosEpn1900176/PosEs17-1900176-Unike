@@ -7,13 +7,13 @@ const ActionButtonsPresentation = props => {
     <>
       {props.actions.map((action, index) => (
         <Button
-          iconRight
+          rounded
           transparent
           key={index}
           style={styles.button}
           disabled={action.disabled}
           onPress={props.onPress(action)}>
-          <Text>{action.label}</Text>
+          {/* <Text>{action.label}</Text> */}
           <Icon
             type={action.icon.type}
             name={action.icon.name}

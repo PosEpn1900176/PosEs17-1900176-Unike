@@ -3,9 +3,10 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   button: {
     backgroundColor: '#ddd',
-    height: 50,
-    marginLeft: 15,
-    marginRight: 15,
+    height: 70,
+    width: 70,
+    margin: 15,
+    justifyContent: 'center',
   },
   icon: {
     fontSize: 30,

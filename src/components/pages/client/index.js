@@ -21,14 +21,13 @@ import ButtonGroup from '../../organisms/buttonGroup';
 import { buttonsData } from './data';
 import getDirections from 'react-native-google-maps-directions';
 import { useSelector } from 'react-redux';
-import { filterRequestWithoutGeolocation } from '../../../utils/maps';
 
 const ClientPage = ({ navigation }) => {
   const {
     coords = { latitude: -23.564259, longitude: -46.652507 },
   } = useSelector(state => state.services.map.currentPosition);
   const [item] = useNavigationParam('item');
-  console.log('Item', item)
+  console.log('Item', item);
   const [mode, setMode] = useState('DRIVING');
 
   const handleBack = () => {
@@ -39,7 +38,7 @@ const ClientPage = ({ navigation }) => {
     setMode(value);
   };
   const onPressMarker = () => {
-    const { latitude, longitude } = item.geolocation;
+    const { Latitude: latitude, Longitude: longitude } = item;
     const data = {
       source: coords,
       destination: {

@@ -1,25 +1,23 @@
 import React from 'react';
-import { Container } from 'native-base';
+import { Container, Text } from 'native-base';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
-import { useGetRegion } from '../../../hooks';
+// import { useGetRegion } from '../../../hooks';
+import { getRegion } from '../../../utils/maps';
 import { useSelector } from 'react-redux';
 import styles from './styles';
 import MapViewDirections from 'react-native-maps-directions';
-import { hasLatitude } from './utils';
 
 const GOOGLE_MAPS_APIKEY = 'AIzaSyBM9agp_gMCjF3WlhtzX0LglbCwKu_54wA';
 
 const ShowMap = props => {
-  const {
-    coords = { latitude: -23.564259, longitude: -46.652507 },
-  } = useSelector(state => state.services.map.currentPosition);
-  const getRegion = useGetRegion();
+  const { coords } = useSelector(state => state.services.map.currentPosition);
+  // const getRegion = useGetRegion();
   const onPress = marker => {
     return event => {
       props.onPressMarker(marker);
     };
   };
-  console.log('PROPS', props, coords);
+  console.log('INITAL', coords);
 
   return (
     <Container>
@@ -36,7 +34,6 @@ const ShowMap = props => {
         loadingEnabled={true}
         toolbarEnabled={true}>
         {props.data.map((marker, index) => {
-          console.log('MARKer', marker);
           return (
             <Marker
               key={index}
@@ -46,8 +43,7 @@ const ShowMap = props => {
           );
         })}
         <Marker key="unike" pinColor="#0000ff" coordinate={getRegion(coords)} />
-        {props.data.length === 1 &&
-        hasLatitude(props.data[0].EnderecoCliente) ? (
+        {props.data.length === 1 ? (
           <MapViewDirections
             origin={coords}
             destination={

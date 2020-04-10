@@ -8,7 +8,6 @@ import { ListService } from '../../../templates/listService';
 import TotalService from './totalService';
 
 const InfoMapPresentation = ({ marker, ...props }) => {
-  console.log('status', props.status);
   return (
     <View style={styles.infoMap}>
       <View style={styles.content}>

@@ -21,6 +21,7 @@ import ButtonGroup from '../../organisms/buttonGroup';
 import { buttonsData } from './data';
 import getDirections from 'react-native-google-maps-directions';
 import { useSelector } from 'react-redux';
+import { filterRequestWithoutGeolocation } from '../../../utils/maps';
 
 const ClientPage = ({ navigation }) => {
   const {
@@ -78,7 +79,11 @@ const ClientPage = ({ navigation }) => {
               </TabHeading>
             }>
             <View>
-              <ShowMap data={[item]} mode={mode} onPressMarker={() => {}} />
+              <ShowMap
+                data={filterRequestWithoutGeolocation([item])}
+                mode={mode}
+                onPressMarker={() => {}}
+              />
               <View style={styles.getPositionButton(100)}>
                 <ButtonGroup data={buttonsData} onMode={onMode} />
               </View>

@@ -3,6 +3,7 @@ import { Text, Container, Content, Footer, Button } from 'native-base';
 import { ShowMap } from '../../templates/showMap';
 import { HeaderSignup } from '../../templates/headerSignup';
 import { useSelector } from 'react-redux';
+import { filterRequestWithoutGeolocation } from '../../../utils/maps';
 
 const MapPage = ({ navigation }) => {
   const selector = useSelector(
@@ -15,7 +16,7 @@ const MapPage = ({ navigation }) => {
     <Container>
       <HeaderSignup />
       <Content>
-        <ShowMap markers={selector} />
+        <ShowMap markers={filterRequestWithoutGeolocation(selector)} />
       </Content>
       <Footer>
         <Button onPress={goBack}>

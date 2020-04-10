@@ -17,7 +17,7 @@ const ShowMap = props => {
       props.onPressMarker(marker);
     };
   };
-  console.log('INITAL', coords);
+  console.log('INITAL', props.data, getRegion(coords));
 
   return (
     <Container>

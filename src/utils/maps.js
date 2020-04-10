@@ -11,17 +11,17 @@ const hasGeolocation = ({ Latitude, Longitude }) => {
   return Latitude && Longitude;
 };
 
-const addGeolocationData = (requests = []) => {
-  return requests.map(request => {
-    if (!hasGeolocation(request)) {
-      request.EnderecoCliente = {
-        ...request.EnderecoCliente,
-        ...mapLocation(),
-      };
-    }
-    return request;
-  });
-};
+// const addGeolocationData = (requests = []) => {
+//   return requests.map(request => {
+//     if (!hasGeolocation(request)) {
+//       request.EnderecoCliente = {
+//         ...request.EnderecoCliente,
+//         ...mapLocation(),
+//       };
+//     }
+//     return request;
+//   });
+// };
 
 const getRegion = (
   { latitude, longitude, Latitude, Longitude },
@@ -29,8 +29,8 @@ const getRegion = (
 ) => {
   const { width, height } = Dimensions.get('window');
   let coords = {
-    latitude: latitude || Latitude,
-    longitude: longitude || Longitude,
+    latitude: parseFloat(latitude || Latitude),
+    longitude: parseFloat(longitude || Longitude),
   };
   if (delta) {
     coords.latitudeDelta = 0.0922;
@@ -40,4 +40,7 @@ const getRegion = (
   return { ...coords };
 };
 
-export { addGeolocationData, getRegion };
+const filterRequestWithoutGeolocation = requests =>
+  requests.filter(request => hasGeolocation(request.EnderecoCliente));
+
+export { getRegion, filterRequestWithoutGeolocation };

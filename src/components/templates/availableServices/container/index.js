@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import AvailableServicesPresentation from '../presentation';
 import { useAvailableServices } from './use';
+import { filterRequestWithoutGeolocation } from '../../../../utils/maps';
 
 const AvailableServicesContainer = props => {
   const data = useAvailableServices();
+  console.log('DATA', data)
   const [selectedMarker, setSelectedMarker] = useState({});
   const [showMarker, setShowMarker] = useState(false);
 
@@ -16,7 +18,7 @@ const AvailableServicesContainer = props => {
   };
   return (
     <AvailableServicesPresentation
-      data={data}
+      data={filterRequestWithoutGeolocation(data)}
       onPressMarker={onPressMarker}
       showMarker={showMarker}
       selectedMarker={selectedMarker}

@@ -18,13 +18,12 @@ const ProfileUserPagePresentation = props => {
   return (
     <Container>
       <HeaderSignup />
-
       <Tabs>
         <Tab
           heading={
             <TabHeading>
               <Icon name="person" />
-              <Text>VerPerfil</Text>
+              <Text>Ver Perfil</Text>
             </TabHeading>
           }>
           <InfoProfile />

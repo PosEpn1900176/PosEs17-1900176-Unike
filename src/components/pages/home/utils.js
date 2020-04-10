@@ -24,9 +24,8 @@ const actions = [
     },
   },
   {
-    label: 'Ajuda',
-    link: 'Help',
-    disabled: true,
+    label: 'Sobre',
+    link: 'AboutPage',
     icon: {
       name: 'help',
       type: 'Entypo',

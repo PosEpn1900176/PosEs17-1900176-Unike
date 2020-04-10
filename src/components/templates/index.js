@@ -6,3 +6,4 @@ export * from './question';
 export * from './availableServices';
 export * from './scheduleServices';
 export * from './listService';
+export * from './infoProfile';

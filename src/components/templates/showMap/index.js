@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Text } from 'native-base';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
-// import { useGetRegion } from '../../../hooks';
 import { getRegion } from '../../../utils/maps';
 import { useSelector } from 'react-redux';
 import styles from './styles';
@@ -11,13 +10,12 @@ const GOOGLE_MAPS_APIKEY = 'AIzaSyBM9agp_gMCjF3WlhtzX0LglbCwKu_54wA';
 
 const ShowMap = props => {
   const { coords } = useSelector(state => state.services.map.currentPosition);
-  // const getRegion = useGetRegion();
+
   const onPress = marker => {
     return event => {
       props.onPressMarker(marker);
     };
   };
-  console.log('INITAL', props.data, getRegion(coords));
 
   return (
     <Container>
@@ -38,7 +36,7 @@ const ShowMap = props => {
             <Marker
               key={index}
               coordinate={getRegion(marker.EnderecoCliente)}
-              onPress={onPress(marker.EnderecoCliente)}
+              onPress={onPress(marker)}
             />
           );
         })}

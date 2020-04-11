@@ -3,10 +3,10 @@ import { List, ListItem, Text, Left, Body, Right, View } from 'native-base';
 import { getDate, formatMoney } from '../../../lib';
 import styles from './styles';
 
-const ListService = props => {
+const ListService = ({ requests = [] }) => {
   return (
     <List>
-      {props.requests.map((request, index) => {
+      {requests.map((request, index) => {
         const service = request.Servico;
         return (
           <View key={index} style={styles.row}>

@@ -5,7 +5,6 @@ import { getDate } from '../../../../lib';
 import { ImageUser } from '../../../organisms/imageUser';
 
 const InfoProfilePresentation = ({ profile }) => {
-  console.log(profile);
   return (
     <Content padder>
       <Card>

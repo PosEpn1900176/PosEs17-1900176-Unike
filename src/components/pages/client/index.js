@@ -28,7 +28,6 @@ const ClientPage = ({ navigation }) => {
     coords = { latitude: -23.564259, longitude: -46.652507 },
   } = useSelector(state => state.services.map.currentPosition);
   const [item] = useNavigationParam('item');
-  console.log('Item', item);
   const [mode, setMode] = useState('DRIVING');
 
   const handleBack = () => {

@@ -1,33 +1,20 @@
 import React from 'react';
 import styles from './styles';
 import {
-  DeckSwiper,
-  Card,
-  CardItem,
-  Left,
   Body,
   Button,
   Icon,
-  Fab,
-  Right,
-  Grid,
-  Col,
   Text,
   Container,
   List,
   Content,
   ListItem,
-  Thumbnail,
   Badge,
 } from 'native-base';
-import { DataValue } from '../../../molecules';
-import { HeaderSignup } from '../../headerSignup';
-import { ListService } from '../../listService';
 import { getFullName, getFullAddress, getDate } from '../../../../lib';
-import { ScrollView, View, Dimensions } from 'react-native';
+import { View } from 'react-native';
 
 const TableScheduleServicesPresentation = ({ data = [], onViewMap }) => {
-  console.log('Presentation', onViewMap);
   return (
     <Container>
       <Content>

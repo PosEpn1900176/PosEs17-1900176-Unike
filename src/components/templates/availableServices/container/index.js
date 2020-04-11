@@ -5,7 +5,6 @@ import { filterRequestWithoutGeolocation } from '../../../../utils/maps';
 
 const AvailableServicesContainer = props => {
   const data = useAvailableServices();
-  console.log('DATA', data)
   const [selectedMarker, setSelectedMarker] = useState({});
   const [showMarker, setShowMarker] = useState(false);
 

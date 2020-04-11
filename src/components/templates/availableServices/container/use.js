@@ -9,7 +9,6 @@ const useAvailableServices = () => {
   const selector = useSelector(state => state.services.map.available);
   const dispatch = useDispatch();
   const [data, fetch] = useFetch('availableService');
-
   useEffect(() => {
     fetch({
       params: {

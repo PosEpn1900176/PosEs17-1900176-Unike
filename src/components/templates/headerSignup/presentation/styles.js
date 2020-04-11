@@ -5,7 +5,14 @@ const styles = StyleSheet.create({
     height: 40,
     width: 120,
   },
-  item: { borderWidth: 1, backgroundColor: '#eee', height: 50 },
+  item: {
+    borderWidth: 1,
+    backgroundColor: '#eee',
+    height: 50,
+  },
+  search: {
+    color: 'gray',
+  },
 });
 
 export default styles;

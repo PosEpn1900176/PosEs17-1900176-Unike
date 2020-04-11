@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import { Container, View, Content } from 'native-base';
+import {
+  Container,
+  View,
+  Content,
+  Button,
+  Text,
+  Footer,
+  Left,
+  Icon,
+} from 'native-base';
 import { HeaderSignup } from '../../templates/headerSignup';
 import { ActionButtons } from '../../molecules';
 import { actions } from './utils';

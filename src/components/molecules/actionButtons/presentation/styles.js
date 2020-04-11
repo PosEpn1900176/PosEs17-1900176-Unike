@@ -5,9 +5,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#ddd',
     height: 70,
     width: 70,
-    margin: 15,
-    marginBottom: 15,
     justifyContent: 'center',
+  },
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
   },
   icon: {
     fontSize: 30,
@@ -19,11 +23,16 @@ const styles = StyleSheet.create({
   },
   label: {
     width: 100,
-    fontSize: 10,
+    marginTop: 5,
+    fontSize: 14,
     textAlign: 'center',
   },
   actionsButton: {
-    marginBottom: 30,
+    display: 'flex',
+    alignItems: 'center',
+    width: 100,
+    height: 100,
+    margin: 15,
   },
 });
 

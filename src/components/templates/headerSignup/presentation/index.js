@@ -1,17 +1,13 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import {
   Header,
   Left,
-  Body,
   Right,
   Button,
-  Title,
   Text,
   Item,
   Icon,
   Input,
-  View,
-  Container,
 } from 'native-base';
 import { Image } from 'react-native';
 import { logo } from '../../../../images';
@@ -20,17 +16,10 @@ import styles from './styles';
 const HeaderSeach = ({ onChangeText = () => {} }) => {
   const [text, setText] = useState('');
 
-  useEffect(() => {
-    onChange('');
-  }, [onChange]);
-
-  const onChange = useCallback(
-    value => {
-      setText(value);
-      onChangeText(value);
-    },
-    [onChangeText],
-  );
+  const onChange = value => {
+    setText(value);
+    onChangeText(value);
+  };
 
   return (
     <Header searchBar transparent>
@@ -51,7 +40,7 @@ const HeaderDefault = props => {
       </Left>
       <Right>
         <Button transparent onPress={props.onBack}>
-          <Text style={{ color: 'gray' }}>Bem vindo</Text>
+          <Text style={styles.search}>Bem vindo</Text>
         </Button>
       </Right>
     </Header>

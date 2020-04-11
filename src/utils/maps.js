@@ -40,9 +40,7 @@ const getRegion = (
   return { ...coords };
 };
 
-const filterRequestWithoutGeolocation = requests => {
-  console.log('Request', requests);
-  return requests.filter(request => hasGeolocation(request.EnderecoCliente));
-};
+const filterRequestWithoutGeolocation = requests =>
+  requests.filter(request => hasGeolocation(request.EnderecoCliente));
 
 export { getRegion, filterRequestWithoutGeolocation };

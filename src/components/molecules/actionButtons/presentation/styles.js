@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     height: 70,
     width: 70,
     margin: 15,
+    marginBottom: 15,
     justifyContent: 'center',
   },
   icon: {
@@ -15,6 +16,14 @@ const styles = StyleSheet.create({
   flex: {
     flex: 1,
     display: 'flex',
+  },
+  label: {
+    width: 100,
+    fontSize: 10,
+    textAlign: 'center',
+  },
+  actionsButton: {
+    marginBottom: 30,
   },
 });
 

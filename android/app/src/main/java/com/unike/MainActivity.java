@@ -1,4 +1,4 @@
-package com.unike;
+package com.prfunike;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
